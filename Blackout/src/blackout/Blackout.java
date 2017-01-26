@@ -6,6 +6,7 @@
 package blackout;
 
 import byui.cit260.blackout.model.Backpack;
+import byui.cit260.blackout.model.Player;
 
 /**
  *
@@ -24,6 +25,16 @@ public class Blackout {
         
         String backpackItems = backpack.toString();
         System.out.println(backpackItems);
+        
+        Player playerOne = new Player();
+        
+        playerOne.setName("Fred Flinstone");
+        playerOne.setStartStrength(100);
+        playerOne.setStrenghth(25);
+        playerOne.setTalk("Welcome to Blackout");
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
         
     }
     
