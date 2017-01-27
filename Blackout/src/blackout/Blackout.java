@@ -1,6 +1,7 @@
 
 package blackout;
 
+import byui.cit260.blackout.model.Antidote;
 import byui.cit260.blackout.model.Backpack;
 import byui.cit260.blackout.model.Game;
 import byui.cit260.blackout.model.Location;
@@ -8,6 +9,7 @@ import byui.cit260.blackout.model.Map;
 import byui.cit260.blackout.model.NonPlayer;
 import byui.cit260.blackout.model.Player;
 import byui.cit260.blackout.model.Scene;
+
 
 
 public class Blackout {
@@ -87,7 +89,17 @@ public class Blackout {
         String theSceneOneInfo = sceneOne.toString();
         System.out.println(theSceneOneInfo);
         
+        //Antidote
         
+        Antidote theAntidote = new Antidote();
+        theAntidote.setDescription("The Bottle of Dr Pepper");
+        theAntidote.setName("Dr Pepper");
+        theAntidote.setType("The Antidote");
+        theAntidote.setWeightInPounds(176);
+        theAntidote.setWeighInKilo(79.8323);
+        
+        String theAntidoteInfo = theAntidote.toString();
+        System.out.println(theAntidoteInfo);
         
         
     }
