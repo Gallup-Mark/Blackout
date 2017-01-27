@@ -17,12 +17,8 @@ public class Backpack implements Serializable {
     //Class instance variables or attributes
     
     private String items;
-
     
-    public Backpack() {
-    
-    }
-
+    //getters and setters
     public String getItems() {
         return items;
     }
@@ -31,6 +27,7 @@ public class Backpack implements Serializable {
         this.items = items;
     }
 
+    //hashes
     @Override
     public int hashCode() {
         int hash = 7;
@@ -38,11 +35,13 @@ public class Backpack implements Serializable {
         return hash;
     }
 
+    //String
     @Override
     public String toString() {
         return "Backpack{" + "items=" + items + '}';
     }
 
+    //
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
