@@ -15,6 +15,7 @@ public class Blackout {
 
     public static void main(String[] args) {
         
+        //added by Mark
         Game game = new Game();
         
         game.setTotalTime(300);
@@ -23,6 +24,7 @@ public class Blackout {
         String gameInfo = game.toString();
         System.out.println(gameInfo);
         
+        //added by Mark
         Map map = new Map();
         
         map.setColumnCount(5);
@@ -34,6 +36,7 @@ public class Blackout {
         String mapInfo = map.toString();
         System.out.println(mapInfo);
         
+        //added by Mark
         Location location = new Location();
         
         location.setColumn(3);
@@ -44,7 +47,7 @@ public class Blackout {
         System.out.println(locationInfo);
         
         
-        
+        //Team assignment
         Backpack backpack = new Backpack();
         
         backpack.setItems("phone");
@@ -52,6 +55,7 @@ public class Blackout {
         String backpackItems = backpack.toString();
         System.out.println(backpackItems);
         
+        //added by Mark
         Player playerOne = new Player();
         
         playerOne.setName("Fred Flinstone");
