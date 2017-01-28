@@ -17,13 +17,12 @@ public class Door implements Serializable{
     //Class instance variables or attributes
     private boolean locked;
     private boolean unlocked;
-    private String window;
-    private String key;
+    private boolean window;
+    private String keyType;
+    private boolean haveKey;
 
     public Door() {
     }
-    
-    
 
     public boolean isLocked() {
         return locked;
@@ -41,35 +40,44 @@ public class Door implements Serializable{
         this.unlocked = unlocked;
     }
 
-    public String getWindow() {
+    public boolean isWindow() {
         return window;
     }
 
-    public void setWindow(String window) {
+    public void setWindow(boolean window) {
         this.window = window;
     }
 
-    public String getKey() {
-        return key;
+    public String getKeyType() {
+        return keyType;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setKeyType(String keyType) {
+        this.keyType = keyType;
+    }
+
+    public boolean isHaveKey() {
+        return haveKey;
+    }
+
+    public void setHaveKey(boolean haveKey) {
+        this.haveKey = haveKey;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + (this.locked ? 1 : 0);
-        hash = 37 * hash + (this.unlocked ? 1 : 0);
-        hash = 37 * hash + Objects.hashCode(this.window);
-        hash = 37 * hash + Objects.hashCode(this.key);
+        int hash = 5;
+        hash = 71 * hash + (this.locked ? 1 : 0);
+        hash = 71 * hash + (this.unlocked ? 1 : 0);
+        hash = 71 * hash + (this.window ? 1 : 0);
+        hash = 71 * hash + Objects.hashCode(this.keyType);
+        hash = 71 * hash + (this.haveKey ? 1 : 0);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Door{" + "locked=" + locked + ", unlocked=" + unlocked + ", window=" + window + ", key=" + key + '}';
+        return "Door{" + "locked=" + locked + ", unlocked=" + unlocked + ", window=" + window + ", keyType=" + keyType + ", haveKey=" + haveKey + '}';
     }
 
     @Override
@@ -90,14 +98,20 @@ public class Door implements Serializable{
         if (this.unlocked != other.unlocked) {
             return false;
         }
-        if (!Objects.equals(this.window, other.window)) {
+        if (this.window != other.window) {
             return false;
         }
-        if (!Objects.equals(this.key, other.key)) {
+        if (this.haveKey != other.haveKey) {
+            return false;
+        }
+        if (!Objects.equals(this.keyType, other.keyType)) {
             return false;
         }
         return true;
     }
+    
+    
+
     
     
     
