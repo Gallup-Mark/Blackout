@@ -3,10 +3,14 @@ package blackout;
 
 import byui.cit260.blackout.model.Antidote;
 import byui.cit260.blackout.model.Backpack;
+import byui.cit260.blackout.model.Door;
 import byui.cit260.blackout.model.Game;
+import byui.cit260.blackout.model.Item;
+import byui.cit260.blackout.model.ItemType;
 import byui.cit260.blackout.model.Location;
 import byui.cit260.blackout.model.Map;
 import byui.cit260.blackout.model.NonPlayer;
+import byui.cit260.blackout.model.Phone;
 import byui.cit260.blackout.model.Player;
 import byui.cit260.blackout.model.Scene;
 
@@ -101,7 +105,53 @@ public class Blackout {
         String theAntidoteInfo = theAntidote.toString();
         System.out.println(theAntidoteInfo);
         
+        //added by Matthew for the second time
         
-    }
+        //Item
+        Item itemOne = new Item();
+            itemOne.setDescription("Joe Bob's Soda");
+            itemOne.setName("Root Beer");
+            itemOne.setType("Soda");
+            
+            String sodaOne = itemOne.toString();
+            System.out.println(sodaOne);
+        
+        
+        //ItemType
+        ItemType antidote = new ItemType();
+        ItemType phone = new ItemType();
+        ItemType soda = new ItemType();
+        ItemType money = new ItemType();
+        ItemType coat = new ItemType();
+        ItemType wallet = new ItemType();
+        ItemType candy = new ItemType();
+        
+        String mainAntidote = antidote.toString();
+            System.out.println(mainAntidote);
+        
+        //Phone
+        Phone cell = new Phone();
+            cell.setContactList("Wife");
+            cell.setPassword("JoeBobsPhone");
+            cell.setPictures("Picture of Wife");
+            
+            String cellphone = cell.toString();
+            System.out.println(cellphone);
+        
+        //Door
+        Door doorOne = new Door();
+            doorOne.setKeyType("Skeleton Key");
+            doorOne.setHaveKey(false);
+            doorOne.setLocked(true);
+            doorOne.setUnlocked(false);
+            doorOne.setWindow(true);
+            
+            String levelOneDoor = doorOne.toString();
+            System.out.println(levelOneDoor);
+            
+            
+            
+    }   
+            
     
 }
