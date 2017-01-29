@@ -17,27 +17,10 @@ public class Scene implements Serializable{
         private String description;
         private String mapSymbol;
         private int numberItems;
-        private NonPlayer nonPlayer;
-        private String type;
+        private String nonPlayer;
+        
 
-    /**
-     * Get the value of type
-     *
-     * @return the value of type
-     */
-    public String getType() {
-        return type;
-    }
-
-    /**
-     * Set the value of type
-     *
-     * @param type new value of type
-     */
-    public void setType(String type) {
-        this.type = type;
-    }
-
+    
 
         
         
@@ -46,7 +29,7 @@ public class Scene implements Serializable{
      *
      * @return the value of nonPlayer
      */
-    public NonPlayer getNonPlayer() {
+    public String getNonPlayer() {
         return nonPlayer;
     }
 
@@ -55,7 +38,7 @@ public class Scene implements Serializable{
      *
      * @param nonPlayer new value of nonPlayer
      */
-    public void setNonPlayer(NonPlayer nonPlayer) {
+    public void setNonPlayer(String nonPlayer) {
         this.nonPlayer = nonPlayer;
     }
 
@@ -119,11 +102,10 @@ public class Scene implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.description);
-        hash = 79 * hash + Objects.hashCode(this.mapSymbol);
-        hash = 79 * hash + this.numberItems;
-        hash = 79 * hash + Objects.hashCode(this.nonPlayer);
-        hash = 79 * hash + Objects.hashCode(this.type);
+        hash = 29 * hash + Objects.hashCode(this.description);
+        hash = 29 * hash + Objects.hashCode(this.mapSymbol);
+        hash = 29 * hash + this.numberItems;
+        hash = 29 * hash + Objects.hashCode(this.nonPlayer);
         return hash;
     }
 
@@ -148,9 +130,6 @@ public class Scene implements Serializable{
         if (!Objects.equals(this.mapSymbol, other.mapSymbol)) {
             return false;
         }
-        if (!Objects.equals(this.type, other.type)) {
-            return false;
-        }
         if (!Objects.equals(this.nonPlayer, other.nonPlayer)) {
             return false;
         }
@@ -159,15 +138,11 @@ public class Scene implements Serializable{
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", mapSymbol=" + mapSymbol + ", numberItems=" + numberItems + ", nonPlayer=" + nonPlayer + ", type=" + type + '}';
+        return "Scene{" + "description=" + description + ", mapSymbol=" + mapSymbol + ", numberItems=" + numberItems + ", nonPlayer=" + nonPlayer + '}';
     }
 
    
 
-    
-    
-    
-    
-    
+ 
     
 }
