@@ -96,6 +96,7 @@ public class Blackout {
         
         //Scene Type
         SceneType subway = new SceneType();
+        subway.setSubway("The Boring Subway");
         SceneType apartment = new SceneType();
         SceneType street = new SceneType();
         SceneType pharmacy = new SceneType();
