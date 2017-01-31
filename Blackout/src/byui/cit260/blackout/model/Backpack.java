@@ -20,9 +20,9 @@ public class Backpack implements Serializable {
     
     
     //default constructor
-    public Backpack(String items) {
-        this.items = items;
+    public Backpack() {
     }
+
     
     
     //getters and setters
