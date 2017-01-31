@@ -18,6 +18,13 @@ public class Backpack implements Serializable {
     
     private String items;
     
+    
+    //default constructor
+    public Backpack(String items) {
+        this.items = items;
+    }
+    
+    
     //getters and setters
     public String getItems() {
         return items;
