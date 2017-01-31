@@ -13,6 +13,7 @@ import byui.cit260.blackout.model.NonPlayer;
 import byui.cit260.blackout.model.Phone;
 import byui.cit260.blackout.model.Player;
 import byui.cit260.blackout.model.Scene;
+import byui.cit260.blackout.model.SceneType;
 
 
 
@@ -84,14 +85,27 @@ public class Blackout {
         
         //Scene 
         Scene sceneOne = new Scene();
-        sceneOne.setDescription("Boring Old Subway care");
+        sceneOne.setDescription("Boring Old Subway car");
         sceneOne.setMapSymbol("#");
         sceneOne.setNumberItems(3);
-        sceneOne.setNonPlayer(theNonPlayer);
-        sceneOne.setType("subway");
+        sceneOne.setNonPlayer("Job Bob");
         
         String theSceneOneInfo = sceneOne.toString();
         System.out.println(theSceneOneInfo);
+        
+        
+        //Scene Type
+        SceneType subway = new SceneType();
+        subway.setSubway("The Boring Subway");
+        SceneType apartment = new SceneType();
+        SceneType street = new SceneType();
+        SceneType pharmacy = new SceneType();
+        SceneType hospital = new SceneType();
+        
+        String subwaySceneTypeInfo = subway.toString();
+        System.out.println(subwaySceneTypeInfo);
+        
+        
         
         //Antidote
         
