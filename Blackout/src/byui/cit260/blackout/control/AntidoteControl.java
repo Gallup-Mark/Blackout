@@ -6,7 +6,7 @@ package byui.cit260.blackout.control;
  */
 public class AntidoteControl {
     
-public double calcMedAmount(double weightInPounds, int numberOfPills) {
+public static double calcMedAmount(double weightInPounds, int numberOfPills) {
     
             if (weightInPounds <=0) { //weightInPounds is negative?
                 return -1;

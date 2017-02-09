@@ -7,7 +7,7 @@ package byui.cit260.blackout.control;
  */
 public class DoorControl {
     
-    public double breakDoorOpen(double playerWeight, double playerForce, double doorWeight, double doorWidth, double doorHeight) {
+    public static double breakDoorOpen(double playerWeight, double playerForce, double doorWeight, double doorWidth, double doorHeight) {
     
             if (doorHeight <=0) { //doorHeight is negative?
                 return -1;
