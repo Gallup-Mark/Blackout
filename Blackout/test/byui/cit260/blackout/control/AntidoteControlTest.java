@@ -1,4 +1,3 @@
-
 package byui.cit260.blackout.control;
 
 import org.junit.Test;
