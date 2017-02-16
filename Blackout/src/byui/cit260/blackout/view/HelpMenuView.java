@@ -1,35 +1,31 @@
 
 package byui.cit260.blackout.view;
 
-import blackout.Blackout;
-import byui.cit260.blackout.control.GameControl;
-import byui.cit260.blackout.view.GameMenuView;
 import java.util.Scanner;
 
 /**
  *
  * @author mgallup
  */
-public class MainMenuView {
+public class HelpMenuView {
     
     private String promptMessage = "";
     private String menu;
     
-    public MainMenuView() {
+    public HelpMenuView() {
         this.menu = "\n"
                 + "\n----------------------------------------------------------"
-                + "\n | Main Menu"
+                + "\n | Help Menu"
                 + "\n----------------------------------------------------------"
-                + "\nN - New Game"
-                + "\nS - Save Game"
-                + "\nL - Load Game"
-                + "\nH - Help Menu"
+                + "\nG - Goal of Game"
+                + "\nF - Finding clues"
+                + "\nH - How to move"
                 + "\nQ - Quit Game"
                 + "\n-----------------------------------------------------------";
         System.out.println(menu);
     }
 
-    public void displayMainMenuView() {
+    public void displayHelpMenuView() {
         boolean done = false; // set flag to not done
         do {
                 // prompt for and get players name
@@ -71,20 +67,17 @@ public class MainMenuView {
             choice = choice.toUpperCase(); //convert choice to upper case
             
             switch (choice) {
-                case "N" : //create start new game
-                    this.startNewGame();
+                case "G" : //display goal of game
+                    this.displayGoal();
                     break;
-                case "S" : // create save game
-                    this.saveGame();
+                case "H" : // display how to move
+                    this.displayMoveOptions();
                     break;
-                case "L" : // Load game
-                    this.loadGame();
+                case "F" : // display clues
+                    this.displayClues();
                     break;
-                case "H" : //Help Menu
-                    this.helpMenu();
-                    break;
-                case "Q" : //quit game
-                    this.quitGame();
+                case "Q" : //close help menu
+                    this.closeHelpMenu();
                     break;
                 default :
                     System.out.println("\n*** Invalid selection, try again");
@@ -93,31 +86,21 @@ public class MainMenuView {
             return false;
     }
 
-    private void startNewGame() {
-        // create new game
-        GameControl.createNewGame(Blackout.getPlayer());
-        
-        //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    private void displayGoal() {
+        System.out.println("\n*** displayGoal() function called ***");
     }
 
-    private void saveGame() {
-        System.out.println("\n*** saveGame() function called ***");
+    private void displayMoveOptions() {
+       System.out.println("\n*** displayMoveOptions() function called ***");
     }
 
-    private void loadGame() {
-        System.out.println("\n*** loadGame() function called ***");
+    private void displayClues() {
+        System.out.println("\n*** displayClues() function called ***");
     }
 
-    private void helpMenu() {
-       // display help menu
-       HelpMenuView helpMenu = new HelpMenuView();
-       helpMenu.displayHelpMenuView();
+    private void closeHelpMenu() {
+        System.out.println("\n*** closeHelpMenu() function called ***");
     }
 
-    private void quitGame() {
-        System.out.println("\n*** quitMenu() function called ***");
-    }
     
 }
