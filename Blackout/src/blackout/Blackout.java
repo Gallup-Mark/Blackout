@@ -1,6 +1,11 @@
 
 package blackout;
 
+import byui.cit260.blackout.model.Game;
+import byui.cit260.blackout.model.Player;
+import byui.cit260.blackout.view.StartProgramView;
+
+/*
 import byui.cit260.blackout.model.Antidote;
 import byui.cit260.blackout.model.Backpack;
 import byui.cit260.blackout.model.Door;
@@ -14,162 +19,38 @@ import byui.cit260.blackout.model.Phone;
 import byui.cit260.blackout.model.Player;
 import byui.cit260.blackout.model.Scene;
 import byui.cit260.blackout.model.SceneType;
+*/
 
 
 
 public class Blackout {
+    
+    private static Game currentGame = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        Blackout.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Blackout.player = player;
+    }
+    private static Player player = null;
 
 
     public static void main(String[] args) {
         
-        //added by Mark
-        Game game = new Game();
-        
-        game.setTotalTime(300);
-        game.setStartTime(1);
-        
-        String gameInfo = game.toString();
-        System.out.println(gameInfo);
-        
-        //added by Mark
-        Map map = new Map();
-        
-        map.setColumnCount(5);
-        map.setRowCount(5);
-        map.setCurrentColumn(3);
-        map.setCurrentRow("D");
-        map.setCurrentScene("subway");
-        
-        String mapInfo = map.toString();
-        System.out.println(mapInfo);
-        
-        //added by Mark
-        Location location = new Location();
-        
-        location.setColumn(3);
-        location.setRow("E");
-        location.setDescription("Apartment");
-        
-        String locationInfo = location.toString();
-        System.out.println(locationInfo);
-        
-        
-        //Team assignment
-        Backpack backpack = new Backpack();
-        
-        backpack.setItems("phone");
-        
-        String backpackItems = backpack.toString();
-        System.out.println(backpackItems);
-        
-        //added by Mark
-        Player playerOne = new Player();
-        
-        playerOne.setName("Fred Flinstone");
-        playerOne.setStartStrength(100);
-        playerOne.setStrenghth(25);
-        playerOne.setTalk("Welcome to Blackout");
-        
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
-        
-        
-        
-        //added by Brian
-        
-        //non player 1 stuff
-        NonPlayer theNonPlayer = new NonPlayer();
-        theNonPlayer.setClue("Go Over There");
-        theNonPlayer.setName("Joe Bob");
-        theNonPlayer.setLevel(2);
-        
-        String theNonPlayerInfo = theNonPlayer.toString();
-        System.out.println(theNonPlayerInfo);
-        
-        
-        //Scene 
-        Scene sceneOne = new Scene();
-        sceneOne.setDescription("Boring Old Subway car");
-        sceneOne.setMapSymbol("#");
-        sceneOne.setNumberItems(3);
-        sceneOne.setNonPlayer("Job Bob");
-        
-        String theSceneOneInfo = sceneOne.toString();
-        System.out.println(theSceneOneInfo);
-        
-        
-        //Scene Type
-        SceneType subway = new SceneType();
-        subway.setSubway("The Boring Subway");
-        SceneType apartment = new SceneType();
-        SceneType street = new SceneType();
-        SceneType pharmacy = new SceneType();
-        SceneType hospital = new SceneType();
-        
-        String subwaySceneTypeInfo = subway.toString();
-        System.out.println(subwaySceneTypeInfo);
-        
-        
-        
-        //Antidote
-        
-        Antidote theAntidote = new Antidote();
-        theAntidote.setDescription("The Bottle of Dr Pepper");
-        theAntidote.setName("Dr Pepper");
-        theAntidote.setType("The Antidote");
-        theAntidote.setWeightInPounds(176);
-        theAntidote.setWeighInKilo(79.8323);
-        
-        String theAntidoteInfo = theAntidote.toString();
-        System.out.println(theAntidoteInfo);
-        
-        //added by Matthew for the second time
-        
-        //Item
-        Item itemOne = new Item();
-            itemOne.setDescription("Joe Bob's Soda");
-            itemOne.setName("Root Beer");
-            itemOne.setType("Soda");
-            
-            String sodaOne = itemOne.toString();
-            System.out.println(sodaOne);
-        
-        
-        //ItemType
-        ItemType antidote = new ItemType();
-        ItemType phone = new ItemType();
-        ItemType soda = new ItemType();
-        ItemType money = new ItemType();
-        ItemType coat = new ItemType();
-        ItemType wallet = new ItemType();
-        ItemType candy = new ItemType();
-        
-        String mainAntidote = antidote.toString();
-            System.out.println(mainAntidote);
-        
-        //Phone
-        Phone cell = new Phone();
-            cell.setContactList("Wife");
-            cell.setPassword("JoeBobsPhone");
-            cell.setPictures("Picture of Wife");
-            
-            String cellphone = cell.toString();
-            System.out.println(cellphone);
-        
-        //Door
-        Door doorOne = new Door();
-            doorOne.setKeyType("Skeleton Key");
-            doorOne.setHaveKey(false);
-            doorOne.setLocked(true);
-            doorOne.setUnlocked(false);
-            doorOne.setWindow(true);
-            
-            String levelOneDoor = doorOne.toString();
-            System.out.println(levelOneDoor);
-            
-            
-            
-    }   
-            
-    
+       //create StartProgramViewOrig and display the start program view
+       StartProgramView startProgramView = new StartProgramView();
+       startProgramView.displayStartProgramView();
+                
+    }
+
 }
