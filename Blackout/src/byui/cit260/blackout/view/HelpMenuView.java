@@ -30,8 +30,11 @@ public class HelpMenuView {
         do {
                 // prompt for and get players name
                 String menuOption = this.getMenuOption();
-                if (menuOption.toUpperCase().equals("Q"))  //user wants to quit
-                    return; // exit the game
+                if (menuOption.toUpperCase().equals("Q")) { //user wants to quit
+                    MainMenuView mainMenu = new MainMenuView();
+                    mainMenu.displayMainMenuView();
+                    return;
+                }
                     
                     // do the requested action and display the next view
                    done = this.doAction(menuOption);
@@ -76,9 +79,7 @@ public class HelpMenuView {
                 case "F" : // display clues
                     this.displayClues();
                     break;
-                case "Q" : //close help menu
-                    this.closeHelpMenu();
-                    break;
+                
                 default :
                     System.out.println("\n*** Invalid selection, try again");
                     break;
@@ -87,20 +88,18 @@ public class HelpMenuView {
     }
 
     private void displayGoal() {
-        System.out.println("\n*** displayGoal() function called ***");
+        System.out.println("\n*** Figure out who you are and how much antidote you need to survive ***");
     }
 
     private void displayMoveOptions() {
-       System.out.println("\n*** displayMoveOptions() function called ***");
+       System.out.println("\n*** Where do you want to go?***");
     }
 
     private void displayClues() {
-        System.out.println("\n*** displayClues() function called ***");
+        System.out.println("\n*** Gather clues to bring back your memory and find the antidote ***");
     }
 
-    private void closeHelpMenu() {
-        System.out.println("\n*** closeHelpMenu() function called ***");
-    }
+    
 
     
 }
