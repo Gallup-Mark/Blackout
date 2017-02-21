@@ -22,6 +22,7 @@ public class GameMenuView {
                 + "\nS - Status"
                 + "\nE - Examine"
                 + "\nT - Talk"
+                + "\nA - Antidote Amount"
                 + "\nQ - Back to Main Menu"
                 + "\n-----------------------------------------------------------";
         System.out.println(menu);
@@ -87,6 +88,9 @@ public class GameMenuView {
                 case "T" : //view talk
                     this.talk();
                     break;
+                case "A" : //Amount of Antidote
+                   this.viewAntidoteAmount();
+                   break;
                 //case "Q" : //back to Main Menu
                   //  this.mainMenu();
                     //break;
@@ -123,6 +127,13 @@ public class GameMenuView {
     //private void mainMenu() {
       //  System.out.println("\n*** mainMenu() function called ***");
   //  }
+
+    private void viewAntidoteAmount() {
+        AntidoteView antidoteView = new AntidoteView();
+        antidoteView.displayAntidoteView();
+
+        //System.out.println("\n*** viewAntidoteAmount() function called ***");
+    }
 
     
 }
