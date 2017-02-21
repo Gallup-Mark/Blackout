@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Phone implements Serializable{
     
     //Class instance variables or attributes
-    private String password;
+    private int password;
     private String contactList;
     private String pictures;
 
@@ -25,11 +25,11 @@ public class Phone implements Serializable{
     
     
 
-    public String getPassword() {
+    public int getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(int password) {
         this.password = password;
     }
 
