@@ -9,8 +9,8 @@ import java.util.Scanner;
  */
 public class GameMenuView {
 
-    private String promptMessage = "";
-    private String menu;
+    private final String promptMessage = "\nPlease enter an option:";
+    private final String menu;
     
     public GameMenuView() {
         this.menu = "\n"
@@ -85,7 +85,7 @@ public class GameMenuView {
                     this.viewExamine();
                     break;
                 case "T" : //view talk
-                    this.viewTalk();
+                    this.talk();
                     break;
                 //case "Q" : //back to Main Menu
                   //  this.mainMenu();
@@ -112,8 +112,12 @@ public class GameMenuView {
         System.out.println("\n*** viewExamine() function called ***");
     }
 
-    private void viewTalk() {
-        System.out.println("\n*** viewTalk() function called ***");
+    private void talk() {
+        //System.out.println("\n*** viewTalk() function called ***");
+        
+        //Added by Matt
+        TalkMenuView talkMenu = new TalkMenuView();
+        talkMenu.displayTalkMenuView();
     }
 
     //private void mainMenu() {

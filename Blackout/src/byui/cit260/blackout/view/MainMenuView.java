@@ -3,7 +3,6 @@ package byui.cit260.blackout.view;
 
 import blackout.Blackout;
 import byui.cit260.blackout.control.GameControl;
-import byui.cit260.blackout.view.GameMenuView;
 import java.util.Scanner;
 
 /**
@@ -12,8 +11,8 @@ import java.util.Scanner;
  */
 public class MainMenuView {
     
-    private String promptMessage = "";
-    private String menu;
+    private final String promptMessage = "\nPlease enter an option:";
+    private final String menu;
     
     public MainMenuView() {
         this.menu = "\n"
