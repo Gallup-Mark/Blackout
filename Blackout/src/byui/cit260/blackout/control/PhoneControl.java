@@ -11,7 +11,7 @@ package byui.cit260.blackout.control;
  */
 public class PhoneControl {
     
-    public int callPassword(int firstLetter, int secondLetter, int thirdLetter, int fourthLetter){
+    public static int callPassword(int firstLetter, int secondLetter, int thirdLetter, int fourthLetter){
     
         //firstletter validation
         if (firstLetter < 0){
