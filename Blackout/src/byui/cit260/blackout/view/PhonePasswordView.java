@@ -13,6 +13,18 @@ import java.util.Scanner;
  */
 public class PhonePasswordView {
     
+    private final String banner;
+    
+    public PhonePasswordView() {
+        this.banner = "\n"
+                + "\n------------------------------------------"
+                + "\nYou will now have an opportunity to unlock your phone."
+                + "\nPlease pay close attention to the following"
+                + "\nAnd input what you are asked for and nothing else."
+                + "\n------------------------------------------";
+            System.out.println(banner);
+    }
+    
     private final String promptMessage = "Please enter the password:";
     private final String promptMessage2 = "Please enter a value from 0 to 9:";
     private final String promptMessage3 = "Please enter another value from 0 to 9:";
@@ -120,4 +132,18 @@ public class PhonePasswordView {
         }
         return value;
     }
+    
+    public void checkPassword(){
+        if (password == phonePassword){
+            System.out.println("The password is correct");
+            //return for use when other code is finished
+            //return true;
+        }
+        else {
+            System.out.println("Incorrect Password");
+            //return for use when other code is finished
+            //return false;
+        }
+    }
 }
+
