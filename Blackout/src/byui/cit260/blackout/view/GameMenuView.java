@@ -25,7 +25,6 @@ public class GameMenuView {
                 + "\nA - Antidote Amount"
                 + "\nQ - Back to Main Menu"
                 + "\n-----------------------------------------------------------";
-        System.out.println(menu);
     }
 
     public void displayGameMenuView() {
@@ -34,8 +33,8 @@ public class GameMenuView {
                 // prompt for and get players name
                 String menuOption = this.getMenuOption();
                 if (menuOption.toUpperCase().equals("Q"))  { //user wants to quit
-                    MainMenuView mainMenu = new MainMenuView();
-                    mainMenu.displayMainMenuView();
+                    //MainMenuView mainMenu = new MainMenuView();
+                    //mainMenu.displayMainMenuView();
                     return;
                 }
                     
@@ -48,6 +47,9 @@ public class GameMenuView {
     }
 
     private String getMenuOption() {
+                System.out.println(menu);
+
+        
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; //value to be returned
         boolean valid = false; // intialize to not valid

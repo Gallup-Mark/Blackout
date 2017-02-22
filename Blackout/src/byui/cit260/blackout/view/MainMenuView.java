@@ -25,7 +25,6 @@ public class MainMenuView {
                 + "\nH - Help Menu"
                 + "\nQ - Quit Game"
                 + "\n-----------------------------------------------------------";
-        System.out.println(menu);
     }
 
     public void displayMainMenuView() {
@@ -45,6 +44,8 @@ public class MainMenuView {
     }
 
     private String getMenuOption() {
+                System.out.println(menu);
+
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; //value to be returned
         boolean valid = false; // intialize to not valid
