@@ -6,18 +6,17 @@ package byui.cit260.blackout.control;
  */
 public class AntidoteControl {
     
-public static double calcMedAmount(double weightInPounds, int numberOfPills) {
+public static double calcMedAmount(double weightInPounds) {
     
             double weightInKilo = (weightInPounds * 0.4535);
+            System.out.println("Your weight in kilograms is " + weightInKilo);
             double medicineAmount = (weightInKilo * 5);
+            medicineAmount = Math.round(medicineAmount);
     
             if (weightInPounds <=0) { //weightInPounds is negative?
                 return -1;
             }
-            if (numberOfPills <=0) { //numberOfPills is negative?
-                return -2;
-            }
-
+           
             if (weightInKilo <= 0 ) { //weightInKilo is negative?
                 return -3;
             }
@@ -33,4 +32,16 @@ public static double calcMedAmount(double weightInPounds, int numberOfPills) {
             
     }
     
+public static boolean testAntidote(double medicineAmount, double takenMedicineAmount) {
+        boolean answer = false;
+            if (medicineAmount == takenMedicineAmount) {
+                answer = true;
+            }
+            
+            return answer;
+
+        }
+
+
 }
+

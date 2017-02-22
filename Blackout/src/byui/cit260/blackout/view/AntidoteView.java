@@ -10,48 +10,48 @@ import java.util.Scanner;
  */
 public class AntidoteView {
     
-    private final String promptMessage;
-    private final String promptMessage2;
+    private  final String promptMessage = "\nPlease enter your weight in pounds";
+    private final String promptMessage2 = "Please enter the number of pills to ingest";
     
-    double weightInPounds = this.getWeightInPounds();
-    double medicineAmount = this.getMedicineAmount();
+    double weightInPounds = 0;
+    double medicineAmount = 0;
+    double numberOfPills = 0;
     
     public AntidoteView() {
             
-            //promptMessage = "Please enter your weight in pounds"            
-            this.promptMessage = "\nPlease enter your weight in pounds:"; 
-           // promptMessage2 = "Please enter the number of tablets to ingest:"
-            this.promptMessage2 = "Please enter the number of tablets to ingest:";
-        int numberOfPills = 0;
-            
-            double weightinKilo = AntidoteControl.calcMedAmount(weightInPounds, numberOfPills);
-            double medicineAmount = AntidoteControl.calcMedAmount(weightInPounds, numberOfPills);
-    
-         
-            
-            //display the banner when view is created
+                   //display the banner when view is created
             this.displayBanner(); 
             
+           
+            weightInPounds = getWeightInPounds();
+            //double weightinKilo = AntidoteControl.calcMedAmount(weightInPounds);
+            
+            medicineAmount = AntidoteControl.calcMedAmount(weightInPounds);
+            //System.out.println(medicineAmount);
+            numberOfPills = numberOfPills();
+            
+            // Verify number of pills = medicine amount
+            boolean doILive = AntidoteControl.testAntidote(medicineAmount, numberOfPills);
+            System.out.println(doILive);
     
     }
 
     private void displayBanner() {
         System.out.println(
-                   "\n***************************************************************"
-                + "\n*                                                                                      *"
-                + "\n* Would you like to administer the Antidote?                   *"
-                + "\n*                                                                                      *"
-                + "\n* The antidote comes in 500mg and 250mg tablets.       *"
-                + "\n*                                                                                      *"
-                + "\n* You must take 5mg per kilogram of your weight.           *"
-                + "\n*                                                                                      *"
-                + "\n* Enter your weight in pounds and the game will            *"
-                + "\n* calculate your weight into kilograms.  And then              *"
-                + "\n* mulitiply it by 5mg.                                                         *"
-                + "\n* It is then up to you to decide how many pills to take.      *"
-                + "\n* If you do not take enough, your life ends..                      *"
-                + "\n*                                                                                          *"
-                + "\n*******************************************************************");
+                   "\n***********************************************************"
+                + "\n* Would you like to administer the Antidote?"
+                + "\n"
+                + "\n* The antidote comes in 500mg  tablets."
+                + "\n"
+                + "\n* You must take 5mg per kilogram of your weight.*"
+                + "\n"
+                + "\n* Enter your weight in pounds and the game wil*"
+                + "\n* calculate your weight into kilograms.  And the*"
+                + "\n* mulitiply it by 5mg."
+                + "\n* It is then up to you to decide how many pills to take."
+                + "\n* If you do not take enough, your life ends."
+                + "\n"
+                + "\n************************************************************");
                 
         
     }
@@ -60,7 +60,6 @@ public class AntidoteView {
         
         
 
-// System.out.println("\n*** calcMedAmont() function called ***");
     }
 
     private double getWeightInPounds() {
@@ -81,9 +80,9 @@ public class AntidoteView {
         }
         return value;
     }
-
-    private double getMedicineAmount() {
-         Scanner keyboard = new Scanner(System.in);
+    
+    private double numberOfPills() {
+        Scanner keyboard = new Scanner(System.in);
         int value = 0;
         boolean valid = false;
         
@@ -92,7 +91,7 @@ public class AntidoteView {
             
             value = keyboard.nextInt();
             
-            if (value < 0 || value > 50) {
+            if (value < 0 || value > 500) {
                 System.out.println("\nInvalid value: Choose a correct value");
                 continue;
             }
@@ -100,6 +99,8 @@ public class AntidoteView {
         }
         return value;
     }
+
+    
 
     //void displayAntidoteView() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
