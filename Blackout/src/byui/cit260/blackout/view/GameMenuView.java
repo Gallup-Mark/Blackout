@@ -20,6 +20,7 @@ public class GameMenuView {
                 + "\nM - Move to New Location ((Player can enter N,E,S,W"
                 + "\nV - View Map"
                 + "\nS - Status"
+                + "\nB - Backpack Menu"
                 + "\nE - Examine"
                 + "\nT - Talk"
                 + "\nA - Antidote Amount"
@@ -93,14 +94,21 @@ public class GameMenuView {
                 case "A" : //Amount of Antidote
                    this.viewAntidoteAmount();
                    break;
-                //case "Q" : //back to Main Menu
-                  //  this.mainMenu();
-                    //break;
+                case "B" : //Amount of Antidote
+                   this.viewBackPack();
+                   break;
                 default :
                     System.out.println("\n*** Invalid selection, try again");
                     break;
             }
             return false;
+    }
+    
+    
+    private void viewBackPack() {
+        BackpackMenuView backpack = new BackpackMenuView();
+        backpack.displayBackpackMenuView();
+        
     }
 
     private void moveLocation() {
