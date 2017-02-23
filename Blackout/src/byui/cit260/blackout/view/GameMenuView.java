@@ -127,7 +127,9 @@ public class GameMenuView {
     }
 
     private void viewExamine() {
-        System.out.println("\n*** viewExamine() function called ***");
+        //System.out.println("\n*** viewExamine() function called ***");
+        ExamMenu examMenu = new ExamMenu();
+        examMenu.displayExamMenuView();
     }
 
     private void talk() {

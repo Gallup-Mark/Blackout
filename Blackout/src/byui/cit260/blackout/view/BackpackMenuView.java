@@ -148,11 +148,11 @@ public class BackpackMenuView {
             
             String displayMessage =  "\n"
                 + "\n----------------------------------------------------------"
-                + "\n | Item List"
+                + "\n | Clue List"
                 + "\n----------------------------------------------------------";
             
             if(sz == 0){   
-                displayMessage += "\n No Items In List";
+                displayMessage += "\n No Clues In List";
             } else {
                 
                 Object[] theItems = BackPackControl.getClueList().toArray();
