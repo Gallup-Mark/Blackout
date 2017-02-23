@@ -24,6 +24,7 @@ public class GameMenuView {
                 + "\nE - Examine"
                 + "\nT - Talk"
                 + "\nA - Antidote Amount"
+                + "\nP - Phone"
                 + "\nQ - Back to Main Menu"
                 + "\n-----------------------------------------------------------";
     }
@@ -97,6 +98,9 @@ public class GameMenuView {
                 case "B" : //Amount of Antidote
                    this.viewBackPack();
                    break;
+                case "P" : //PhonePasswordView
+                   this.viewPhonePassword();
+                   break;
                 default :
                     System.out.println("\n*** Invalid selection, try again");
                     break;
@@ -143,6 +147,12 @@ public class GameMenuView {
         antidoteView.displayAntidoteView();
 
         //System.out.println("\n*** viewAntidoteAmount() function called ***");
+    }
+
+    private void viewPhonePassword() {
+        PhonePasswordView phonepassword = new PhonePasswordView();
+        phonepassword.displayPhonePasswordView();
+
     }
 
     

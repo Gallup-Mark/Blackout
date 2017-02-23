@@ -14,6 +14,11 @@ import java.util.Scanner;
 public class PhonePasswordView {
     
     private final String banner;
+    private String promptMessage = "Please enter the password:";
+    private String promptMessage2 = "Please enter a value from 0 to 9:";
+    private String promptMessage3 = "Please enter another value from 0 to 9:";
+    private int password;
+    private int phonePassword;
     
     public PhonePasswordView() {
         this.banner = "\n"
@@ -25,18 +30,20 @@ public class PhonePasswordView {
             System.out.println(banner);
     }
     
-    private final String promptMessage = "Please enter the password:";
-    private final String promptMessage2 = "Please enter a value from 0 to 9:";
-    private final String promptMessage3 = "Please enter another value from 0 to 9:";
+    public void displayPhonePasswordView(){
     
-    int firstLetter = this.getFirstLetter();
-    int secondLetter = this.getSecondLetter();
-    int thirdLetter = this.getThirdLetter();
-    int fourthLetter = this.getFourthLetter();
+        int firstLetter = this.getFirstLetter();
+        int secondLetter = this.getSecondLetter();
+        int thirdLetter = this.getThirdLetter();
+        int fourthLetter = this.getFourthLetter();
     
-    int password = PhoneControl.callPassword(firstLetter, secondLetter, thirdLetter, fourthLetter);
+        password = PhoneControl.callPassword(firstLetter, secondLetter, thirdLetter, fourthLetter);
     
-    int phonePassword = this.getPhonePassword();
+        phonePassword = this.getPhonePassword();
+        
+        this.checkPassword();
+
+    }
     
     private int getPhonePassword() {
         Scanner keyboard = new Scanner(System.in);
