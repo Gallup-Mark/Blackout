@@ -31,9 +31,6 @@ public class BackPackControl {
         
     }
     
-   
-    
-    
     public static void addClueToList(String itemName){
         
        //make temp item and add it to the itemList
