@@ -25,12 +25,12 @@ public class AntidoteControlTest {
         //Input Values for Test Case 1
         
         double weightInPounds = 100;
-        int numberOfPills = 1;
+        double numberOfPills = 1;
         
         AntidoteControl instance = new AntidoteControl();
         
         double expResult = 226.75;
-        double result = instance.calcMedAmount(weightInPounds, numberOfPills);
+        double result = instance.calcMedAmount(weightInPounds);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -48,7 +48,7 @@ public class AntidoteControlTest {
         // AntidoteControl instance = new AntidoteControl();
         
         expResult = -1;
-        result = instance.calcMedAmount(weightInPounds, numberOfPills);
+        result = instance.calcMedAmount(weightInPounds);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -66,7 +66,7 @@ public class AntidoteControlTest {
         // AntidoteControl instance = new AntidoteControl();
         
         expResult = -2;
-        result = instance.calcMedAmount(weightInPounds, numberOfPills);
+        result = instance.calcMedAmount(weightInPounds);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -84,7 +84,7 @@ public class AntidoteControlTest {
         // AntidoteControl instance = new AntidoteControl();
         
         expResult = 226.75;
-        result = instance.calcMedAmount(weightInPounds, numberOfPills);
+        result = instance.calcMedAmount(weightInPounds);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
