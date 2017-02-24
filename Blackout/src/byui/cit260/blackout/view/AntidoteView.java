@@ -10,8 +10,10 @@ import java.util.Scanner;
  */
 public class AntidoteView {
     
-    private  final String promptMessage = "\nPlease enter your weight in pounds";
-    private final String promptMessage2 = "Please enter the number of pills to ingest";
+    private final String promptMessage = "\nPlease enter your weight in pounds";
+    private final String promptMessage2 = "\nPlease enter the number of pills to ingest";
+    private final String promptMessage3 = "\nYou chose correctly, Continue the game";
+    private final String promptMessage4 = "\nYou chose wrong. You are dead! Game Over!";
     
     double weightInPounds = 0;
     double medicineAmount = 0;
@@ -32,7 +34,17 @@ public class AntidoteView {
             
             // Verify number of pills = medicine amount
             boolean doILive = AntidoteControl.testAntidote(medicineAmount, numberOfPills);
-            System.out.println(doILive);
+                if (doILive) {
+                    System.out.println(promptMessage3);
+                                       
+                }
+                else {
+                    System.out.println(promptMessage4); 
+                    MainMenuView mainMenuView = new MainMenuView();
+                    mainMenuView.displayMainMenuView();
+                }
+                
+                    //System.out.println(doILive);
     
     }
 
@@ -46,8 +58,9 @@ public class AntidoteView {
                 + "\n* You must take 5mg per kilogram of your weight.*"
                 + "\n"
                 + "\n* Enter your weight in pounds and the game wil*"
-                + "\n* calculate your weight into kilograms.  And the*"
+                + "\n* calculate your weight into kilograms.  And then*"
                 + "\n* mulitiply it by 5mg."
+                + "\n"          
                 + "\n* It is then up to you to decide how many pills to take."
                 + "\n* If you do not take enough, your life ends."
                 + "\n"
@@ -102,9 +115,7 @@ public class AntidoteView {
 
     
 
-    //void displayAntidoteView() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+}
     
 
 

@@ -29,8 +29,8 @@ public class AntidoteControlTest {
         
         AntidoteControl instance = new AntidoteControl();
         
-        double expResult = 226.75;
-        double result = instance.calcMedAmount(weightInPounds);
+        double expResult = 227;
+        double result = AntidoteControl.calcMedAmount(weightInPounds);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -48,7 +48,7 @@ public class AntidoteControlTest {
         // AntidoteControl instance = new AntidoteControl();
         
         expResult = -1;
-        result = instance.calcMedAmount(weightInPounds);
+        result = AntidoteControl.calcMedAmount(weightInPounds);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -60,13 +60,13 @@ public class AntidoteControlTest {
         
         //Input Values for Test Case 3
         
-        weightInPounds = 200;
+        weightInPounds = 10001;
         numberOfPills = 0;
         
         // AntidoteControl instance = new AntidoteControl();
         
         expResult = -2;
-        result = instance.calcMedAmount(weightInPounds);
+        result = AntidoteControl.calcMedAmount(weightInPounds);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -83,8 +83,8 @@ public class AntidoteControlTest {
         
         // AntidoteControl instance = new AntidoteControl();
         
-        expResult = 226.75;
-        result = instance.calcMedAmount(weightInPounds);
+        expResult = 227;
+        result = AntidoteControl.calcMedAmount(weightInPounds);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

@@ -16,15 +16,15 @@ public static double calcMedAmount(double weightInPounds) {
             if (weightInPounds <=0) { //weightInPounds is negative?
                 return -1;
             }
-           
-            if (weightInKilo <= 0 ) { //weightInKilo is negative?
-                return -3;
-            }
             
             if (weightInPounds >= 10000){  //that boy is tooo FAT  not enough pills for this guy he should die
                 return -2;
             }
-            
+           
+            if (weightInKilo <= 0 ) { //weightInKilo is negative?
+                return -3;
+            }
+
             if (medicineAmount <=0) { //medicineAmount is negative?
                 return -4;
             }
