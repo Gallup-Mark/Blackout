@@ -7,7 +7,7 @@ import java.util.Stack;
 
 /**
  *
- * @author mgallup
+ * @author Brian
  */
 public class BackpackMenuView {
     

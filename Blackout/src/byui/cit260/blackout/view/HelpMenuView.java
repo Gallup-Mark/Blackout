@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author mgallup
+ * @author Team Blackout
  */
 public class HelpMenuView {
     
@@ -17,7 +17,7 @@ public class HelpMenuView {
                 + "\n----------------------------------------------------------"
                 + "\n | Help Menu"
                 + "\n----------------------------------------------------------"
-                + "\nG - Goal of Game"
+                + "\nG - Goal of game"
                 + "\nF - Finding clues"
                 + "\nH - How to move"
                 + "\nQ - Quit Game"

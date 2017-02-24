@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author mgallup
+ * @author Team Blackout
  */
 public class MainMenuView {
     

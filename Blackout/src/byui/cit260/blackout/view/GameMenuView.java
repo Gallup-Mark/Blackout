@@ -95,7 +95,7 @@ public class GameMenuView {
                 case "A" : //Amount of Antidote
                    this.viewAntidoteAmount();
                    break;
-                case "B" : //Amount of Antidote
+                case "B" : //View Backpack contents
                    this.viewBackPack();
                    break;
                 case "P" : //PhonePasswordView
