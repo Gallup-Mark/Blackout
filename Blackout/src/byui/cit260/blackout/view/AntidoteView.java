@@ -12,8 +12,8 @@ public class AntidoteView {
     
     private final String promptMessage = "\nPlease enter your weight in pounds";
     private final String promptMessage2 = "\nPlease enter the number of pills to ingest";
-    private final String promptMessage3 = "\nYou chose correctly, Continue the game";
-    private final String promptMessage4 = "\nYou chose wrong. You are dead! Game Over!";
+    private final String promptMessage3 = "\nYou took the correct amount of antidote, Continue the game";
+    private final String promptMessage4 = "\nYou took too many pills. You are dead! Game Over!";
     
     double weightInPounds = 0;
     double medicineAmount = 0;
@@ -40,6 +40,7 @@ public class AntidoteView {
                 }
                 else {
                     System.out.println(promptMessage4); 
+                    
                     MainMenuView mainMenuView = new MainMenuView();
                     mainMenuView.displayMainMenuView();
                 }

@@ -35,14 +35,12 @@ public class GameMenuView {
                 // prompt for and get players name
                 String menuOption = this.getMenuOption();
                 if (menuOption.toUpperCase().equals("Q"))  { //user wants to quit
-                    //MainMenuView mainMenu = new MainMenuView();
-                    //mainMenu.displayMainMenuView();
+                   
                     return;
                 }
                     
                     // do the requested action and display the next view
                    done = this.doAction(menuOption);
-                   
                    
         } while (!done);
 
@@ -50,7 +48,6 @@ public class GameMenuView {
 
     private String getMenuOption() {
                 System.out.println(menu);
-
         
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; //value to be returned
