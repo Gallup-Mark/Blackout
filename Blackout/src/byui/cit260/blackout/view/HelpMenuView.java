@@ -7,13 +7,13 @@ import java.util.Scanner;
  *
  * @author Team Blackout
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
     
-    private String promptMessage = "";
-    private String menu;
+    //private String promptMessage = "";
+   // private String menu;
     
     public HelpMenuView() {
-        this.menu = "\n"
+       super ("\n"
                 + "\n----------------------------------------------------------"
                 + "\n | Help Menu"
                 + "\n----------------------------------------------------------"
@@ -21,10 +21,10 @@ public class HelpMenuView {
                 + "\nF - Finding clues"
                 + "\nH - How to move"
                 + "\nQ - Quit Game"
-                + "\n-----------------------------------------------------------";
+                + "\n-----------------------------------------------------------");
     }
 
-    public void displayHelpMenuView() {
+  /*  public void displayHelpMenuView() {
         boolean done = false; // set flag to not done
         do {
                 // prompt for and get players name
@@ -63,9 +63,10 @@ public class HelpMenuView {
             break;  // end then loop
         }
         return value;
-    }
+    }*/
 
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
 
             choice = choice.toUpperCase(); //convert choice to upper case
             

@@ -11,16 +11,13 @@ import java.util.Scanner;
  *
  * @author Brian
  */
-public class ExamMenu {
+public class ExamMenu extends View{
    
-
-
-    
-    private String menu;
-    private String promptMessage = "\nPlease enter an option:";
+   //private String menu;
+    //private String promptMessage = "\nPlease enter an option:";
     
     public ExamMenu() {
-        this.menu = "\n"
+        super ("\n"
                 + "\n------------------------------------------"
                 + "\n |Exam Menu"
                 + "\n------------------------------------------"
@@ -30,11 +27,11 @@ public class ExamMenu {
                 + "\nL - Look Left"
                 + "\nR - Look Right"
                 + "\nQ - Quit Menu"
-                + "\n------------------------------------------";
-            System.out.println(menu);
+                + "\n------------------------------------------");
+            //System.out.println(menu);
     }
     
-    public void displayExamMenuView() {
+  /*  public void displayExamMenuView() {
         boolean done = false;
         do {
             String menuOption = this.getMenuOption();
@@ -70,9 +67,10 @@ public class ExamMenu {
             break;
         }
         return value;
-    }
+    }*/
     
-    private boolean doAction (String choice) {
+    @Override
+    public boolean doAction (String choice) {
         choice = choice.toUpperCase();
         
         switch (choice) {

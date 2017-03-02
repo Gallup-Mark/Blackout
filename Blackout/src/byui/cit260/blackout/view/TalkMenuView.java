@@ -10,13 +10,13 @@ import java.util.Scanner;
  *
  * @author Matt
  */
-public class TalkMenuView {
+public class TalkMenuView extends View {
     
-    private final String menu;
-    private final String promptMessage = "\nPlease enter an option:";
+    //private final String menu;
+    //private final String promptMessage = "\nPlease enter an option:";
     
     public TalkMenuView() {
-        this.menu = "\n"
+        super ( "\n"
                 + "\n------------------------------------------"
                 + "\n |Talk Menu"
                 + "\n------------------------------------------"
@@ -25,11 +25,11 @@ public class TalkMenuView {
                 + "\nA - Ask Question"
                 + "\nW - Whisper"
                 + "\nQ - Quit Menu"
-                + "\n------------------------------------------";
-            System.out.println(menu);
+                + "\n------------------------------------------");
+            //System.out.println(menu);
     }
     
-    public void displayTalkMenuView() {
+   /* public void displayTalkMenuView() {
         boolean done = false;
         do {
             String menuOption = this.getMenuOption();
@@ -62,9 +62,10 @@ public class TalkMenuView {
             break;
         }
         return value;
-    }
+    }*/
     
-    private boolean doAction (String choice) {
+    @Override
+    public boolean doAction (String choice) {
         choice = choice.toUpperCase();
         
         switch (choice) {

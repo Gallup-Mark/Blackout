@@ -9,13 +9,13 @@ import java.util.Scanner;
  *
  * @author Team Blackout
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
-    private final String promptMessage = "\nPlease enter an option:";
-    private final String menu;
+    //private final String promptMessage = "\nPlease enter an option:";
+   // private final String menu;
     
     public MainMenuView() {
-        this.menu = "\n"
+        super( "\n"
                 + "\n----------------------------------------------------------"
                 + "\n | Main Menu"
                 + "\n----------------------------------------------------------"
@@ -24,10 +24,10 @@ public class MainMenuView {
                 + "\nL - Load Game"
                 + "\nH - Help Menu"
                 + "\nQ - Quit Game"
-                + "\n-----------------------------------------------------------";
+                + "\n-----------------------------------------------------------");
     }
 
-    public void displayMainMenuView() {
+    /*public void displayMainMenuView() {
         boolean done = false; // set flag to not done
         do {
                 // prompt for and get players name
@@ -64,13 +64,14 @@ public class MainMenuView {
             break;  // end then loop
         }
         return value;
-    }
+    }*/
 
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String value) {
 
-            choice = choice.toUpperCase(); //convert choice to upper case
+            value = value.toUpperCase(); //convert choice to upper case
             
-            switch (choice) {
+            switch (value) {
                 case "N" : //create start new game
                     this.startNewGame();
                     break;
@@ -99,7 +100,8 @@ public class MainMenuView {
         
         //display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
+        System.out.println(menu);
     }
 
     private void saveGame() {
@@ -113,7 +115,7 @@ public class MainMenuView {
     private void helpMenu() {
        // display help menu
        HelpMenuView helpMenu = new HelpMenuView();
-       helpMenu.displayHelpMenuView();
+       helpMenu.display();
     }
 
     private void quitGame() {

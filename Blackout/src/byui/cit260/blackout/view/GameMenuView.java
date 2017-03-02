@@ -7,13 +7,13 @@ import java.util.Scanner;
  *
  * @author mgallup
  */
-public class GameMenuView {
+public class GameMenuView extends View {
 
-    private final String promptMessage = "\nPlease enter an option:";
-    private final String menu;
+    //private final String promptMessage = "\nPlease enter an option:";
+    //private final String menu;
     
     public GameMenuView() {
-        this.menu = "\n"
+        super( "\n"
                 + "\n----------------------------------------------------------"
                 + "\n | Game Menu"
                 + "\n----------------------------------------------------------"
@@ -26,10 +26,10 @@ public class GameMenuView {
                 + "\nA - Antidote Amount"
                 + "\nP - Phone"
                 + "\nQ - Back to Main Menu"
-                + "\n-----------------------------------------------------------";
+                + "\n-----------------------------------------------------------");
     }
 
-    public void displayGameMenuView() {
+    /*public void displayGameMenuView() {
         boolean done = false; // set flag to not done
         do {
                 // prompt for and get players name
@@ -67,9 +67,10 @@ public class GameMenuView {
             break;  // end then loop
         }
         return value;
-    }
+    }*/
 
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
 
             choice = choice.toUpperCase(); //convert choice to upper case
             
@@ -108,7 +109,9 @@ public class GameMenuView {
     
     private void viewBackPack() {
         BackpackMenuView backpack = new BackpackMenuView();
-        backpack.displayBackpackMenuView();
+        backpack.display();
+                System.out.println(menu);
+
         
     }
 
@@ -126,15 +129,19 @@ public class GameMenuView {
     private void viewExamine() {
         //System.out.println("\n*** viewExamine() function called ***");
         ExamMenu examMenu = new ExamMenu();
-        examMenu.displayExamMenuView();
-    }
+        examMenu.display();
+                System.out.println(menu);
+
+                }
 
     private void talk() {
         //System.out.println("\n*** viewTalk() function called ***");
         
         //Added by Matt
         TalkMenuView talkMenu = new TalkMenuView();
-        talkMenu.displayTalkMenuView();
+        talkMenu.display();
+                System.out.println(menu);
+
     }
 
     //private void mainMenu() {
@@ -144,6 +151,8 @@ public class GameMenuView {
     private void viewAntidoteAmount() {
         AntidoteView antidoteView = new AntidoteView();
         antidoteView.displayAntidoteView();
+                System.out.println(menu);
+
 
         //System.out.println("\n*** viewAntidoteAmount() function called ***");
     }
@@ -151,6 +160,7 @@ public class GameMenuView {
     private void viewPhonePassword() {
         PhonePasswordView phonepassword = new PhonePasswordView();
         phonepassword.displayPhonePasswordView();
+                System.out.println(menu);
 
     }
 

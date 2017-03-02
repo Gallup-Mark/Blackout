@@ -9,15 +9,15 @@ import java.util.Stack;
  *
  * @author Brian
  */
-public class BackpackMenuView {
+public class BackpackMenuView extends View {
     
-    private String promptMessage = "";
-    private String menu = "";
+    //private String promptMessage = "";
+    //private String menu = "";
     
     //private Stack itemList = BackPackControl
     
     public BackpackMenuView(){
-        this.menu = "\n"
+        super( "\n"
                 + "\n----------------------------------------------------------"
                 + "\n | Backpack Menu"
                 + "\n----------------------------------------------------------"
@@ -26,10 +26,10 @@ public class BackpackMenuView {
                 + "\nA - Add Item to Backpack"
                 + "\nD - Add Clue to Clue List"
                 + "\nQ - Return to Game Menu"
-                + "\n-----------------------------------------------------------";
+                + "\n-----------------------------------------------------------");
     }
         
-    public void displayBackpackMenuView() {
+    /*public void displayBackpackMenuView() {
         boolean done = false; // set flag to not done
         do {
                 // prompt for and get players name
@@ -68,9 +68,10 @@ public class BackpackMenuView {
             break;  // end then loop
         }
         return value;
-    }
+    }*/
         
-        private boolean doAction(String choice) {
+    @Override    
+    public boolean doAction(String choice) {
 
             choice = choice.toUpperCase(); //convert choice to upper case
             

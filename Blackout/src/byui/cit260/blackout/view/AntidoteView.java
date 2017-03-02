@@ -42,7 +42,7 @@ public class AntidoteView {
                     System.out.println(promptMessage4); 
                     
                     MainMenuView mainMenuView = new MainMenuView();
-                    mainMenuView.displayMainMenuView();
+                    mainMenuView.display();
                 }
                 
                     //System.out.println(doILive);
