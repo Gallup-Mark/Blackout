@@ -11,7 +11,21 @@ public class Scene extends View {
     public int numItems;
     public String nonPlayers;
     
+    
+    
     public Scene() {
+        
+        
+        super( "\n"
+                + "\n----------------------------------------------------------"
+                + "\n | Locaitons Menu"
+                + "\n----------------------------------------------------------"
+                + "\nI - View Number of Items"
+                + "\nN - View non Players"
+                + "\nD - View Location Description"
+                + "\nQ - Return to Locations Menu"
+                + "\n-----------------------------------------------------------");
+        
         
     }
 
@@ -46,10 +60,78 @@ public class Scene extends View {
     public void setNonPlayers(String nonPlayers) {
         this.nonPlayers = nonPlayers;
     }
+    
+    public void displayMapSymbol(){
+        System.out.println(getMapSymbol());
+        
+    }
+    
+    public void displayNumbersOfItems(){
+        
+          
+        System.out.println(getNumItems());
+    }
+    
+    public void displayNonPlayers(){
+        
+        System.out.println(getNonPlayers());
+        
+    }
     @Override    
-    public boolean doAction(String choice) {
-        return true;
+public boolean doAction(String choice) {
+
+            choice = choice.toUpperCase(); //convert choice to upper case
             
+            switch (choice) {
+                case "I" : //item list
+                    showItemNumber();
+                    break;
+                case "N" : //non players
+                    showNonPlayers();
+                    break;
+                case "D" : //Des of Scene
+                    showDescription();
+                    break;
+                
+                
+                default :
+                    System.out.println("\n*** Invalid selection, try again");
+                    break;
+            }
+            return false;
+    }
+
+    private void showItemNumber(){
+         System.out.println("\n"
+                + "\n----------------------------------------------------------"
+                + "\n | Number of Items"
+                + "\n----------------------------------------------------------"); 
+        System.out.println(getNumItems());
+        
+        System.out.println(menu);
+        
+    }
+    
+    private void showNonPlayers(){
+        
+        
+        System.out.println("\n"
+                + "\n----------------------------------------------------------"
+                + "\n |Non Player"
+                + "\n----------------------------------------------------------");
+        System.out.println(getNonPlayers());
+         System.out.println(menu);
+    }
+    
+    private void showDescription(){
+        
+        System.out.println("\n"
+                + "\n----------------------------------------------------------"
+                + "\n |Lcoation Description"
+                + "\n----------------------------------------------------------");
+        System.out.println(getDescription());
+         System.out.println(menu);
+        
     }
 }
     
