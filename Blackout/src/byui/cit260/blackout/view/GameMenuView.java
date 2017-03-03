@@ -116,7 +116,12 @@ public class GameMenuView extends View {
     }
 
     private void moveLocation() {
-        System.out.println("\n*** moveLocation() function called ***");
+        
+        LocationMenuView locationMenuView = new LocationMenuView();
+        locationMenuView.display();
+         System.out.println(menu);
+        
+        
     }
 
     private void viewMap() {
