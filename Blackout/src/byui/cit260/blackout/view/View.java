@@ -13,9 +13,7 @@ public abstract class View implements ViewInterface {
     protected String promptMessage = "\nPlease enter an option:";
     protected String menu;
     
-    public View() {
-        
-    }
+
     
     public View(String theMenu) {
         this.menu = theMenu;
@@ -57,7 +55,7 @@ public abstract class View implements ViewInterface {
                 continue;
             }
             
-            break;  // end then loop
+            break;  // end the loop
         }
         return value;
     }

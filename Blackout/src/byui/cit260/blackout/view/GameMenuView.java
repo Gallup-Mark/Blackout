@@ -128,7 +128,9 @@ public class GameMenuView extends View {
         System.out.println("\n*** viewMap() function called ***");    }
 
     private void viewStatus() {
-        System.out.println("\n*** viewStatus() function called ***");
+        StatsView statsView = new StatsView();
+        statsView.display();
+        System.out.println(menu);
     }
 
     private void viewExamine() {
