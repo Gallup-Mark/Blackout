@@ -1,11 +1,13 @@
 
 package byui.cit260.blackout.view;
 
+import byui.cit260.blackout.control.StreetMenuControl;
+
 /**
  *
  * @author mgallup
  */
-public class StreetMenuView extends SceneView {
+public class StreetMenuView extends View {
     
     public StreetMenuView() {
         
@@ -51,10 +53,12 @@ public class StreetMenuView extends SceneView {
     }
 
     private void streetOne() {
-        StreetMenuView streetMenu = new StreetMenuView();
+        //StreetMenuView streetMenu = new StreetMenuView();
         //streetMenu.display();
                 //System.out.println(menu);
         System.out.println("\n*** This takes you to Street One ***");
+        StreetMenuControl.showstreetViewOne();
+        System.out.println(menu);
     }
 
     private void streetTwo() {
