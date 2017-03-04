@@ -3,11 +3,11 @@ package byui.cit260.blackout.view;
 
 /**
  *
- * @author Brian
+ * @author mgallup
  */
-public class PharmacyViewThree extends PharmacyScene {
+public class PharmacyViewFour extends PharmacyScene {
     
-     public PharmacyViewThree(){
+     public PharmacyViewFour(){
      
 
         
@@ -21,10 +21,10 @@ public class PharmacyViewThree extends PharmacyScene {
                 + "\n(________)"
                 +"\n   _     _"  
                 +"\n  / \\   / \\" 
-                +"\n ( # ) ( 3 )"
+                +"\n ( # ) ( 4 )"
                 +"\n  \\_/   \\_/");
         
-        super.setDescription(" Pharmacy Room 3");
+        super.setDescription(" Pharmacy Room 4");
         super.setNumItems(3);
         super.setNonPlayers("Dr Stranger");
         

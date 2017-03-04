@@ -3,7 +3,7 @@ package byui.cit260.blackout.view;
 
 /**
  *
- * @author mgall
+ * @author Brian
  */
 public class Scene extends View {
     public String description;
@@ -18,7 +18,7 @@ public class Scene extends View {
         
         super( "\n"
                 + "\n----------------------------------------------------------"
-                + "\n | Locaitons Menu"
+                + "\n | Locations Menu"
                 + "\n----------------------------------------------------------"
                 + "\nI - View Number of Items"
                 + "\nN - View non Players"

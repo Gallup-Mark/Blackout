@@ -5,6 +5,7 @@ import byui.cit260.blackout.control.BackPackControl;
 import java.util.Scanner;
 import java.util.Stack;
 import byui.cit260.blackout.control.LocationControl;
+import byui.cit260.blackout.control.StreetMenuControl;
 
 /**
  *
@@ -25,6 +26,9 @@ public class LocationMenuView extends View {
                 + "\nW - Pharmacy Room 1"
                 + "\nE - Pharmacy Room 2"
                 + "\nR - Pharmacy Room 3"
+                + "\nT - Pharmacy Room 4"
+                + "\nY - Pharmacy Room 5"
+                + "\nS - Street Menu"
                 + "\nQ - Return to Game Menu"
                 + "\n-----------------------------------------------------------");
     }
@@ -46,7 +50,15 @@ public class LocationMenuView extends View {
                 case "R" : //show Room 3 of Pharmacy
                     showPharmacyRoom3();
                     break;
-                
+                case "T" : //show Room 4 of Pharmacy
+                    showPharmacyRoom4();
+                    break;
+                    case "Y" : //show Room 5 of Pharmacy
+                    showPharmacyRoom5();
+                    break;
+                    case "S" : //show Street Menu
+                    showStreetViewOne();
+                    break;
                 
                 default :
                     System.out.println("\n*** Invalid selection, try again");
@@ -69,6 +81,19 @@ public class LocationMenuView extends View {
     
     private void showPharmacyRoom3(){
         LocationControl.showpharmacyViewThree();  
+        System.out.println(menu);
+    }
+
+    private void showPharmacyRoom4() {
+        LocationControl.showpharmacyViewFour();  
+        System.out.println(menu);    }
+
+    private void showPharmacyRoom5() {
+        LocationControl.showpharmacyViewFive();  
+        System.out.println(menu);    }
+
+    private void showStreetViewOne() {
+       StreetMenuControl.showstreetViewOne();  
         System.out.println(menu);
     }
 

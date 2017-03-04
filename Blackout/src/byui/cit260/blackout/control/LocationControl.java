@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.blackout.control;
 
 import byui.cit260.blackout.view.*;
@@ -19,12 +15,13 @@ public class LocationControl {
     public static PharmacyViewOne pharmacyViewOne = new PharmacyViewOne();
     public static  PharmacyViewTwo pharmacyViewTwo = new PharmacyViewTwo();
     public static PharmacyViewThree pharmacyViewThree = new PharmacyViewThree();
+    public static PharmacyViewFour pharmacyViewFour = new PharmacyViewFour();
+    public static PharmacyViewFive pharmacyViewFive = new PharmacyViewFive();
+    
     
     public static void showpharmacyViewOne(){
         pharmacyViewOne.displayMapSymbol();
         pharmacyViewOne.display();
-        
-        
     }
     
     public static void showpharmacyViewTwo(){
@@ -36,6 +33,18 @@ public class LocationControl {
         pharmacyViewThree.displayMapSymbol();
         pharmacyViewThree.display();
     }
+    
+    public static void showpharmacyViewFour(){
+        pharmacyViewFour.displayMapSymbol();
+        pharmacyViewFour.display();
+    }
+    
+    public static void showpharmacyViewFive(){
+        pharmacyViewFive.displayMapSymbol();
+        pharmacyViewFive.display();
+    }
+
+    
     
     
 }
