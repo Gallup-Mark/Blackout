@@ -5,7 +5,7 @@ import byui.cit260.blackout.control.BackPackControl;
 import java.util.Scanner;
 import java.util.Stack;
 import byui.cit260.blackout.control.LocationControl;
-import byui.cit260.blackout.control.StreetMenuControl;
+
 
 /**
  *
@@ -71,30 +71,30 @@ public class LocationMenuView extends View {
     private void showPharmacyRoom1(){
         LocationControl.showpharmacyViewOne(); 
         
-        System.out.println(menu);
     }
     
     private void showPharmacyRoom2(){
         LocationControl.showpharmacyViewTwo();
-        System.out.println(menu);
+        
     }
     
     private void showPharmacyRoom3(){
         LocationControl.showpharmacyViewThree();  
-        System.out.println(menu);
+       
     }
 
     private void showPharmacyRoom4() {
         LocationControl.showpharmacyViewFour();  
-        System.out.println(menu);    }
+           }
 
     private void showPharmacyRoom5() {
         LocationControl.showpharmacyViewFive();  
-        System.out.println(menu);    }
+         }
 
     private void showStreetMenu() {
-       StreetMenuControl.showstreetMenu(); 
-        System.out.println(menu);
+       //StreetMenuControl.showstreetMenu(); 
+        StreetMenuView streetMenu = new StreetMenuView();
+        streetMenu.display();
     }
 
     

@@ -17,7 +17,7 @@ public abstract class View implements ViewInterface {
     
     public View(String theMenu) {
         this.menu = theMenu;
-        System.out.println(menu);
+       
     }
     
     @Override
@@ -38,13 +38,14 @@ public abstract class View implements ViewInterface {
     
     @Override    
     public String getInput() {
-                //System.out.println(menu);
+                
 
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; //value to be returned
         boolean valid = false; // intialize to not valid
         
         while (!valid) { // loop while an invalid va;lue is entered
+            System.out.println(menu);
             System.out.println("\n" + this.promptMessage);
             
             value = keyboard.nextLine(); // get next line typed on keyboard

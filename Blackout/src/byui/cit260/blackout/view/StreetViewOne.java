@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.blackout.view;
 
 /**
  *
- * @author mgall
+ * @author mgallup
  */
 public class StreetViewOne extends SceneView {
     
@@ -18,11 +14,6 @@ public class StreetViewOne extends SceneView {
         super(menu);
     }
     
-//    @Override
-//    public void display() {
-//        System.out.println("\n*** You have reached Street 1.  What is your next move?***");
-//        
-//    }
     
     @Override
     public void display() {

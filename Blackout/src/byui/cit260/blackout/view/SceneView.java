@@ -3,7 +3,7 @@ package byui.cit260.blackout.view;
 
 /**
  *
- * @author mgall
+ * @author Brian
  */
 public class SceneView extends View {
     public String description;
