@@ -5,9 +5,10 @@ package byui.cit260.blackout.view;
  *
  * @author mgallup
  */
-public class StreetMenuView extends View {
+public class StreetMenuView extends SceneView {
     
     public StreetMenuView() {
+        
         super( "\n"
                 + "\n----------------------------------------------------------"
                 + "\n | Street Menu"
@@ -51,8 +52,8 @@ public class StreetMenuView extends View {
 
     private void streetOne() {
         StreetMenuView streetMenu = new StreetMenuView();
-        streetMenu.display();
-                System.out.println(menu);
+        //streetMenu.display();
+                //System.out.println(menu);
         System.out.println("\n*** This takes you to Street One ***");
     }
 
