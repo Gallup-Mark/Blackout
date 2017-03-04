@@ -57,7 +57,7 @@ public class LocationMenuView extends View {
                     showPharmacyRoom5();
                     break;
                     case "S" : //show Street Menu
-                    showStreetViewOne();
+                    showStreetMenu();
                     break;
                 
                 default :
@@ -92,8 +92,8 @@ public class LocationMenuView extends View {
         LocationControl.showpharmacyViewFive();  
         System.out.println(menu);    }
 
-    private void showStreetViewOne() {
-       StreetMenuControl.showstreetViewOne();  
+    private void showStreetMenu() {
+       StreetMenuControl.showstreetMenu(); 
         System.out.println(menu);
     }
 
