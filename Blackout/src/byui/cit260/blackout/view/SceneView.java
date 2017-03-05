@@ -113,7 +113,7 @@ public boolean doAction(String choice) {
                 + "\n----------------------------------------------------------"); 
         System.out.println(getNumItems());
         
-        System.out.println(menu);
+       // System.out.println(menu);
         
     }
     
@@ -125,7 +125,7 @@ public boolean doAction(String choice) {
                 + "\n |Non Player"
                 + "\n----------------------------------------------------------");
         System.out.println(getNonPlayers());
-         System.out.println(menu);
+         //System.out.println(menu);
     }
     
     private void showDescription(){
@@ -135,7 +135,7 @@ public boolean doAction(String choice) {
                 + "\n |Lcoation Description"
                 + "\n----------------------------------------------------------");
         System.out.println(getDescription());
-         System.out.println(menu);
+         //System.out.println(menu);
         
     }
 }
