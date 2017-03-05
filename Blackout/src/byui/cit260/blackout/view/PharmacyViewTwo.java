@@ -33,9 +33,9 @@ public class PharmacyViewTwo extends PharmacyScene {
         
     }
 
-    public void displayMapSymbol() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public void displayMapSymbol() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
     
     
 }
