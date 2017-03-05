@@ -71,7 +71,7 @@ public class GameMenuView extends View {
     private void viewBackPack() {
         BackpackMenuView backpack = new BackpackMenuView();
         backpack.display();
-        System.out.println(menu);
+        //System.out.println(menu);
 
         
     }
@@ -81,6 +81,7 @@ public class GameMenuView extends View {
         LocationMenuView locationMenuView = new LocationMenuView();
         locationMenuView.display();
          System.out.println(menu);
+         
         
         
     }
@@ -91,16 +92,16 @@ public class GameMenuView extends View {
     private void viewStatus() {
         StatsView statsView = new StatsView();
         statsView.display();
-        System.out.println(menu);
+        //System.out.println(menu);
     }
 
     private void viewExamine() {
         //System.out.println("\n*** viewExamine() function called ***");
         ExamMenu examMenu = new ExamMenu();
         examMenu.display();
-                System.out.println(menu);
+        //System.out.println(menu);
 
-                }
+    }
 
     private void talk() {
         //System.out.println("\n*** viewTalk() function called ***");
@@ -108,7 +109,7 @@ public class GameMenuView extends View {
         //Added by Matt
         TalkMenuView talkMenu = new TalkMenuView();
         talkMenu.display();
-                System.out.println(menu);
+        //System.out.println(menu);
 
     }
 
@@ -119,7 +120,7 @@ public class GameMenuView extends View {
     private void viewAntidoteAmount() {
         AntidoteView antidoteView = new AntidoteView();
         antidoteView.displayAntidoteView();
-                System.out.println(menu);
+        //System.out.println(menu);
 
 
         //System.out.println("\n*** viewAntidoteAmount() function called ***");
@@ -128,7 +129,7 @@ public class GameMenuView extends View {
     private void viewPhonePassword() {
         PhonePasswordView phonepassword = new PhonePasswordView();
         phonepassword.displayPhonePasswordView();
-                System.out.println(menu);
+        //System.out.println(menu);
 
     }
 
