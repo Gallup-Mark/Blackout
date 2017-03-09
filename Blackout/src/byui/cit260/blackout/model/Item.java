@@ -16,7 +16,7 @@ public class Item implements Serializable{
     //Class instance variables or attributes
     private String description;
     private String name;
-    private String type;
+    private String clue;
 
     public Item() {
     }
@@ -39,12 +39,12 @@ public class Item implements Serializable{
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getClue() {
+        return clue;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setClue(String clue) {
+        this.clue = clue;
     }
 
     @Override
@@ -52,13 +52,13 @@ public class Item implements Serializable{
         int hash = 7;
         hash = 47 * hash + Objects.hashCode(this.description);
         hash = 47 * hash + Objects.hashCode(this.name);
-        hash = 47 * hash + Objects.hashCode(this.type);
+        hash = 47 * hash + Objects.hashCode(this.clue);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Item{" + "description=" + description + ", name=" + name + ", type=" + type + '}';
+        return "Item{" + "description=" + description + ", name=" + name + ", clue=" + clue + '}';
     }
     
     @Override
@@ -79,7 +79,7 @@ public class Item implements Serializable{
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.type, other.type)) {
+        if (!Objects.equals(this.clue, other.clue)) {
             return false;
         }
         return true;

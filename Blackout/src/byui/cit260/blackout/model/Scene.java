@@ -17,7 +17,7 @@ public class Scene implements Serializable{
         private String description;
         private String mapSymbol;
         private int numberItems;
-        private String nonPlayer;
+        private NonPlayer nonPlayer;
         
 
     
@@ -29,7 +29,7 @@ public class Scene implements Serializable{
      *
      * @return the value of nonPlayer
      */
-    public String getNonPlayer() {
+    public NonPlayer getNonPlayer() {
         return nonPlayer;
     }
 
@@ -38,7 +38,7 @@ public class Scene implements Serializable{
      *
      * @param nonPlayer new value of nonPlayer
      */
-    public void setNonPlayer(String nonPlayer) {
+    public void setNonPlayer(NonPlayer nonPlayer) {
         this.nonPlayer = nonPlayer;
     }
 
@@ -138,7 +138,7 @@ public class Scene implements Serializable{
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", mapSymbol=" + mapSymbol + ", numberItems=" + numberItems + ", nonPlayer=" + nonPlayer + '}';
+        return "Scene{" + "description=" + description + ", mapSymbol=" + mapSymbol + ", numberItems=" + numberItems + ", nonPlayer=" + '}'; //nonplayer missing
     }
 
    

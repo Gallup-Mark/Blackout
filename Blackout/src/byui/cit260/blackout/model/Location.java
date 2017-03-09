@@ -4,25 +4,29 @@ package byui.cit260.blackout.model;
 // Author MGallup
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 
 public class Location implements Serializable{
     
-    private String row;
+    private int row;
     private int column;
     private String description;
+    private Scene scene;
+    private boolean visited;
+    private ArrayList<NonPlayer> nonPlayer;
 
     public Location() {
     }
     
     
 
-    public String getRow() {
+    public int getRow() {
         return row;
     }
 
-    public void setRow(String row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
@@ -42,6 +46,15 @@ public class Location implements Serializable{
         this.description = description;
     }
 
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -78,6 +91,10 @@ public class Location implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public void setScene(Scene scene) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

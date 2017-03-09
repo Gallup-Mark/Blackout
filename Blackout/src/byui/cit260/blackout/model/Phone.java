@@ -21,6 +21,11 @@ public class Phone implements Serializable{
     private String pictures;
 
     public Phone() {
+        this.contactList = "Mama";
+        this.password = 123;
+        this.pictures = "; )";
+        
+    
     }
     
     

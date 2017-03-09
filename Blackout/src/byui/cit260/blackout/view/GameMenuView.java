@@ -1,6 +1,10 @@
 
 package byui.cit260.blackout.view;
 
+import byui.cit260.blackout.control.GameControl;
+import byui.cit260.blackout.model.Map;
+import byui.cit260.blackout.control.MapControl;
+import byui.cit260.blackout.model.Game;
 import java.util.Scanner;
 
 /**
@@ -87,7 +91,31 @@ public class GameMenuView extends View {
     }
 
     private void viewMap() {
-        System.out.println("\n*** viewMap() function called ***");    }
+        
+        //Map map = new Map(5, 5);
+        String title = "The Map, I'm the Map!";
+        String rowDivider = "------------------------------------------";
+        String columnDivider = "|";
+        System.out.println("\n" + title);
+//        System.out.println("\n" + rowDivider);
+//        System.out.println("\n" + columnDivider);
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i + "   ");
+        }
+        
+        System.out.println("\n" + rowDivider);
+        
+        for (int i = 0;i <5;i++) {
+            System.out.println("\n" + i + columnDivider);
+            for (int ii = 0;ii < 5;ii++) {
+                //Map map = Game.getMap();
+                if (GameControl.game.getMap().getLocations())
+                System.out.println(" ?? " + columnDivider);
+            }
+            System.out.println("\n" + rowDivider);
+        }
+    }
 
     private void viewStatus() {
         StatsView statsView = new StatsView();

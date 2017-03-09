@@ -10,6 +10,11 @@ public class Game implements Serializable{
     //class instance variables
     private double totalTime;
     private double startTime;
+    private Map map;
+    
+    private Item[] item;
+    private Backpack backpack;
+    private Phone phone;
 
     public Game() {
     }
@@ -32,6 +37,37 @@ public class Game implements Serializable{
         this.startTime = startTime;
     }
 
+    public Backpack getBackpack() {
+        return backpack;
+    }
+
+    public void setBackpack(Backpack backpack) {
+        this.backpack = backpack;
+    }
+
+    public Item[] getItem() {
+        return item;
+    }
+
+    public void setItem(Item[] item) {
+        this.item = item;
+    }
+
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -66,6 +102,14 @@ public class Game implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public void setPlayer(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
     
     
