@@ -19,7 +19,7 @@ import byui.cit260.blackout.model.SceneType;
  */
 public class GameControl {
     
-    public static Game game;
+    
     
     public static Player createPlayer(String name) {
         
@@ -39,9 +39,8 @@ public class GameControl {
     public static void createNewGame(Player player) {
         //System.out.println("\n*** createNewGame stub function called ***");
         
-        game = new Game();
+       Game game = new Game();
         Blackout.setCurrentGame(game);
-        
         game.setPlayer(player);
         
         Item[] itemList = GameControl.createItemList();
