@@ -5,6 +5,7 @@ import byui.cit260.blackout.control.GameControl;
 import byui.cit260.blackout.model.Map;
 import byui.cit260.blackout.control.MapControl;
 import byui.cit260.blackout.model.Game;
+import byui.cit260.blackout.model.Location;
 import java.util.Scanner;
 
 /**
@@ -92,6 +93,10 @@ public class GameMenuView extends View {
 
     private void viewMap() {
         
+        
+        
+        Location[][] locations = Map.getLocations();
+        
         //Map map = new Map(5, 5);
         String title = "The Map, I'm the Map!";
         String rowDivider = "------------------------------------------";
@@ -100,20 +105,42 @@ public class GameMenuView extends View {
 //        System.out.println("\n" + rowDivider);
 //        System.out.println("\n" + columnDivider);
 
+        String linePrintout = "";
         for (int i = 0; i < 5; i++) {
-            System.out.println(i + "   ");
+            linePrintout = linePrintout + i + "  ";
+            //System.out.println(i + "   ");
         }
         
-        System.out.println("\n" + rowDivider);
+        System.out.println(linePrintout);
         
-        for (int i = 0;i <5;i++) {
-            System.out.println("\n" + i + columnDivider);
-            for (int ii = 0;ii < 5;ii++) {
-                //Map map = Game.getMap();
-                if (GameControl.game.getMap().getLocations())
-                System.out.println(" ?? " + columnDivider);
+        //System.out.println(rowDivider);
+        
+        for (int i = 0;i <4;i++) {
+            System.out.println(i + columnDivider);
+            //reset the line 
+            linePrintout = "";
+            
+            for (int ii = 0;ii < 4;ii++) {
+                
+                //shows if the location has been visited or not
+                if(locations[i][ii].isVisited()){
+                    linePrintout = linePrintout + locations[i][i].getScene().getMapSymbol() + "  ";
+                    
+                    //line.insert(ii, locations[i][i].getScene().getMapSymbol());
+                    //System.out.println(locations[i][i].getScene().getMapSymbol());
+                } else {
+                    //System.out.println(" ?? " + columnDivider);
+                     linePrintout =  linePrintout + "??";
+                    //line.insert(ii, "??");
+                }
+                 linePrintout =  linePrintout + columnDivider;
+                
+               // System.out.println(linePrintout);
             }
+            
+            System.out.println(linePrintout);
             System.out.println("\n" + rowDivider);
+            System.out.println("\n");
         }
     }
 
