@@ -15,6 +15,7 @@ public class Game implements Serializable{
     private Item[] item;
     private Backpack backpack;
     private Phone phone;
+    private Player player; 
 
     public Game() {
     }
@@ -105,7 +106,8 @@ public class Game implements Serializable{
     }
 
     public void setPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.player = player;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void setMap(Map map) {
