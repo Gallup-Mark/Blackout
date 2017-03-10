@@ -53,6 +53,8 @@ public class Location implements Serializable{
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
+    
+   
 
     
     @Override
@@ -94,7 +96,14 @@ public class Location implements Serializable{
     }
 
     public void setScene(Scene scene) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        this.scene = scene;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public Scene getScene(){
+        return this.scene;
+        
     }
     
     
