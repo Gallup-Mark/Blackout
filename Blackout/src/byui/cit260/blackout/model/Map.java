@@ -15,7 +15,7 @@ public class Map implements Serializable{
         private String currentRow;
         private int currentColumn;
         private String currentScene;
-        private Location[][] locations;
+        private static Location[][] locations;
 
     public Map(int row, int column) {
         if (row < 1 || column < 1) {
@@ -81,7 +81,7 @@ public class Map implements Serializable{
         this.currentScene = currentScene;
     }
 
-    public Location[][] getLocations() {
+    public static Location[][] getLocations() {
         return locations;
     }
 
@@ -89,9 +89,7 @@ public class Map implements Serializable{
         this.locations = locations;
     }
     
-    public boolean isVisited(int row, int column) {
-        
-    }
+   
 
     @Override
     public int hashCode() {
