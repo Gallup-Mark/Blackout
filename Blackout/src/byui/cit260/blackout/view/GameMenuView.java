@@ -98,40 +98,35 @@ public class GameMenuView extends View {
         Location[][] locations = Map.getLocations();
         
         //Map map = new Map(5, 5);
-        String title = "The Map, I'm the Map!";
-        String rowDivider = "------------------------------------------";
+        String title = "    The Map, I'm the Map! \n";
+        String rowDivider = "---------------------------";
         String columnDivider = "|";
-        System.out.println("\n" + title);
-//        System.out.println("\n" + rowDivider);
-//        System.out.println("\n" + columnDivider);
+        System.out.println("" + title);
 
-        String linePrintout = "";
+
+        String linePrintout = " ";
         for (int i = 0; i < 5; i++) {
-            linePrintout = linePrintout + i + "  ";
-            //System.out.println(i + "   ");
+            
+            linePrintout = linePrintout + " " + (i + 1) + "   ";
+            
         }
         
         System.out.println(linePrintout);
+        System.out.println(rowDivider);
         
-        //System.out.println(rowDivider);
-        
-        for (int i = 0;i <4;i++) {
-            System.out.println(i + columnDivider);
-            //reset the line 
-            linePrintout = "";
+        for (int i = 0;i <5;i++) {
+          
+            linePrintout = (i + 1) + columnDivider;
             
-            for (int ii = 0;ii < 4;ii++) {
+            for (int ii = 0;ii < 5;ii++) {
                 
                 //shows if the location has been visited or not
                 if(locations[i][ii].isVisited()){
                     linePrintout = linePrintout + locations[i][i].getScene().getMapSymbol() + "  ";
                     
-                    //line.insert(ii, locations[i][i].getScene().getMapSymbol());
-                    //System.out.println(locations[i][i].getScene().getMapSymbol());
                 } else {
-                    //System.out.println(" ?? " + columnDivider);
-                     linePrintout =  linePrintout + "??";
-                    //line.insert(ii, "??");
+                   
+                     linePrintout =  linePrintout + " ?? ";
                 }
                  linePrintout =  linePrintout + columnDivider;
                 
@@ -139,8 +134,8 @@ public class GameMenuView extends View {
             }
             
             System.out.println(linePrintout);
-            System.out.println("\n" + rowDivider);
-            System.out.println("\n");
+            System.out.println(rowDivider);
+            //System.out.println("\n");
         }
     }
 
