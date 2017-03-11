@@ -19,6 +19,8 @@ public class PhonePasswordView {
     private String promptMessage3 = "Please enter another value from 0 to 9:";
     private int password;
     private int phonePassword;
+    private String messageMenu;
+
     
     public PhonePasswordView() {
         this.banner = "\n"
@@ -42,6 +44,10 @@ public class PhonePasswordView {
         phonePassword = this.getPhonePassword();
         
         this.checkPassword();
+        
+        if (password == phonePassword) {
+            this.displayMessageMenuView();
+        }
 
     }
     
@@ -142,7 +148,8 @@ public class PhonePasswordView {
     
     public void checkPassword(){
         if (password == phonePassword){
-            System.out.println("The password is correct");
+            System.out.println("The password is correct" 
+                                + "\n You may now read your messages");
             //return for use when other code is finished
             //return true;
         }
@@ -152,5 +159,19 @@ public class PhonePasswordView {
             //return false;
         }
     }
+
+    private void displayMessageMenuView() {
+        
+        this.messageMenu = "\n----------------------------------------------------"
+                + "\nYour have 3 messages"
+                +"\n-----------------------------------------------"
+                + "\nPlease select a message number:";
+        
+        System.out.println(messageMenu);
+        
+        
+    }
+    
+
 }
 

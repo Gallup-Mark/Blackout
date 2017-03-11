@@ -5,6 +5,9 @@
  */
 package byui.cit260.blackout.control;
 
+import byui.cit260.blackout.model.MessageList;
+import byui.cit260.blackout.model.PhoneMessage;
+
 /**
  *
  * @author Matthew
@@ -61,4 +64,31 @@ public class PhoneControl {
         
     }
     
+
+    public static PhoneMessage[] createMessageList() {
+        
+        PhoneMessage[] messageList = new PhoneMessage[3];
+        
+        PhoneMessage message1 = new PhoneMessage();
+        message1.setFrom("Mom");
+        message1.setMessage("Please don't forget to stop by the Pharmacy to pick up my meds");
+        messageList[MessageList.message1.ordinal()] = message1; 
+        
+        PhoneMessage message2 = new PhoneMessage();
+        message2.setFrom("The Wife");
+        message2.setMessage("Don't forget to pick up your wallet at Bob's apartment.");
+        messageList[MessageList.message2.ordinal()] = message2; 
+        
+        PhoneMessage message3 = new PhoneMessage();
+        message3.setFrom("Bob");
+        message3.setMessage("Hey man. I have your wallet.  Your forgot it here after the game");
+        messageList[MessageList.message3.ordinal()] = message3; 
+        
+        return messageList;
+        
+        
+        
+    }
+
+
 }
