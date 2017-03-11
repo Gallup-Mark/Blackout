@@ -5,6 +5,7 @@
  */
 package byui.cit260.blackout.view;
 import byui.cit260.blackout.control.PhoneControl;
+import byui.cit260.blackout.model.PhoneMessage;
 import java.util.Scanner;
 
 /**
@@ -14,12 +15,15 @@ import java.util.Scanner;
 public class PhonePasswordView {
     
     private final String banner;
-    private String promptMessage = "Please enter the password:";
-    private String promptMessage2 = "Please enter a value from 0 to 9:";
-    private String promptMessage3 = "Please enter another value from 0 to 9:";
+    private final String promptMessage = "Please enter the password:";
+    private final String promptMessage2 = "Please enter a value from 0 to 9:";
+    private final String promptMessage3 = "Please enter another value from 0 to 9:";
     private int password;
     private int phonePassword;
-    private String messageMenu;
+    private PhoneMessage[] messageList;
+//    private String messageBanner;
+//    private final int numMessages = PhoneControl.createMessageList().length;
+//    private PhoneMessage[] messageList;
 
     
     public PhonePasswordView() {
@@ -46,8 +50,10 @@ public class PhonePasswordView {
         this.checkPassword();
         
         if (password == phonePassword) {
-            this.displayMessageMenuView();
+            messageList = PhoneControl.createMessageList();
         }
+        
+        
 
     }
     
@@ -149,7 +155,8 @@ public class PhonePasswordView {
     public void checkPassword(){
         if (password == phonePassword){
             System.out.println("The password is correct" 
-                                + "\n You may now read your messages");
+                             + "\n You may now read your messages");
+            messageList = PhoneControl.displayMessages();
             //return for use when other code is finished
             //return true;
         }
@@ -160,17 +167,18 @@ public class PhonePasswordView {
         }
     }
 
-    private void displayMessageMenuView() {
-        
-        this.messageMenu = "\n----------------------------------------------------"
-                + "\nYour have 3 messages"
-                +"\n-----------------------------------------------"
-                + "\nPlease select a message number:";
-        
-        System.out.println(messageMenu);
-        
-        
-    }
+//    private void displayMessagesView() {
+//        
+//        this.messageBanner = "\n----------------------------------------------------"
+//                + "\nYour have " + numMessages + " messages"
+//                +"\n---------------------------------------------------";
+//        
+//        System.out.println(messageBanner);
+//        
+//        messageList = PhoneControl.createMessageList();
+//        
+//        
+//    }
     
 
 }

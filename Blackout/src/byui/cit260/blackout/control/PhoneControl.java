@@ -14,6 +14,10 @@ import byui.cit260.blackout.model.PhoneMessage;
  */
 public class PhoneControl {
     
+    private static String messageBanner;
+    private static final int NUM_MESSAGES = PhoneControl.createMessageList().length;
+    private static PhoneMessage[] messageList;
+    
     public static int callPassword(int firstLetter, int secondLetter, int thirdLetter, int fourthLetter){
     
         //firstletter validation
@@ -64,6 +68,36 @@ public class PhoneControl {
         
     }
     
+//    public PhoneMessage[] displayMessagesView() {
+//        
+//        this.messageBanner = "\n----------------------------------------------------"
+//                + "\nYour have " + numMessages + " messages"
+//                +"\n---------------------------------------------------";
+//        
+//        System.out.println(messageBanner);
+//        
+//        messageList = PhoneControl.createMessageList();
+//        
+//        return messageList;
+//    }
+    
+//    public PhoneMessage[] displayMessagesView() {
+//        PhoneControl.messageBanner = "\n----------------------------------------------------"
+//            + "\nYour have " + numMessages + " messages"
+//            +"\n---------------------------------------------------";
+//        
+//        System.out.println(messageBanner);
+//        
+//        messageList = PhoneControl.createMessageList();
+//        
+//        
+//        for(PhoneMessage message: messageList) {
+//            
+//            System.out.println(message);
+//        }
+//        
+//        return messageList;
+//        }
 
     public static PhoneMessage[] createMessageList() {
         
@@ -84,11 +118,47 @@ public class PhoneControl {
         message3.setMessage("Hey man. I have your wallet.  Your forgot it here after the game");
         messageList[MessageList.message3.ordinal()] = message3; 
         
+        
+        
+//        PhoneControl.messageBanner = "\n----------------------------------------------------"
+//                + "\nYour have " + numMessages + " messages"
+//                +"\n---------------------------------------------------";
+//        
+//        System.out.println(messageBanner);
+//        
+//        messageList = PhoneControl.createMessageList();
+//        
+//        
+//        for(PhoneMessage message: messageList) {
+//            
+//            System.out.println(message);
+//        }
+//        
+//        return messageList;
+//        return messageList;
         return messageList;
         
         
         
     }
+    
+        public static PhoneMessage[] displayMessages() {
+        PhoneControl.messageBanner = "\n----------------------------------------------------"
+            + "\nYour have " + NUM_MESSAGES + " messages"
+            +"\n---------------------------------------------------";
+        
+        System.out.println(messageBanner);
+        
+        messageList = PhoneControl.createMessageList();
+        
+        
+        for(PhoneMessage message: messageList) {
+            
+            System.out.println(message);
+        }
+        
+        return messageList;
+        }
 
 
 }
