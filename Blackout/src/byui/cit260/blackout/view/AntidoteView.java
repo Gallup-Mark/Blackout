@@ -33,17 +33,17 @@ public class AntidoteView {
             numberOfPills = numberOfPills();
             
             // Verify number of pills = medicine amount
-            boolean doILive = AntidoteControl.testAntidote(medicineAmount, numberOfPills);
-                if (doILive) {
-                    System.out.println(promptMessage3);
-                                       
-                }
-                else {
-                    System.out.println(promptMessage4); 
-                    
-                    MainMenuView mainMenuView = new MainMenuView();
-                    mainMenuView.display();
-                }
+//            boolean doILive = AntidoteControl.testAntidote(medicineAmount, numberOfPills);
+//                if (doILive) {
+//                    System.out.println(promptMessage3);
+//                                       
+//                }
+//                else {
+//                    System.out.println(promptMessage4); 
+//                    
+//                    MainMenuView mainMenuView = new MainMenuView();
+//                    mainMenuView.display();
+//                }
                 
                     //System.out.println(doILive);
     

@@ -12,5 +12,8 @@ package byui.cit260.blackout.model;
 public enum MessageList {
     message1,
     message2,
-    message3;
+    message3,
+    antidotMessage1,
+    antidoteMessage2,
+    antidoteMessage3;
 }

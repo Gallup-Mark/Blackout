@@ -1,10 +1,18 @@
 package byui.cit260.blackout.control;
 
+import byui.cit260.blackout.model.AntidoteMessage;
+import byui.cit260.blackout.model.MessageList;
+
+
 /**
  *
  * @author mgallup
  */
 public class AntidoteControl {
+    
+    private static String messageBanner;
+     private static final int NUM_MESSAGES = AntidoteControl.createMessageList().length;
+    private static AntidoteMessage[] messageList;
     
 public static double calcMedAmount(double weightInPounds) {
     
@@ -36,15 +44,61 @@ public static double calcMedAmount(double weightInPounds) {
             
     }
     
-public static boolean testAntidote(double medicineAmount, double takenMedicineAmount) {
-        boolean answer = false;
-            if (medicineAmount == takenMedicineAmount) {
-                answer = true;
-            }
-            
-            return answer;
+//public static boolean testAntidote(double medicineAmount, double takenMedicineAmount) {
+//        boolean answer = false;
+//            if (medicineAmount == takenMedicineAmount) {
+//                answer = true;
+//            }
+//            
+//            return answer;
+//
+//        }
 
+public static AntidoteMessage[] createMessageList() {
+        
+        AntidoteMessage[] messageList = new AntidoteMessage[3];
+        
+        AntidoteMessage message1 = new AntidoteMessage();
+        message1.setFrom("Doctor");
+        message1.setMessage("That is the correct amount of pills, continue the game");
+        messageList[MessageList.message1.ordinal()] = message1; 
+        
+        AntidoteMessage message2 = new AntidoteMessage();
+        message2.setFrom("The Pharmacist");
+        message2.setMessage("You took too many pills! Your are dead! Game Over!");
+        messageList[MessageList.message2.ordinal()] = message2; 
+        
+        AntidoteMessage message3 = new AntidoteMessage();
+        message3.setFrom("Wife");
+        message3.setMessage("You didn't take enough pills.  You will now die in a matter of time.");
+        messageList[MessageList.message3.ordinal()] = message3; 
+        
+
+        return messageList;
+        
+        
+        
+    }
+    
+        public static AntidoteMessage[] displayMessages() {
+        AntidoteMessage.messageBanner = "\n----------------------------------------------------"
+            + "\nYour have " + NUM_MESSAGES + " messages"
+            +"\n---------------------------------------------------";
+        
+        System.out.println(messageBanner);
+        
+        messageList = AntidoteControl.createMessageList();
+        
+        
+        for(AntidoteMessage message: messageList) {
+            
+            System.out.println(message);
         }
+        
+        return messageList;
+        }
+
+
 
 
 }

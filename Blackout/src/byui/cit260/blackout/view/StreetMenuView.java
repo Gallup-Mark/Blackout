@@ -53,9 +53,9 @@ public class StreetMenuView extends View {
     }
 
     private void streetOne() {
-        
-        System.out.println("\n*** This takes you to Street One ***");
-       
+        StreetViewOne streetViewOne = new StreetViewOne();
+        streetViewOne.display();
+       // System.out.println("\n*** This takes you to Street One ***");
     }
 
     private void streetTwo() {
