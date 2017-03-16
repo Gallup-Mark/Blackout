@@ -30,6 +30,8 @@ public class GameControl {
         
         Player player = new Player();
         player.setName(name);
+       // player.setWeight(200);
+      //  player.setForce(20.3);
         
         //Blackout.setPlayer(player);
         

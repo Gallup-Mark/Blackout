@@ -18,11 +18,12 @@ public class SceneView extends View {
         
         super( "\n"
                 + "\n----------------------------------------------------------"
-                + "\n | Locaitons Menu"
+                + "\n | Locations Menu"
                 + "\n----------------------------------------------------------"
                 + "\nI - View Number of Items"
                 + "\nN - View non Players"
                 + "\nD - View Location Description"
+                + "\nF - View Door"
                 + "\nQ - Return to Locations Menu"
                 + "\n-----------------------------------------------------------");
         
@@ -96,6 +97,8 @@ public boolean doAction(String choice) {
                     break;
                 case "D" : //Des of SceneView
                     showDescription();
+                case "F" : //View Door
+                    showDoor();
                     break;
                 
                 
@@ -136,6 +139,13 @@ public boolean doAction(String choice) {
                 + "\n----------------------------------------------------------");
         System.out.println(getDescription());
          //System.out.println(menu);
+        
+    }
+
+    private void showDoor() {
+        DoorView doorView = new DoorView();
+        doorView.display();
+        
         
     }
 }

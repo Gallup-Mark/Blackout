@@ -20,9 +20,20 @@ public class Door implements Serializable{
     private boolean window;
     private String keyType;
     private boolean haveKey;
+    private static boolean open;
 
     public Door() {
     }
+
+    public static boolean isOpen() {
+        return open;
+    }
+
+    public static void setOpen(boolean open) {
+        Door.open = open;
+    }
+    
+    
 
     public boolean isLocked() {
         return locked;

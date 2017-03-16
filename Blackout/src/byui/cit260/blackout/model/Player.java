@@ -12,6 +12,26 @@ public class Player implements Serializable{
     private int strength;
     private String talk;
     private int startStrength;
+    private static double weight;
+    private static double force;
+
+    public static double getForce() {
+        return force;
+    }
+
+    public static void setForce(double force) {
+        Player.force = force;
+    }
+    
+    
+
+    public static double getWeight() {
+        return weight;
+    }
+
+    public static void setWeight(double weight) {
+        Player.weight = weight;
+    }
 
     public Player() {
     }

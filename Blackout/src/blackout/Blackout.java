@@ -46,10 +46,18 @@ public class Blackout {
 
 
     public static void main(String[] args) {
+         StartProgramView startProgramView = new StartProgramView();
+
+        
+        try {
         
        //create StartProgramViewOrig and display the start program view
-       StartProgramView startProgramView = new StartProgramView();
        startProgramView.displayStartProgramView();
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.displayStartProgramView();
+        }
                 
     }
 
