@@ -1,12 +1,11 @@
-
 package byui.cit260.blackout.model;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 // Author MGallup
-public class Player implements Serializable{
-    
+public class Player implements Serializable {
+
     // class instance variables
     private String name;
     private int strength;
@@ -22,8 +21,6 @@ public class Player implements Serializable{
     public static void setForce(double force) {
         Player.force = force;
     }
-    
-    
 
     public static double getWeight() {
         return weight;
@@ -35,8 +32,7 @@ public class Player implements Serializable{
 
     public Player() {
     }
-    
-    
+
     public String getName() {
         return name;
     }
@@ -79,8 +75,6 @@ public class Player implements Serializable{
     public String toString() {
         return "Player{" + "name=" + name + ", strength=" + strength + ", talk=" + talk + ", startStrength=" + startStrength + '}';
     }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -108,5 +102,5 @@ public class Player implements Serializable{
         }
         return true;
     }
-   
+
 }

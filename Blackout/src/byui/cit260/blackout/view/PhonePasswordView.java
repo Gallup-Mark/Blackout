@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.blackout.view;
+
 import byui.cit260.blackout.control.PhoneControl;
 import byui.cit260.blackout.exceptions.PhoneControlException;
 import byui.cit260.blackout.model.PhoneMessage;
@@ -15,7 +16,7 @@ import java.util.Scanner;
  * @author Matt
  */
 public class PhonePasswordView {
-    
+
     private final String banner;
     private final String promptMessage = "Please enter the password:";
     private final String promptMessage2 = "Please enter a value from 0 to 9:";
@@ -27,7 +28,6 @@ public class PhonePasswordView {
 //    private final int numMessages = PhoneControl.createMessageList().length;
 //    private PhoneMessage[] messageList;
 
-    
     public PhonePasswordView() {
         this.banner = "\n"
                 + "\n------------------------------------------"
@@ -35,11 +35,11 @@ public class PhonePasswordView {
                 + "\nPlease pay close attention to the following"
                 + "\nAnd input what you are asked for and nothing else."
                 + "\n------------------------------------------";
-            System.out.println(banner);
+        System.out.println(banner);
     }
-    
-    public void displayPhonePasswordView(){
-    
+
+    public void displayPhonePasswordView() {
+
         int firstLetter;
         try {
             firstLetter = this.getFirstLetter();
@@ -50,7 +50,7 @@ public class PhonePasswordView {
             System.out.println(te.getMessage());
             return;
         }
-        
+
         int secondLetter;
         try {
             secondLetter = this.getSecondLetter();
@@ -61,7 +61,7 @@ public class PhonePasswordView {
             System.out.println(te.getMessage());
             return;
         }
-        
+
         int thirdLetter;
         try {
             thirdLetter = this.getThirdLetter();
@@ -72,7 +72,7 @@ public class PhonePasswordView {
             System.out.println(te.getMessage());
             return;
         }
-        
+
         int fourthLetter;
         try {
             fourthLetter = this.getFourthLetter();
@@ -83,7 +83,7 @@ public class PhonePasswordView {
             System.out.println(te.getMessage());
             return;
         }
-    
+
         try {
             password = PhoneControl.callPassword(firstLetter, secondLetter, thirdLetter, fourthLetter);
         } catch (PhoneControlException ex) {
@@ -94,7 +94,7 @@ public class PhonePasswordView {
             te.printStackTrace();
             return;
         }
-    
+
         try {
             phonePassword = this.getPhonePassword();
         } catch (PhoneControlException ex) {
@@ -104,31 +104,29 @@ public class PhonePasswordView {
             System.out.println(te.getMessage());
             return;
         }
-        
+
         this.checkPassword();
-        
+
         if (password == phonePassword) {
             messageList = PhoneControl.createMessageList();
         }
-        
-        
 
     }
-    
+
     private int getPhonePassword() throws PhoneControlException {
         Scanner keyboard = new Scanner(System.in);
         String value;
         int number = 0;
         boolean valid = false;
-        
+
         while (!valid) {
             System.out.println("\n" + this.promptMessage);
-            
+
             value = keyboard.next();
-            
+
             try {
                 number = parseInt(value);
-            }catch (NumberFormatException nf) {
+            } catch (NumberFormatException nf) {
                 System.out.println("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
                 continue;
             }
@@ -140,9 +138,8 @@ public class PhonePasswordView {
             break;
         }
         return number;
-    } 
-    
-    
+    }
+
 //    {
 //        Scanner keyboard = new Scanner(System.in);
 //        int value = 0;
@@ -161,21 +158,20 @@ public class PhonePasswordView {
 //        }
 //        return value;
 //    }
-
     private int getFirstLetter() throws PhoneControlException {
         Scanner keyboard = new Scanner(System.in);
         String value;
         int number = 0;
         boolean valid = false;
-        
+
         while (!valid) {
             System.out.println("\n" + this.promptMessage2);
-            
+
             value = keyboard.next();
-            
+
             try {
                 number = parseInt(value);
-            }catch (NumberFormatException nf) {
+            } catch (NumberFormatException nf) {
                 System.out.println("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
                 continue;
             }
@@ -194,15 +190,15 @@ public class PhonePasswordView {
         String value;
         int number = 0;
         boolean valid = false;
-        
+
         while (!valid) {
             System.out.println("\n" + this.promptMessage3);
-            
+
             value = keyboard.next();
-            
+
             try {
                 number = parseInt(value);
-            }catch (NumberFormatException nf) {
+            } catch (NumberFormatException nf) {
                 System.out.println("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
                 continue;
             }
@@ -221,15 +217,15 @@ public class PhonePasswordView {
         String value;
         int number = 0;
         boolean valid = false;
-        
+
         while (!valid) {
             System.out.println("\n" + this.promptMessage3);
-            
+
             value = keyboard.next();
-            
+
             try {
                 number = parseInt(value);
-            }catch (NumberFormatException nf) {
+            } catch (NumberFormatException nf) {
                 System.out.println("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
                 continue;
             }
@@ -248,15 +244,15 @@ public class PhonePasswordView {
         String value;
         int number = 0;
         boolean valid = false;
-        
+
         while (!valid) {
             System.out.println("\n" + this.promptMessage3);
-            
+
             value = keyboard.next();
-            
+
             try {
                 number = parseInt(value);
-            }catch (NumberFormatException nf) {
+            } catch (NumberFormatException nf) {
                 System.out.println("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
                 continue;
             }
@@ -269,16 +265,15 @@ public class PhonePasswordView {
         }
         return number;
     }
-    
-    public void checkPassword(){
-        if (password == phonePassword){
-            System.out.println("The password is correct" 
-                             + "\n You may now read your messages");
+
+    public void checkPassword() {
+        if (password == phonePassword) {
+            System.out.println("The password is correct"
+                    + "\n You may now read your messages");
             messageList = PhoneControl.displayMessages();
             //return for use when other code is finished
             //return true;
-        }
-        else {
+        } else {
             System.out.println("Incorrect Password");
             //return for use when other code is finished
             //return false;
@@ -297,7 +292,4 @@ public class PhonePasswordView {
 //        
 //        
 //    }
-    
-
 }
-

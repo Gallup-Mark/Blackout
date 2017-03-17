@@ -1,4 +1,3 @@
-
 package blackout;
 
 import byui.cit260.blackout.model.Game;
@@ -19,12 +18,9 @@ import byui.cit260.blackout.model.Phone;
 import byui.cit260.blackout.model.Player;
 import byui.cit260.blackout.model.Scene;
 import byui.cit260.blackout.model.SceneType;
-*/
-
-
-
+ */
 public class Blackout {
-    
+
     private static Game currentGame = null;
 
     public static Game getCurrentGame() {
@@ -44,21 +40,19 @@ public class Blackout {
     }
     private static Player player = null;
 
-
     public static void main(String[] args) {
-         StartProgramView startProgramView = new StartProgramView();
+        StartProgramView startProgramView = new StartProgramView();
 
-        
         try {
-        
-       //create StartProgramViewOrig and display the start program view
-       startProgramView.displayStartProgramView();
+
+            //create StartProgramViewOrig and display the start program view
+            startProgramView.displayStartProgramView();
         } catch (Throwable te) {
             System.out.println(te.getMessage());
             te.printStackTrace();
             startProgramView.displayStartProgramView();
         }
-                
+
     }
 
 }
