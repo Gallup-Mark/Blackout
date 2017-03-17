@@ -5,6 +5,7 @@
  */
 package byui.cit260.blackout.control;
 
+import byui.cit260.blackout.exceptions.PhoneControlException;
 import byui.cit260.blackout.model.MessageList;
 import byui.cit260.blackout.model.PhoneMessage;
 
@@ -18,42 +19,50 @@ public class PhoneControl {
     private static final int NUM_MESSAGES = PhoneControl.createMessageList().length;
     private static PhoneMessage[] messageList;
     
-    public static int callPassword(int firstLetter, int secondLetter, int thirdLetter, int fourthLetter){
+    public static int callPassword(int firstLetter, int secondLetter, int thirdLetter, int fourthLetter) throws PhoneControlException {
     
         //firstletter validation
         if (firstLetter < 0){
-            return -1;
+            //return -1;
+            throw new PhoneControlException ("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
         }
        
         if (firstLetter > 9){
-            return -1;
+            //return -1;
+            throw new PhoneControlException ("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
         }
         
         //secondletter validation
         if (secondLetter < 0){
-            return -1;
+            //return -1;
+            throw new PhoneControlException ("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
         }
         
         if (secondLetter > 9){
-            return -1;
+            //return -1;
+            throw new PhoneControlException ("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
         }
         
         //thirdletter validation
         if (thirdLetter < 0){
-            return -1;
+            //return -1;
+            throw new PhoneControlException ("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
         }
         
         if (thirdLetter > 9){
-            return -1;
+            //return -1;
+            throw new PhoneControlException ("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
         }
         
         //fourthletter validation
         if (fourthLetter < 0){
-            return -1;
+            //return -1;
+            throw new PhoneControlException ("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
         }
         
         if (fourthLetter > 9){
-            return -1;
+            //return -1;
+            throw new PhoneControlException ("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
         }
         
         //password calculation
