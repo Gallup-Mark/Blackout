@@ -15,11 +15,31 @@ public enum SceneType implements Serializable{
     
     //class vars
     
-    subway,
-    apartment,
-    street,
-    pharmacy,
-    hospital;
+    subwayOne,
+    subwayTwo,
+    subwayThree,
+    subwayFour,
+    subwayFive,
+    apartmentOne,
+    apartmentTwo,
+    apartmentThree,
+    apartmentFour,
+    apartmentFive,
+    streetOne,
+    streetTwo,
+    streetThree,
+    streetFour,
+    streetFive,
+    pharmacyOne,
+    pharmacyTwo,
+    pharmacyThree,
+    pharmacyFour,
+    pharmacyFive,
+    hospitalOne,
+    hospitalTwo,
+    hospitalThree,
+    hospitalFour,
+    hospitalFive;
 
 //    public SceneType(){
 //        
