@@ -157,8 +157,8 @@ public class GameMenuView extends View {
     //  System.out.println("\n*** mainMenu() function called ***");
     //  }
     private void viewAntidoteAmount() {
-        AntidoteView antidoteView = new AntidoteView();
-        antidoteView.displayAntidoteView();
+        //AntidoteView antidoteView = new AntidoteView();
+        //antidoteView.displayAntidoteView();
         //System.out.println(menu);
 
         //System.out.println("\n*** viewAntidoteAmount() function called ***");
