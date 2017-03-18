@@ -42,41 +42,184 @@ public class MapControl {
 //    pharmacy,
 //    hospital
         
-        Scene subway = new Scene();
-        subway.setDescription("Crummy old subway where there was a crash");
-        subway.setMapSymbol("; )");
-        subway.setNonPlayer(NonPlayer.Thug1);
-        subway.setNumberItems(2);
-        scenes[SceneType.subway.ordinal()] = subway;
+        Scene subwayOne = new Scene();
+        subwayOne.setDescription("Crummy old subway where there was a crash");
+        subwayOne.setMapSymbol("; )");
+        subwayOne.setNonPlayer(NonPlayer.Thug1);
+        subwayOne.setNumberItems(2);
+        scenes[SceneType.subwayOne.ordinal()] = subwayOne;
+        
+        Scene subwayTwo = new Scene();
+        subwayTwo.setDescription("Crummy old subway where there was a crash");
+        subwayTwo.setMapSymbol("; )");
+        subwayTwo.setNonPlayer(NonPlayer.Thug1);
+        subwayTwo.setNumberItems(2);
+        scenes[SceneType.subwayTwo.ordinal()] = subwayTwo;
+        
+        Scene subwayThree = new Scene();
+        subwayThree.setDescription("Crummy old subway where there was a crash");
+        subwayThree.setMapSymbol("; )");
+        subwayThree.setNonPlayer(NonPlayer.Thug1);
+        subwayThree.setNumberItems(2);
+        scenes[SceneType.subwayThree.ordinal()] = subwayThree;
+        
+        Scene subwayFour = new Scene();
+        subwayFour.setDescription("Crummy old subway where there was a crash");
+        subwayFour.setMapSymbol("; )");
+        subwayFour.setNonPlayer(NonPlayer.Thug1);
+        subwayFour.setNumberItems(2);
+        scenes[SceneType.subwayFour.ordinal()] = subwayFour;
+        
+        Scene subwayFive = new Scene();
+        subwayFive.setDescription("Crummy old subway where there was a crash");
+        subwayFive.setMapSymbol("; )");
+        subwayFive.setNonPlayer(NonPlayer.Thug1);
+        subwayFive.setNumberItems(2);
+        scenes[SceneType.subwayFive.ordinal()] = subwayFive;
         
         
-        Scene apartment = new Scene();
-        apartment.setDescription("Billy Redneck Suites");
-        apartment.setMapSymbol("; (");
-        apartment.setNonPlayer(NonPlayer.PoliceManJoe);
-        apartment.setNumberItems(1);
-        scenes[SceneType.apartment.ordinal()] = apartment;
+        Scene apartmentOne = new Scene();
+        apartmentOne.setDescription("Billy Redneck Suites");
+        apartmentOne.setMapSymbol("; (");
+        apartmentOne.setNonPlayer(NonPlayer.PoliceManJoe);
+        apartmentOne.setNumberItems(1);
+        scenes[SceneType.apartmentOne.ordinal()] = apartmentOne;
         
-        Scene street = new Scene();
-        street.setDescription("Main Street");
-        street.setMapSymbol("; 0");
-        street.setNonPlayer(NonPlayer.Thug3);
-        street.setNumberItems(1);
-        scenes[SceneType.street.ordinal()] = street;
+        Scene apartmentTwo = new Scene();
+        apartmentTwo.setDescription("Billy Redneck Suites");
+        apartmentTwo.setMapSymbol("; (");
+        apartmentTwo.setNonPlayer(NonPlayer.PoliceManJoe);
+        apartmentTwo.setNumberItems(1);
+        scenes[SceneType.apartmentTwo.ordinal()] = apartmentTwo;
         
-        Scene pharmacy = new Scene();
-        pharmacy.setDescription("Old Joe's Drugs");
-        pharmacy.setMapSymbol("; P");
-        pharmacy.setNonPlayer(NonPlayer.Thug2);
-        pharmacy.setNumberItems(0);
-        scenes[SceneType.pharmacy.ordinal()] = pharmacy;
+        Scene apartmentThree = new Scene();
+        apartmentThree.setDescription("Billy Redneck Suites");
+        apartmentThree.setMapSymbol("; (");
+        apartmentThree.setNonPlayer(NonPlayer.PoliceManJoe);
+        apartmentThree.setNumberItems(1);
+        scenes[SceneType.apartmentThree.ordinal()] = apartmentThree;
         
-        Scene hospital = new Scene();
-        hospital.setDescription("St. Granny Crack Memorial Hospital");
-        hospital.setMapSymbol("; X");
-        hospital.setNonPlayer(NonPlayer.PoliceManJoe);
-        hospital.setNumberItems(1);
-        scenes[SceneType.hospital.ordinal()] = hospital;
+        Scene apartmentFour = new Scene();
+        apartmentFour.setDescription("Billy Redneck Suites");
+        apartmentFour.setMapSymbol("; (");
+        apartmentFour.setNonPlayer(NonPlayer.PoliceManJoe);
+        apartmentFour.setNumberItems(1);
+        scenes[SceneType.apartmentFour.ordinal()] = apartmentFour;
+        
+        Scene apartmentFive = new Scene();
+        apartmentFive.setDescription("Billy Redneck Suites");
+        apartmentFive.setMapSymbol("; (");
+        apartmentFive.setNonPlayer(NonPlayer.PoliceManJoe);
+        apartmentFive.setNumberItems(1);
+        scenes[SceneType.apartmentFive.ordinal()] = apartmentFive;
+        
+        
+        
+        Scene streetOne = new Scene();
+        streetOne.setDescription("Main Street");
+        streetOne.setMapSymbol("; 0");
+        streetOne.setNonPlayer(NonPlayer.Thug3);
+        streetOne.setNumberItems(1);
+        scenes[SceneType.streetOne.ordinal()] = streetOne;
+        
+        Scene streetTwo = new Scene();
+        streetTwo.setDescription("Main Street");
+        streetTwo.setMapSymbol("; 0");
+        streetTwo.setNonPlayer(NonPlayer.Thug3);
+        streetTwo.setNumberItems(1);
+        scenes[SceneType.streetTwo.ordinal()] = streetTwo;
+        
+        Scene streetThree = new Scene();
+        streetThree.setDescription("Main Street");
+        streetThree.setMapSymbol("; 0");
+        streetThree.setNonPlayer(NonPlayer.Thug3);
+        streetThree.setNumberItems(1);
+        scenes[SceneType.streetThree.ordinal()] = streetThree;
+        
+        Scene streetFour = new Scene();
+        streetFour.setDescription("Main Street");
+        streetFour.setMapSymbol("; 0");
+        streetFour.setNonPlayer(NonPlayer.Thug3);
+        streetFour.setNumberItems(1);
+        scenes[SceneType.streetFour.ordinal()] = streetFour;
+        
+        Scene streetFive = new Scene();
+        streetFive.setDescription("Main Street");
+        streetFive.setMapSymbol("; 0");
+        streetFive.setNonPlayer(NonPlayer.Thug3);
+        streetFive.setNumberItems(1);
+        scenes[SceneType.streetFive.ordinal()] = streetFive;
+        
+        
+        Scene pharmacyOne = new Scene();
+        pharmacyOne.setDescription("Old Joe's Drugs");
+        pharmacyOne.setMapSymbol("; P");
+        pharmacyOne.setNonPlayer(NonPlayer.Thug2);
+        pharmacyOne.setNumberItems(0);
+        scenes[SceneType.pharmacyOne.ordinal()] = pharmacyOne;
+        
+        Scene pharmacyTwo = new Scene();
+        pharmacyTwo.setDescription("Old Joe's Drugs");
+        pharmacyTwo.setMapSymbol("; P");
+        pharmacyTwo.setNonPlayer(NonPlayer.Thug2);
+        pharmacyTwo.setNumberItems(0);
+        scenes[SceneType.pharmacyTwo.ordinal()] = pharmacyTwo;
+        
+        Scene pharmacyThree = new Scene();
+        pharmacyThree.setDescription("Old Joe's Drugs");
+        pharmacyThree.setMapSymbol("; P");
+        pharmacyThree.setNonPlayer(NonPlayer.Thug2);
+        pharmacyThree.setNumberItems(0);
+        scenes[SceneType.pharmacyThree.ordinal()] = pharmacyThree;
+        
+        Scene pharmacyFour = new Scene();
+        pharmacyFour.setDescription("Old Joe's Drugs");
+        pharmacyFour.setMapSymbol("; P");
+        pharmacyFour.setNonPlayer(NonPlayer.Thug2);
+        pharmacyFour.setNumberItems(0);
+        scenes[SceneType.pharmacyFour.ordinal()] = pharmacyFour;
+        
+        Scene pharmacyFive = new Scene();
+        pharmacyFive.setDescription("Old Joe's Drugs");
+        pharmacyFive.setMapSymbol("; P");
+        pharmacyFive.setNonPlayer(NonPlayer.Thug2);
+        pharmacyFive.setNumberItems(0);
+        scenes[SceneType.pharmacyFive.ordinal()] = pharmacyFive;
+        
+        Scene hospitalOne = new Scene();
+        hospitalOne.setDescription("St. Granny Crack Memorial Hospital");
+        hospitalOne.setMapSymbol("; X");
+        hospitalOne.setNonPlayer(NonPlayer.PoliceManJoe);
+        hospitalOne.setNumberItems(1);
+        scenes[SceneType.hospitalOne.ordinal()] = hospitalOne;
+        
+        Scene hospitalTwo = new Scene();
+        hospitalTwo.setDescription("St. Granny Crack Memorial Hospital");
+        hospitalTwo.setMapSymbol("; X");
+        hospitalOne.setNonPlayer(NonPlayer.PoliceManJoe);
+        hospitalTwo.setNumberItems(1);
+        scenes[SceneType.hospitalTwo.ordinal()] = hospitalTwo;
+        
+        Scene hospitalThree = new Scene();
+        hospitalThree.setDescription("St. Granny Crack Memorial Hospital");
+        hospitalThree.setMapSymbol("; X");
+        hospitalThree.setNonPlayer(NonPlayer.PoliceManJoe);
+        hospitalThree.setNumberItems(1);
+        scenes[SceneType.hospitalThree.ordinal()] = hospitalThree;
+        
+        Scene hospitalFour = new Scene();
+        hospitalFour.setDescription("St. Granny Crack Memorial Hospital");
+        hospitalFour.setMapSymbol("; X");
+        hospitalFour.setNonPlayer(NonPlayer.PoliceManJoe);
+        hospitalFour.setNumberItems(1);
+        scenes[SceneType.hospitalFour.ordinal()] = hospitalFour;
+        
+        Scene hospitalFive = new Scene();
+        hospitalFive.setDescription("St. Granny Crack Memorial Hospital");
+        hospitalFive.setMapSymbol("; X");
+        hospitalFive.setNonPlayer(NonPlayer.PoliceManJoe);
+        hospitalFive.setNumberItems(1);
+        scenes[SceneType.hospitalFive.ordinal()] = hospitalFive;
         
         return scenes;
         
