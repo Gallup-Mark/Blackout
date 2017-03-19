@@ -5,6 +5,9 @@
  */
 package byui.cit260.blackout.control;
 
+import byui.cit260.blackout.exceptions.AntidoteControlException;
+import byui.cit260.blackout.exceptions.DoorUnLockControlException;
+
 /**
  *
  * @author Brian
@@ -12,26 +15,32 @@ package byui.cit260.blackout.control;
 public class DoorUnLockControl {
     
     
-       public double unLockDoorWithCode(int keyCode, double playLbs, int doorNo){
+       public double unLockDoorWithCode(int keyCode, double playLbs, int doorNo) throws DoorUnLockControlException{
         
         //let all the function agruemnts double becuase don't want to deal with parsing/rounding issues
         
         
         //check for invlaid playerLbs
         if(playLbs <= 50){
-            return -1;
+            
+            throw new DoorUnLockControlException("\nWeight in pounds can not be less than 50 ");
+            //return -1;
         }
         
         //check for invalid keyCode
         if(keyCode < 0 || keyCode >= 10){
-            return -2;
+           // return -2;
+            throw new DoorUnLockControlException("\nKeycode must be larger 0 and less than 10 ");
+            
         }
         
         
         //check for invalid door
         //options are doors 1 through 25
         if(doorNo <= 0 || doorNo >= 26){
-            return -3;
+            throw new DoorUnLockControlException("\ndoor must be between 1 and 25 ");
+            
+            //return -3;
         }
         
         //let all the function agruemnts double becuase don't want to deal with parsing/rounding issues
