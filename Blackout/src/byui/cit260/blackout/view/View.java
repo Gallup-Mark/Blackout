@@ -57,5 +57,29 @@ public abstract class View implements ViewInterface {
         }
         return value;
     }
+    
+    
+    public String getInput(String message) {
+
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        String value = ""; //value to be returned
+        boolean valid = false; // intialize to not valid
+
+        while (!valid) { // loop while an invalid va;lue is entered
+            System.out.println(message);
+            //System.out.println("\n" + this.promptMessage);
+
+            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = value.trim(); // trim off leading and trailing blanks
+
+            if (value.length() > 1) { // only one charachter
+                System.out.println("\nInvalid value: choose a correct value");
+                continue;
+            }
+
+            break;  // end the loop
+        }
+        return value;
+    }
 
 }
