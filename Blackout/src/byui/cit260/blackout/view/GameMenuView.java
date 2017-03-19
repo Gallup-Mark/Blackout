@@ -6,6 +6,7 @@ import byui.cit260.blackout.model.Map;
 import byui.cit260.blackout.control.MapControl;
 import byui.cit260.blackout.model.Game;
 import byui.cit260.blackout.model.Location;
+import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 
 /**
@@ -79,10 +80,27 @@ public class GameMenuView extends View {
 
     private void moveLocation() {
 
-        LocationMenuView locationMenuView = new LocationMenuView();
-        locationMenuView.display();
-        System.out.println(menu);
-
+        //LocationMenuView locationMenuView = new LocationMenuView();
+        //locationMenuView.display();
+        //System.out.println(menu);
+       int x = -1; 
+       int y = -1;
+       try {
+             x = parseInt(getInput("Enter X value on Map"));
+       } catch(NumberFormatException e){
+           System.out.println("Invalid Value entered");
+        
+        }
+       try {
+            y = parseInt(getInput("Enter Y value on Map"));
+       } catch(NumberFormatException e){
+           System.out.println("Invalid Value Entered");
+       }
+       if(x >= 0 && y >= 0){
+            MapControl.movePlayer(Blackout.getCurrentGame().getMap(), x, y);
+       } else {
+           System.out.println("Cannot Move to invalid location");
+       }
     }
 
     private void viewMap() {
@@ -99,7 +117,7 @@ public class GameMenuView extends View {
         String linePrintout = " ";
         for (int i = 0; i < 5; i++) {
 
-            linePrintout = linePrintout + " " + (i + 1) + "   ";
+            linePrintout = linePrintout + " " + (i) + "   ";
 
         }
 
@@ -108,7 +126,7 @@ public class GameMenuView extends View {
 
         for (int i = 0; i < 5; i++) {
 
-            linePrintout = (i + 1) + columnDivider;
+            linePrintout = (i) + columnDivider;
 
             for (int ii = 0; ii < 5; ii++) {
 
