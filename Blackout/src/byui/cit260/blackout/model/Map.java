@@ -12,10 +12,20 @@ public class Map implements Serializable{
         // class instance variables
         private int rowCount;
         private int columnCount;
-        private String currentRow;
+        private int currentRow;
         private int currentColumn;
         private String currentScene;
-        private static Location[][] locations;
+        private Location[][] locations;
+        private Location currentLocation;
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+        
 
     public Map(int row, int column) {
         if (row < 1 || column < 1) {
@@ -57,11 +67,11 @@ public class Map implements Serializable{
         this.columnCount = columnCount;
     }
 
-    public String getCurrentRow() {
+    public int getCurrentRow() {
         return currentRow;
     }
 
-    public void setCurrentRow(String currentRow) {
+    public void setCurrentRow(int currentRow) {
         this.currentRow = currentRow;
     }
 
@@ -81,7 +91,7 @@ public class Map implements Serializable{
         this.currentScene = currentScene;
     }
 
-    public static Location[][] getLocations() {
+    public Location[][] getLocations() {
         return locations;
     }
 
