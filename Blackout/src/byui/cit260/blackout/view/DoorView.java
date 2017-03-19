@@ -1,10 +1,15 @@
 package byui.cit260.blackout.view;
 
 import byui.cit260.blackout.control.DoorControl;
+import byui.cit260.blackout.control.DoorUnLockControl;
 import byui.cit260.blackout.exceptions.DoorControlException;
+import byui.cit260.blackout.exceptions.DoorUnLockControlException;
 import byui.cit260.blackout.model.Player;
+import static java.lang.Integer.parseInt;
 //import java.text.ParseException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
 
@@ -41,8 +46,16 @@ public class DoorView extends View {
                 }
             }
             break;
-            case "U": // display Unlock
+            case "U": {
+            try {
+                // display Unlock
                 this.displayUnlock();
+            } catch (DoorUnLockControlException ex) {
+                System.out.println(ex);
+                
+                //Logger.getLogger(DoorView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
 
             default:
@@ -63,8 +76,42 @@ public class DoorView extends View {
 
     }
 
-    private void displayUnlock() {
-        System.out.println("\n*** displayUnlock stub function called ***");
+    private void displayUnlock() throws DoorUnLockControlException {
+        
+        //unLockDoorWithCode(int keyCode, double playLbs, int doorNo)
+        int keyCode = -1;
+        double playLbs = -1;
+        int doorNo = -1;
+        
+        try {
+            keyCode = parseInt(getInput("Enter Keycode"));
+            
+         } catch (NumberFormatException nf) {
+                System.out.println("You must enter a valid number ");
+                
+         }
+         try {
+                playLbs = Double.parseDouble(getInput("Enter Player lbs"));
+         } catch (NumberFormatException e){
+             
+             System.out.println("You must enter a valid number ");
+         }
+         
+         try {
+              doorNo = parseInt(getInput("Enter Door Number"));
+         } catch (NumberFormatException e2) {
+             System.out.println("You must enter a valid number ");
+         }
+         
+         double unlock = DoorUnLockControl.unLockDoorWithCode(keyCode, playLbs, doorNo);
+         if(unlock == 0){
+             System.out.println("You Did No Unlock the door");
+         } else {
+             System.out.println("You Unlocked the Door");
+         }
+        
+        
+        //System.out.println("\n*** displayUnlock stub function called ***");
     }
 
     public void kickDoorInput() throws DoorControlException {
