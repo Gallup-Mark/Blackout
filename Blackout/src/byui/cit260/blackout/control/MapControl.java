@@ -237,7 +237,7 @@ public class MapControl {
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.getCurrentLocation().setVisited(true);
         map.setCurrentRow(row);
-         map.setCurrentColumn(column);
+        map.setCurrentColumn(column);
 
     }
     
