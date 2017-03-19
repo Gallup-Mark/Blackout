@@ -4,10 +4,13 @@ import blackout.Blackout;
 import byui.cit260.blackout.control.GameControl;
 import byui.cit260.blackout.model.Map;
 import byui.cit260.blackout.control.MapControl;
+import byui.cit260.blackout.exceptions.AntidoteControlException;
 import byui.cit260.blackout.model.Game;
 import byui.cit260.blackout.model.Location;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -55,8 +58,15 @@ public class GameMenuView extends View {
             case "T": //view talk
                 this.talk();
                 break;
-            case "A": //Amount of Antidote
+            //updated by Mark 3/18/17
+            case "A": {
+            try {
+                //Amount of Antidote
                 this.viewAntidoteAmount();
+            } catch (AntidoteControlException ex) {
+               System.out.println("\nInvalid input. Please enter a valid letter");
+            }
+        }
                 break;
             case "B": //View Backpack contents
                 this.viewBackPack();
@@ -176,10 +186,10 @@ public class GameMenuView extends View {
     //private void mainMenu() {
     //  System.out.println("\n*** mainMenu() function called ***");
     //  }
-    private void viewAntidoteAmount() {
-        //AntidoteView antidoteView = new AntidoteView();
-        //antidoteView.displayAntidoteView();
-        //System.out.println(menu);
+    private void viewAntidoteAmount() throws AntidoteControlException {
+        AntidoteView antidoteView = new AntidoteView();
+        antidoteView.displayAntidoteView();
+        System.out.println(menu);
 
         //System.out.println("\n*** viewAntidoteAmount() function called ***");
     }
