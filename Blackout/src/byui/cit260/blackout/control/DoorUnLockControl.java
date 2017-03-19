@@ -15,7 +15,7 @@ import byui.cit260.blackout.exceptions.DoorUnLockControlException;
 public class DoorUnLockControl {
     
     
-       public double unLockDoorWithCode(int keyCode, double playLbs, int doorNo) throws DoorUnLockControlException{
+       public static double unLockDoorWithCode(int keyCode, double playLbs, int doorNo) throws DoorUnLockControlException{
         
         //let all the function agruemnts double becuase don't want to deal with parsing/rounding issues
         
