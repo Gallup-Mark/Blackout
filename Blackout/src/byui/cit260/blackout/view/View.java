@@ -72,7 +72,7 @@ public abstract class View implements ViewInterface {
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks
 
-            if (value.length() > 1) { // only one charachter
+            if (value.length() < 1) { // only one charachter
                 System.out.println("\nInvalid value: choose a correct value");
                 continue;
             }
