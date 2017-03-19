@@ -6,6 +6,7 @@
 package byui.cit260.blackout.view;
 
 import blackout.Blackout;
+import byui.cit260.blackout.control.ExamControl;
 import byui.cit260.blackout.model.Item;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
@@ -111,13 +112,8 @@ public class ExamMenu extends View{
         if(itemIndex >= 0){
             
            Item[] items = Blackout.getCurrentGame().getItem();
-           String clue = "";
-           try {
-               clue = items[itemIndex].getClue();
-               
-           } catch (Exception E ){
-               System.out.println("Index Select it out of bounds for your item list");
-            }
+           ExamControl.examItem(items[itemIndex]);
+           
         }
     }   
 
