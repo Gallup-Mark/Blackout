@@ -5,6 +5,9 @@
  */
 package byui.cit260.blackout.view;
 
+import blackout.Blackout;
+import byui.cit260.blackout.model.Item;
+import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 
 /**
@@ -21,7 +24,7 @@ public class ExamMenu extends View{
                 + "\n------------------------------------------"
                 + "\n |Exam Menu"
                 + "\n------------------------------------------"
-                + "\nI - Look At Item"
+                + "\nI - Look At Item In Location"
                 + "\nU - Look Up"
                 + "\nD - Look Down"
                 + "\nL - Look Left"
@@ -95,8 +98,28 @@ public class ExamMenu extends View{
     }
 
     private void lookAtItem() {
-        System.out.println("\n*** lookAtItem()function called ***");
-    }
+        //System.out.println("\n*** lookAtItem()function called ***");
+        //Blackout.getCurrentGame().getItem()
+        
+        int itemIndex  = -1;
+        try {
+            itemIndex = parseInt(getInput("Enter Item List Number"));
+       } catch(NumberFormatException e){
+           System.out.println("Invalid Value Entered");
+       }
+        
+        if(itemIndex >= 0){
+            
+           Item[] items = Blackout.getCurrentGame().getItem();
+           String clue = "";
+           try {
+               clue = items[itemIndex].getClue();
+               
+           } catch (Exception E ){
+               System.out.println("Index Select it out of bounds for your item list");
+            }
+        }
+    }   
 
     private void lookUp() {
         System.out.println("\n*** lookUp() function called ***");
