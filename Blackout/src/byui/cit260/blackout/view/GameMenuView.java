@@ -33,6 +33,7 @@ public class GameMenuView extends View {
                 + "\nT - Talk"
                 + "\nA - Antidote Amount Needed"
                 + "\nP - Phone"
+                + "\nD - Door Menu"
                 + "\nQ - Back to Main Menu"
                 + "\n-----------------------------------------------------------");
     }
@@ -55,7 +56,10 @@ public class GameMenuView extends View {
             case "E": //view examine
                 this.viewExamine();
                 break;
-            case "T": //view talk
+            case "D": //view door
+                this.viewDoor();
+                break;
+            case "T": //view briantalk
                 this.talk();
                 break;
             //updated by Mark 3/18/17
@@ -199,6 +203,14 @@ public class GameMenuView extends View {
         phonepassword.displayPhonePasswordView();
         //System.out.println(menu);
 
+    }
+
+    private void viewDoor() {
+        
+        DoorView doorView = new DoorView();
+        doorView.display();
+        
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
