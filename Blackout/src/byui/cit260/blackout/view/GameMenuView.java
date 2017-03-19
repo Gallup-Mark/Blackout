@@ -1,5 +1,6 @@
 package byui.cit260.blackout.view;
 
+import blackout.Blackout;
 import byui.cit260.blackout.control.GameControl;
 import byui.cit260.blackout.model.Map;
 import byui.cit260.blackout.control.MapControl;
@@ -86,7 +87,8 @@ public class GameMenuView extends View {
 
     private void viewMap() {
 
-        Location[][] locations = Map.getLocations();
+        Location[][] locations = Blackout.getCurrentGame().getMap().getLocations();
+        //Location[][] locations = Map.getLocations();
 
         //Map map = new Map(5, 5);
         String title = "    The Map, I'm the Map! \n";
