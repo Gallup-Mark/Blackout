@@ -92,7 +92,8 @@ public class ExamMenu extends View{
                 break;
            
             default :
-                System.out.println("\n*** Invalid selection. Please try again.***");
+                ErrorView.display(this.getClass().getName(), "*** Invalid selection. Please try again.***");
+                //System.out.println("\n*** Invalid selection. Please try again.***");
                 break;
         }
         return false;
@@ -106,7 +107,9 @@ public class ExamMenu extends View{
         try {
             itemIndex = parseInt(getInput("Enter Item List Number"));
        } catch(NumberFormatException e){
-           System.out.println("Invalid Value Entered");
+           ErrorView.display(this.getClass().getName(), "Invalid Value Entered");
+                
+           //System.out.println("Invalid Value Entered");
        }
         
         if(itemIndex >= 0){
@@ -118,19 +121,19 @@ public class ExamMenu extends View{
     }   
 
     private void lookUp() {
-        System.out.println("\n*** lookUp() function called ***");
+        this.console.println("\n*** lookUp() function called ***");
     }
 
     private void lookLeft() {
-        System.out.println("\n*** lookLeft() function called ***");
+        this.console.println("\n*** lookLeft() function called ***");
     }
 
     private void lookRight() {
-        System.out.println("\n*** lookRight() function called ***");
+        this.console.println("\n*** lookRight() function called ***");
     }
 
     private void lookDown() {
-        System.out.println("\n*** lookDown() function called ***");
+        this.console.println("\n*** lookDown() function called ***");
     } 
     
 }
