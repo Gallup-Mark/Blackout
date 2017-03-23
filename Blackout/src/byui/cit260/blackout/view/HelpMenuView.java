@@ -39,22 +39,22 @@ public class HelpMenuView extends View{
                     break;
                 
                 default :
-                    System.out.println("\n*** Invalid selection, try again");
+                    this.console.println("\n*** Invalid selection, try again");
                     break;
             }
             return false;
     }
 
     private void displayGoal() {
-        System.out.println("\n*** Figure out who you are and how much antidote you need to survive ***");
+        this.console.println("\n*** Figure out who you are and how much antidote you need to survive ***");
     }
 
     private void displayMoveOptions() {
-       System.out.println("\n*** Where do you want to go?***");
+       this.console.println("\n*** Where do you want to go?***");
     }
 
     private void displayClues() {
-        System.out.println("\n*** Gather clues to bring back your memory and find the antidote ***");
+        this.console.println("\n*** Gather clues to bring back your memory and find the antidote ***");
     }
 
     
