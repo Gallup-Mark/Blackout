@@ -68,19 +68,19 @@ public class SceneView extends View {
     }
     
     public void displayMapSymbol(){
-        System.out.println(getMapSymbol());
+        this.console.println(getMapSymbol());
         
     }
     
     public void displayNumbersOfItems(){
         
           
-        System.out.println(getNumItems());
+        this.console.println(getNumItems());
     }
     
     public void displayNonPlayers(){
         
-        System.out.println(getNonPlayers());
+        this.console.println(getNonPlayers());
         
     }
     @Override    
@@ -103,18 +103,21 @@ public boolean doAction(String choice) {
                 
                 
                 default :
-                    System.out.println("\n*** Invalid selection, try again");
+                    
+                    ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again");
+               
+                    //System.out.println("\n*** Invalid selection, try again");
                     break;
             }
             return false;
     }
 
     private void showItemNumber(){
-         System.out.println("\n"
+         this.console.println("\n"
                 + "\n----------------------------------------------------------"
                 + "\n | Number of Items"
                 + "\n----------------------------------------------------------"); 
-        System.out.println(getNumItems());
+        this.console.println(getNumItems());
         
        // System.out.println(menu);
         
@@ -123,21 +126,21 @@ public boolean doAction(String choice) {
     private void showNonPlayers(){
         
         
-        System.out.println("\n"
+        this.console.println("\n"
                 + "\n----------------------------------------------------------"
                 + "\n |Non Player"
                 + "\n----------------------------------------------------------");
-        System.out.println(getNonPlayers());
+        this.console.println(getNonPlayers());
          //System.out.println(menu);
     }
     
     private void showDescription(){
         
-        System.out.println("\n"
+        this.console.println("\n"
                 + "\n----------------------------------------------------------"
                 + "\n |Lcoation Description"
                 + "\n----------------------------------------------------------");
-        System.out.println(getDescription());
+        this.console.println(getDescription());
          //System.out.println(menu);
         
     }

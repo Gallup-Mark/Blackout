@@ -1,9 +1,15 @@
 
 package byui.cit260.blackout.view;
 
+import blackout.Blackout;
 import byui.cit260.blackout.control.GameControl;
 import byui.cit260.blackout.model.Player;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -12,6 +18,9 @@ import java.util.Scanner;
 public class StartProgramView {
     
     private String promptMessage;
+    
+    protected final BufferedReader keyboard = Blackout.getInFile();
+    protected final PrintWriter console = Blackout.getOutFile();
     
     public StartProgramView() {
             
@@ -25,7 +34,7 @@ public class StartProgramView {
     }
 
     private void displayBanner() {
-        System.out.println(
+        this.console.println(
                   "\n*********************************************************"
                 + "\n*                                                       *"
                 + "\n* Blackout is a text-based role playing mystery game,   *"
@@ -86,18 +95,25 @@ public class StartProgramView {
 
     private String getPlayersName() {
         
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        //Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; //value to be returned
         boolean valid = false; // intialize to not valid
         
         while (!valid) { // loop while an invalid va;lue is entered
-            System.out.println("\n" + this.promptMessage);
+            this.console.println("\n" + this.promptMessage);
             
-            value = keyboard.nextLine(); // get next line typed on keyboard
+            try {
+                value = keyboard.readLine(); // get next line typed on keyboard
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(), "Error Reading input: " +ex.getMessage());
+                //System.out.println("\n Error Reading Input: " + ex.getMessage());
+                //Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim(); // trim off leading and trailing blanks
             
             if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
+                
+                this.console.println("\nInvalid value: value can not be blank");
                 continue;
             }
             
@@ -115,7 +131,7 @@ public class StartProgramView {
     private boolean doAction(String playersName) {
         
         if (playersName.length() < 2) {
-            System.out.println("\nInvalid player name: " 
+            this.console.println("\nInvalid player name: " 
             + "The name must be greater than one charachter in length");
             return false;          
             
@@ -125,7 +141,7 @@ public class StartProgramView {
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null) { // if unsuccessful
-            System.out.println("\nError creating the player.");
+            this.console.println("\nError creating the player.");
             return false;
             
         }
@@ -137,7 +153,7 @@ public class StartProgramView {
     }
 
     private void displayNextView(Player player) {
-        System.out.println("\n===================="
+        this.console.println("\n===================="
         + "\n Welcome to the game " + player.getName()
         + "\n We hope you have a lot of fun!");
         

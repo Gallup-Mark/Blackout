@@ -35,7 +35,7 @@ public class StatsView extends View {
                 this.display();
                 break;
             default:
-                System.out.println("\n*** Invalid selection, try again");
+                this.console.println("\n*** Invalid selection, try again");
                     break;
         }
         
@@ -62,36 +62,36 @@ public class StatsView extends View {
     
     private void statistics() {
         
-        System.out.println("\nPercentage of Clues Found"
+        this.console.println("\nPercentage of Clues Found"
                            + "\n-------------------------");
         int percentOfClues = this.percentageOfClues();
-        System.out.println(percentOfClues);
+        this.console.println(percentOfClues);
         
         
-        System.out.println("\nNumber of Locations Visited"
+        this.console.println("\nNumber of Locations Visited"
                            + "\n---------------------------");
         int numLocationsVisited = this.numLocationsVisited();
-        System.out.println(numLocationsVisited);
+        this.console.println(numLocationsVisited);
         
         
-        System.out.println("\nTime Remaining to Find Antidote"
+        this.console.println("\nTime Remaining to Find Antidote"
                            + "\n-------------------------------");
         int timeRemaining = this.timeRemaining();
-        System.out.println(timeRemaining);
+        this.console.println(timeRemaining);
     }
 
     private int percentageOfClues() {
-        System.out.println("***percentageOfClues method called***");
+        this.console.println("***percentageOfClues method called***");
          return 1;
     }
     
     private int numLocationsVisited() {
-         System.out.println("***numLocationsVisited method called***");
+         this.console.println("***numLocationsVisited method called***");
          return 1;
     }
 
     private int timeRemaining() {
-         System.out.println("***timeRemaining method called***");
+         this.console.println("***timeRemaining method called***");
          return 1;
     }
 

@@ -1,6 +1,12 @@
 package byui.cit260.blackout.view;
 
+import blackout.Blackout;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -11,6 +17,9 @@ public abstract class View implements ViewInterface {
     //protected String displayMessage;
     protected String promptMessage = "\nPlease enter an option:";
     protected String menu;
+    
+    protected final BufferedReader keyboard = Blackout.getInFile();
+    protected final PrintWriter console = Blackout.getOutFile();
 
     public View(String theMenu) {
         this.menu = theMenu;
@@ -37,19 +46,27 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
 
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+       // Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; //value to be returned
         boolean valid = false; // intialize to not valid
 
         while (!valid) { // loop while an invalid va;lue is entered
-            System.out.println(menu);
-            System.out.println("\n" + this.promptMessage);
+            this.console.println(menu);
+            this.console.println("\n" + this.promptMessage);
 
-            value = keyboard.nextLine(); // get next line typed on keyboard
+            try {
+                value = this.keyboard.readLine();
+            } catch (IOException ex) {
+                 ErrorView.display(this.getClass().getName(), "Error Reading input: " +ex.getMessage());
+               
+                //System.out.println("\n Error Reading Input: " + ex.getMessage());
+                //Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            //value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks
 
             if (value.length() > 1) { // only one charachter
-                System.out.println("\nInvalid value: choose a correct value");
+                this.console.println("\nInvalid value: choose a correct value");
                 continue;
             }
 
@@ -61,19 +78,26 @@ public abstract class View implements ViewInterface {
     
     public String getInput(String message) {
 
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        //Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; //value to be returned
         boolean valid = false; // intialize to not valid
 
         while (!valid) { // loop while an invalid va;lue is entered
-            System.out.println(message);
+            this.console.println(message);
             //System.out.println("\n" + this.promptMessage);
-
-            value = keyboard.nextLine(); // get next line typed on keyboard
+            try {
+                value = keyboard.readLine(); // get next line typed on keyboard
+            } catch (IOException ex) {
+                 ErrorView.display(this.getClass().getName(), "Error Reading input: " +ex.getMessage());
+               
+                //System.out.println("\n Error Reading Input: " + ex.getMessage());
+                //Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim(); // trim off leading and trailing blanks
 
             if (value.length() < 1) { // only one charachter
-                System.out.println("\nInvalid value: choose a correct value");
+                 
+                this.console.println("\nInvalid value: choose a correct value");
                 continue;
             }
 

@@ -43,7 +43,7 @@ public class StreetMenuView extends View {
                 this.streetFive();
                 break;
             default:
-                System.out.println("\n*** Invalid selection, try again");
+                this.console.println("\n*** Invalid selection, try again");
                 break;
         }
         return false;
@@ -56,19 +56,19 @@ public class StreetMenuView extends View {
     }
 
     private void streetTwo() {
-        System.out.println("\n*** This takes you to Street Two ***");
+        this.console.println("\n*** This takes you to Street Two ***");
     }
 
     private void streetThree() {
-        System.out.println("\n*** This takes you to Street Three ***");
+        this.console.println("\n*** This takes you to Street Three ***");
     }
 
     private void streetFour() {
-        System.out.println("\n*** This takes you to Street Four ***");
+        this.console.println("\n*** This takes you to Street Four ***");
     }
 
     private void streetFive() {
-        System.out.println("\n*** This takes you to Street Five ***");
+        this.console.println("\n*** This takes you to Street Five ***");
     }
 
 }

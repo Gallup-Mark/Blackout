@@ -21,7 +21,7 @@ public class MainMenuView extends View {
                 + "\n----------------------------------------------------------"
                 + "\nN - New Game"
                 + "\nS - Save Game"
-                + "\nL - Load Game"
+                + "\nL - Load Saved Game"
                 + "\nH - Help Menu"
                 + "\nQ - Quit Game"
                 + "\n-----------------------------------------------------------");
@@ -68,11 +68,33 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame() function called ***");
+        //this.console.println("\n\nEnter the file path for file where the game is to be saved.");
+        //this.console.println("\n*** saveGame() function called ***");
+        String filePath = this.getInput("\n\nEnter the file path for file where the game is to be saved.");
+        try{
+            GameControl.saveGame(Blackout.getCurrentGame(), filePath);
+        } catch(Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
     }
 
     private void loadGame() {
-        System.out.println("\n*** loadGame() function called ***");
+        
+        //this.console.println("\n\nEnter the file path for the file where the game was saved.");
+        //this.console.println("\n*** loadGame() function called ***");
+        String filePath = this.getInput("\n\nEnter the file path for the file where the game was saved.");
+        
+        try {
+            
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void helpMenu() {
@@ -82,7 +104,7 @@ public class MainMenuView extends View {
     }
 
     private void quitGame() {
-        System.out.println("\n*** quitMenu() function called ***");
+        this.console.println("\n*** quitMenu() function called ***");
     }
     
 }

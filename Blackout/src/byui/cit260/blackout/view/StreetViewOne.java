@@ -22,7 +22,7 @@ public class StreetViewOne extends SceneView {
     @Override
     public void display() {
         boolean done = false; // set flag to not done
-        System.out.println(super.menu);
+        this.console.println(super.menu);
         do {
                 // prompt for and get players name
                 String value = this.getInput();
@@ -61,7 +61,7 @@ public class StreetViewOne extends SceneView {
                     break;    
                     
                 default :
-                    System.out.println("\n*** Invalid selection, try again");
+                    this.console.println("\n*** Invalid selection, try again");
                     break;
             }
             return false;

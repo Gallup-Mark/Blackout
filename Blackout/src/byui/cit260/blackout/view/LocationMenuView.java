@@ -62,6 +62,7 @@ public class LocationMenuView extends View {
                     break;
                 
                 default :
+                   
                     System.out.println("\n*** Invalid selection, try again");
                     break;
             }

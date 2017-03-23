@@ -85,30 +85,30 @@ public class TalkMenuView extends View {
                 this.quitMenu();
                 break;
             default :
-                System.out.println("\n*** Invalid selection. Please try again.***");
+                this.console.println("\n*** Invalid selection. Please try again.***");
                 break;
         }
         return false;
     }
 
     private void talk() {
-        System.out.println("\n*** talk() function called ***");
+        this.console.println("\n*** talk() function called ***");
     }
 
     private void yell() {
-        System.out.println("\n*** yell() function called ***");
+        this.console.println("\n*** yell() function called ***");
     }
 
     private void askQuestion() {
-        System.out.println("\n*** askQuestion() function called ***");
+        this.console.println("\n*** askQuestion() function called ***");
     }
 
     private void whisper() {
-        System.out.println("\n*** whisper() function called ***");
+        this.console.println("\n*** whisper() function called ***");
     }
 
     private void quitMenu() {
-        System.out.println("\n*** quitMenu() function called ***");
+        this.console.println("\n*** quitMenu() function called ***");
     } 
     
 }
