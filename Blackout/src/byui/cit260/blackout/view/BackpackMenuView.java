@@ -2,8 +2,11 @@
 package byui.cit260.blackout.view;
 
 import byui.cit260.blackout.control.BackPackControl;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -52,7 +55,9 @@ public class BackpackMenuView extends View {
                     break;
                 
                 default :
-                    System.out.println("\n*** Invalid selection, try again");
+                    //this.console.println("\n*** Invalid selection, try again");
+                    ErrorView.display(this.getClass().getName(), "Invalid input. Invalid selection, try again" );
+                
                     break;
             }
             return false;
@@ -93,7 +98,7 @@ public class BackpackMenuView extends View {
             //this displays the item lists
             //System.out.println(itemList);
             
-            System.out.println(displayMessage);
+            this.console.println(displayMessage);
 
         }
         
@@ -131,12 +136,12 @@ public class BackpackMenuView extends View {
             //this displays the item lists
             //System.out.println(itemList);
             
-            System.out.println(displayMessage);
+            this.console.println(displayMessage);
 
         }
         
         private String itemInputValue(){
-            Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+            //Scanner keyboard = new Scanner(System.in); // get infile for keyboard
             String value = ""; //value to be returned
             boolean valid = false; // intialize to not valid
         
@@ -146,13 +151,22 @@ public class BackpackMenuView extends View {
                 + "\n----------------------------------------------------------";
             
             while (!valid) { // loop while an invalid va;lue is entered
-                System.out.println("\n" + displayMessage);
+                this.console.println("\n" + displayMessage);
             
-                value = keyboard.nextLine(); // get next line typed on keyboard
+                try {
+                    value = keyboard.readLine(); // get next line typed on keyboard
+                } catch (IOException ex) {
+                    //System.out.println("\n Error Reading Input: " + ex.getMessage());
+                    ErrorView.display(this.getClass().getName(), "Error Reading Input: " + ex.getMessage());
+                
+                    //Logger.getLogger(BackpackMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 value = value.trim(); // trim off leading and trailing blanks
             
                 if (value.length() < 1) { // only one charachter
-                    System.out.println("\nInvalid Item Name Please enter Longer Item Name");
+                    //System.out.println("\nInvalid Item Name Please enter Longer Item Name");
+                    ErrorView.display(this.getClass().getName(), "Invalid Item Name Please enter Longer Item Name ");
+                
                     continue;
                 }
             
@@ -166,7 +180,7 @@ public class BackpackMenuView extends View {
         private void addItemToBackPack(String itemName){
             
             BackPackControl.getItemList().push(itemName);
-            System.out.println("\n Added item "  + itemName + " to item List");
+            this.console.println("\n Added item "  + itemName + " to item List");
             
             
         }
@@ -174,7 +188,7 @@ public class BackpackMenuView extends View {
         private void addClueToBackPack(String clueName){
             
             BackPackControl.getClueList().push(clueName);
-            System.out.println("\n Added item "  + clueName + " to item List");
+            this.console.println("\n Added item "  + clueName + " to item List");
             
             
         }
