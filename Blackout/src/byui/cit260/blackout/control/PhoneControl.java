@@ -15,9 +15,9 @@ import byui.cit260.blackout.model.PhoneMessage;
  */
 public class PhoneControl {
     
-    private static String messageBanner;
-    private static final int NUM_MESSAGES = PhoneControl.createMessageList().length;
-    private static PhoneMessage[] messageList;
+//    private static String messageBanner;
+//    private static final int NUM_MESSAGES = PhoneControl.createMessageList().length;
+//    private static PhoneMessage[] messageList;
     
     public static int callPassword(int firstLetter, int secondLetter, int thirdLetter, int fourthLetter) throws PhoneControlException {
     
@@ -151,23 +151,23 @@ public class PhoneControl {
         
     }
     
-        public static PhoneMessage[] displayMessages() {
-        PhoneControl.messageBanner = "\n----------------------------------------------------"
-            + "\nYour have " + NUM_MESSAGES + " messages"
-            +"\n---------------------------------------------------";
-        
-        System.out.println(messageBanner);
-        
-        messageList = PhoneControl.createMessageList();
-        
-        
-        for(PhoneMessage message: messageList) {
-            
-            System.out.println(message);
-        }
-        
-        return messageList;
-        }
+//        public static PhoneMessage[] displayMessages() {
+//        PhoneControl.messageBanner = "\n----------------------------------------------------"
+//            + "\nYour have " + NUM_MESSAGES + " messages"
+//            +"\n---------------------------------------------------";
+//        
+//        System.out.println(messageBanner);
+//        
+//        messageList = PhoneControl.createMessageList();
+//        
+//        
+//        for(PhoneMessage message: messageList) {
+//            
+//            System.out.println(message);
+//        }
+//        
+//        return messageList;
+//        }
 
 
 }

@@ -29,6 +29,8 @@ public class PhonePasswordView {
     private final String promptMessage3 = "Please enter another value from 0 to 9:";
     private int password;
     private int phonePassword;
+    private static String messageBanner;
+    private static final int NUM_MESSAGES = PhoneControl.createMessageList().length;
     private PhoneMessage[] messageList;
     
     protected final BufferedReader keyboard = Blackout.getInFile();
@@ -38,6 +40,9 @@ public class PhonePasswordView {
 //    private String messageBanner;
 //    private final int numMessages = PhoneControl.createMessageList().length;
 //    private PhoneMessage[] messageList;
+    
+    
+    
 
     public PhonePasswordView() {
         this.banner = "\n"
@@ -360,7 +365,9 @@ public class PhonePasswordView {
         if (password == phonePassword) {
             this.console.println("The password is correct"
                     + "\n You may now read your messages");
-            messageList = PhoneControl.displayMessages();
+//            messageList = PhoneControl.displayMessages();
+//              messageList = this.displayMessages();
+            this.displayMessages();
             //return for use when other code is finished
             //return true;
         } else {
@@ -369,6 +376,24 @@ public class PhonePasswordView {
             //return false;
         }
     }
+    
+    public PhoneMessage[] displayMessages() {
+        PhonePasswordView.messageBanner = "\n----------------------------------------------------"
+            + "\nYour have " + NUM_MESSAGES + " messages"
+            +"\n---------------------------------------------------";
+        
+        this.console.println(messageBanner);
+        
+        messageList = PhoneControl.createMessageList();
+        
+        
+        for(PhoneMessage message: messageList) {
+            
+            this.console.println(message);
+        }
+        
+        return messageList;
+        }
 
 //    private void displayMessagesView() {
 //        
