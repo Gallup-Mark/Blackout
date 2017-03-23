@@ -69,7 +69,8 @@ public class PhonePasswordView {
         try {
             secondLetter = this.getSecondLetter();
         } catch (PhoneControlException ex) {
-            System.out.println(ex.getMessage());
+            //System.out.println(ex.getMessage());
+            ErrorView.display(this.getClass().getName(), "*** Invalid Value Entered" + ex.getMessage());
             return;
         } catch (Throwable te) {
             ErrorView.display(this.getClass().getName(), "*** Invalid Value Entered" + te.getMessage());
@@ -177,7 +178,7 @@ public class PhonePasswordView {
             if (number < 0) {
                 ErrorView.display(this.getClass().getName(), "Invalid value: Choose a correct value ");
             
-                System.out.println("\nInvalid value: Choose a correct value");
+                //System.out.println("\nInvalid value: Choose a correct value");
                 continue;
             }
             break;
@@ -215,14 +216,15 @@ public class PhonePasswordView {
             try {
                 value = keyboard.readLine();
             } catch (IOException ex) {
-                System.out.println("\n Error Reading Input: " + ex.getMessage());
+                //System.out.println("\n Error Reading Input: " + ex.getMessage());
+                ErrorView.display(this.getClass().getName(), "\n Error Reading Input: " + ex.getMessage());
                 //Logger.getLogger(PhonePasswordView.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             try {
                 number = parseInt(value);
             } catch (NumberFormatException nf) {
-                ErrorView.display(this.getClass().getName(), "Invalid input. Please enter a number between 0 and 9 inclusive ");
+                ErrorView.display(this.getClass().getName(), "Invalid input. Please enter a number between 0 and 9 inclusive " + nf.getMessage());
             
                 //System.out.println("\nInvalid input. Please enter a number between 0 and 9 inclusive:");
                 continue;

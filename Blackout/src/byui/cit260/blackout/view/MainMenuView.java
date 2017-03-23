@@ -51,7 +51,7 @@ public class MainMenuView extends View {
                     this.quitGame();
                     break;
                 default :
-                    System.out.println("\n*** Invalid selection, try again");
+                    this.console.println("\n*** Invalid selection, try again");
                     break;
             }
             return false;

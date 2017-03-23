@@ -63,7 +63,7 @@ public class LocationMenuView extends View {
                 
                 default :
                    
-                    System.out.println("\n*** Invalid selection, try again");
+                    this.console.println("\n*** Invalid selection, try again");
                     break;
             }
             return false;
