@@ -5,6 +5,7 @@ import byui.cit260.blackout.control.DoorUnLockControl;
 import byui.cit260.blackout.exceptions.DoorControlException;
 import byui.cit260.blackout.exceptions.DoorUnLockControlException;
 import byui.cit260.blackout.model.Player;
+import java.io.IOException;
 import static java.lang.Integer.parseInt;
 //import java.text.ParseException;
 import java.util.Scanner;
@@ -42,7 +43,9 @@ public class DoorView extends View {
                     this.displayKick();
                 } catch (DoorControlException ex) {
                     //Logger.getLogger(DoorView.class.getName()).log(Level.SEVERE, null, ex);
-                    System.out.println("\nYou must enter a valid number. Try again or enter Q to quit.");
+                    //System.out.println("\nYou must enter a valid number. Try again or enter Q to quit.");
+                    ErrorView.display(this.getClass().getName(), "You must enter a valid number. Try again or enter Q to quit. : " + ex.getMessage());
+                
                 }
             }
             break;
@@ -50,8 +53,11 @@ public class DoorView extends View {
             try {
                 // display Unlock
                 this.displayUnlock();
-            } catch (DoorUnLockControlException ex) {
-                System.out.println(ex);
+            } catch (DoorUnLockControlException e) {
+                
+                ErrorView.display(this.getClass().getName(), "You must enter a valid number. Try again or enter Q to quit. : " + e.getMessage());
+                
+                //System.out.println(ex);
                 
                 //Logger.getLogger(DoorView.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -59,7 +65,10 @@ public class DoorView extends View {
                 break;
 
             default:
-                System.out.println("\n*** Invalid selection, try again");
+                
+                //System.out.println("\n*** Invalid selection, try again");
+                ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again " );
+                
                 break;
         }
         return false;
@@ -87,46 +96,57 @@ public class DoorView extends View {
             keyCode = parseInt(getInput("Enter Keycode"));
             
          } catch (NumberFormatException nf) {
-                System.out.println("You must enter a valid number ");
+                //System.out.println("You must enter a valid number ");
+                ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again " + nf.getMessage());
                 
          }
          try {
                 playLbs = Double.parseDouble(getInput("Enter Player lbs"));
          } catch (NumberFormatException e){
              
-             System.out.println("You must enter a valid number ");
+             //System.out.println("You must enter a valid number ");
+             ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again " + e.getMessage());
+                
          }
          
          try {
               doorNo = parseInt(getInput("Enter Door Number"));
          } catch (NumberFormatException e2) {
-             System.out.println("You must enter a valid number ");
+             //System.out.println("You must enter a valid number ");
+             ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again " + e2.getMessage());
+                
          }
          
          double unlock = DoorUnLockControl.unLockDoorWithCode(keyCode, playLbs, doorNo);
          if(unlock == 0){
-             System.out.println("You Did No Unlock the door");
+             this.console.println("You Did Not Unlock the door");
          } else {
-             System.out.println("You Unlocked the Door");
+             this.console.println("You Unlocked the Door");
          }
         
-        
+       
         //System.out.println("\n*** displayUnlock stub function called ***");
     }
 
     public void kickDoorInput() throws DoorControlException {
 
         
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        //Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         double value = 0; //value to be returned
         boolean valid = false; // intialize to not valid
         String inputValue = "";
 
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("Enter player weight in pounds:");
+            this.console.println("Enter player weight in pounds:");
             //System.out.println("\n" + this.promptMessage);
-
-            inputValue = keyboard.nextLine(); // get next line typed on keyboard
+            try {
+                inputValue = keyboard.readLine(); // get next line typed on keyboard
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(), "Error Reading Input: " + ex.getMessage());
+                
+                //System.out.println("\n Error Reading Input: " + ex.getMessage());
+                //Logger.getLogger(DoorView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             inputValue = inputValue.trim(); // trim off leading and trailing blanks
 
             try {
@@ -136,19 +156,28 @@ public class DoorView extends View {
                     break;  // end the loop
                 }
             } catch (NumberFormatException nf) {
-                System.out.println("You must enter a valid number dork");
+                ErrorView.display(this.getClass().getName(), "You must enter a valid number dork " );
+                
+               // System.out.println("You must enter a valid number dork");
             }
 
         }
         Player.setWeight(value);
-        System.out.println("Enter player force");
+        this.console.println("Enter player force");
         inputValue = "";
         valid = false;
-        while (!valid) { // loop while an invalid va;lue is entered
+        while (!valid) { try {
+            // loop while an invalid va;lue is entered
             //System.out.println(menu);
             //System.out.println("\n" + this.promptMessage);
 
-            inputValue = keyboard.nextLine(); // get next line typed on keyboard
+            inputValue = keyboard.readLine(); // get next line typed on keyboard
+            } catch (IOException ex) {
+                
+                ErrorView.display(this.getClass().getName(), "Error Reading Input: " + ex.getMessage());
+                //System.out.println("\n Error Reading Input: " + ex.getMessage());
+                //Logger.getLogger(DoorView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             inputValue = inputValue.trim(); // trim off leading and trailing blanks
 
             try {
@@ -159,7 +188,8 @@ public class DoorView extends View {
                 }
 
             } catch (NumberFormatException nf) {
-                System.out.println("You must enter a valid number dork");
+                //System.out.println("You must enter a valid number dork");
+                ErrorView.display(this.getClass().getName(), "You must enter a valid number dork " + nf.getMessage());
             }
 
         }
