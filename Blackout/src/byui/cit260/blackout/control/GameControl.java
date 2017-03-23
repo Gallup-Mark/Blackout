@@ -1,6 +1,7 @@
 package byui.cit260.blackout.control;
 
 import blackout.Blackout;
+import byui.cit260.blackout.exceptions.GameControlExceptions;
 import byui.cit260.blackout.model.Backpack;
 import byui.cit260.blackout.model.Game;
 import byui.cit260.blackout.model.Item;
@@ -11,6 +12,10 @@ import byui.cit260.blackout.model.Phone;
 import byui.cit260.blackout.model.Player;
 import byui.cit260.blackout.model.Scene;
 import byui.cit260.blackout.model.SceneType;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -123,6 +128,39 @@ public class GameControl {
         locations[4][2].setScene(scenes[SceneType.hospitalThree.ordinal()]);
         locations[4][3].setScene(scenes[SceneType.hospitalFour.ordinal()]);
         locations[4][4].setScene(scenes[SceneType.hospitalFive.ordinal()]);
+    }
+
+    public static void saveGame(Game game, String filepath) throws GameControlExceptions{
+        
+        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }
+        
+        catch(Exception e){
+            throw new GameControlExceptions(e.getMessage());
+        }
+        
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void getSavedGame(String filePath) throws GameControlExceptions{
+        
+        Game game = null;
+        
+        try ( FileInputStream fips = new FileInputStream(filePath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        }
+        
+        catch(Exception e){
+            throw new GameControlExceptions(e.getMessage());
+        }
+        
+        Blackout.setCurrentGame(game);
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
