@@ -68,7 +68,8 @@ public class GameMenuView extends View {
                 //Amount of Antidote
                 this.viewAntidoteAmount();
             } catch (AntidoteControlException ex) {
-               System.out.println("\nInvalid input. Please enter a valid letter");
+               //System.out.println("\nInvalid input. Please enter a valid letter");
+               ErrorView.display(this.getClass().getName(), "Invalid Value Entered" + ex.getMessage());
             }
         }
                 break;
@@ -79,7 +80,8 @@ public class GameMenuView extends View {
                 this.viewPhonePassword();
                 break;
             default:
-                System.out.println("\n*** Invalid selection, try again");
+                //ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again");
+                this.console.println("\n*** Invalid selection, try again");
                 break;
         }
         return false;
@@ -102,18 +104,22 @@ public class GameMenuView extends View {
        try {
              x = parseInt(getInput("Enter X value on Map"));
        } catch(NumberFormatException e){
-           System.out.println("Invalid Value entered");
+           ErrorView.display(this.getClass().getName(), "*** Invalid Value Entered" + e.getMessage());
+           //System.out.println("Invalid Value entered");
         
         }
        try {
             y = parseInt(getInput("Enter Y value on Map"));
        } catch(NumberFormatException e){
-           System.out.println("Invalid Value Entered");
+           ErrorView.display(this.getClass().getName(), "*** Invalid Value Entered" + e.getMessage());
+           
+           //System.out.println("Invalid Value Entered");
        }
        if(x >= 0 && y >= 0){
             MapControl.movePlayer(Blackout.getCurrentGame().getMap(), x, y);
        } else {
-           System.out.println("Cannot Move to invalid location");
+           
+           this.console.println("Cannot Move to invalid location");
        }
     }
 
@@ -126,7 +132,7 @@ public class GameMenuView extends View {
         String title = "    The Map, I'm the Map! \n";
         String rowDivider = "---------------------------";
         String columnDivider = "|";
-        System.out.println("" + title);
+        this.console.println("" + title);
 
         String linePrintout = " ";
         for (int i = 0; i < 5; i++) {
@@ -135,8 +141,8 @@ public class GameMenuView extends View {
 
         }
 
-        System.out.println(linePrintout);
-        System.out.println(rowDivider);
+        this.console.println(linePrintout);
+        this.console.println(rowDivider);
 
         for (int i = 0; i < 5; i++) {
 
@@ -157,8 +163,8 @@ public class GameMenuView extends View {
                 // System.out.println(linePrintout);
             }
 
-            System.out.println(linePrintout);
-            System.out.println(rowDivider);
+            this.console.println(linePrintout);
+            this.console.println(rowDivider);
             //System.out.println("\n");
         }
     }
@@ -193,7 +199,7 @@ public class GameMenuView extends View {
     private void viewAntidoteAmount() throws AntidoteControlException {
         AntidoteView antidoteView = new AntidoteView();
         antidoteView.displayAntidoteView();
-        System.out.println(menu);
+        this.console.println(menu);
 
         //System.out.println("\n*** viewAntidoteAmount() function called ***");
     }
