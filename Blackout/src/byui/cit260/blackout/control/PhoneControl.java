@@ -127,6 +127,21 @@ public class PhoneControl {
         message3.setMessage("Hey man. I have your wallet.  Your forgot it here after the game");
         messageList[MessageList.message3.ordinal()] = message3; 
         
+//        PhoneMessage message4 = new PhoneMessage();
+//        message4.setFrom("Wife");
+//        message4.setMessage("I love you");
+//        messageList[MessageList.message4.ordinal()] = message4; 
+//        
+//        PhoneMessage message5 = new PhoneMessage();
+//        message5.setFrom("Wife");
+//        message5.setMessage("Where are you I am worried");
+//        messageList[MessageList.message5.ordinal()] = message5; 
+//        
+//        PhoneMessage message6 = new PhoneMessage();
+//        message6.setFrom("Wife");
+//        message6.setMessage("I have put in a missing person report for you. I am so worried about you");
+//        messageList[MessageList.message6.ordinal()] = message6; 
+        
         
         
 //        PhoneControl.messageBanner = "\n----------------------------------------------------"

@@ -1,12 +1,19 @@
 package byui.cit260.blackout.view;
 
 import blackout.Blackout;
+import static blackout.Blackout.outFile;
 import byui.cit260.blackout.control.GameControl;
 import byui.cit260.blackout.model.Map;
 import byui.cit260.blackout.control.MapControl;
+import byui.cit260.blackout.control.PhoneControl;
 import byui.cit260.blackout.exceptions.AntidoteControlException;
+import byui.cit260.blackout.exceptions.GameControlExceptions;
 import byui.cit260.blackout.model.Game;
 import byui.cit260.blackout.model.Location;
+import byui.cit260.blackout.model.PhoneMessage;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -33,6 +40,7 @@ public class GameMenuView extends View {
                 + "\nT - Talk"
                 + "\nA - Antidote Amount Needed"
                 + "\nP - Phone"
+                + "\nC - Phone Message Report"
                 + "\nD - Door Menu"
                 + "\nQ - Back to Main Menu"
                 + "\n-----------------------------------------------------------");
@@ -78,6 +86,15 @@ public class GameMenuView extends View {
                 break;
             case "P": //PhonePasswordView
                 this.viewPhonePassword();
+                break;
+            case "C": {
+            try {
+                //Phone message report
+                this.phoneMessageReport();
+            } catch (GameControlExceptions ex) {
+                ErrorView.display(this.getClass().getName(), "Error creating report" + ex.getMessage());
+            }
+        }
                 break;
             default:
                 //ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again");
@@ -219,4 +236,41 @@ public class GameMenuView extends View {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-}
+    private void phoneMessageReport() throws GameControlExceptions {
+        
+        
+//        this.console.println("\nPlease enter a file name to save your report:");
+
+        String filePath = this.getInput("\n\nEnter the file you want to save the report to: ");
+        PhoneMessage[] messageList = PhoneControl.createMessageList();
+        
+        
+        try (PrintWriter out = new PrintWriter(filePath)) {
+            
+            out.println("\n\n                             Phone Messages                       ");
+            out.printf("%n%-10s%30s", "From", "Message");
+            out.printf("%n%-10s%30s", "----", "-------");
+            
+            for(PhoneMessage message: messageList) {
+            
+                out.printf("%n%-10s%30s", message.getFrom()
+                                        , message.getMessage());
+            }
+//            GameControl.saveGame(Blackout.getCurrentGame(), filePath);
+        } catch(IOException ex){
+            ErrorView.display(this.getClass().getName(), "Error generating report: " + ex.getMessage());
+//        } finally {
+//            if (out != null) {
+//                try {
+//                    out.close();
+//                } catch (IOException ex2) {
+//                    ErrorView.display(this.getClass().getName(), "Error closing report: " + ex2.getMessage());
+//                }
+            }
+        this.console.println("Your " + filePath + " report was successfully generated!");
+        
+        }
+        
+    }
+        
+
