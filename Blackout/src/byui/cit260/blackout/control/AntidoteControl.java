@@ -80,21 +80,21 @@ public class AntidoteControl {
 
     }
 
-    public static AntidoteMessage[] displayMessages() {
-        AntidoteMessage.messageBanner = "\n----------------------------------------------------"
-                + "\nYour have " + NUM_MESSAGES + " messages"
-                + "\n---------------------------------------------------";
-
-        System.out.println(messageBanner);
-
-        messageList = AntidoteControl.createMessageList();
-
-        for (AntidoteMessage message : messageList) {
-
-            System.out.println(message);
-        }
-
-        return messageList;
-    }
+//    public static AntidoteMessage[] displayMessages() {
+//        AntidoteMessage.messageBanner = "\n----------------------------------------------------"
+//                + "\nYour have " + NUM_MESSAGES + " messages"
+//                + "\n---------------------------------------------------";
+//
+//        System.out.println(messageBanner);
+//
+//        messageList = AntidoteControl.createMessageList();
+//
+//        for (AntidoteMessage message : messageList) {
+//
+//            System.out.println(message);
+//        }
+//
+//        return messageList;
+//    }
 
 }

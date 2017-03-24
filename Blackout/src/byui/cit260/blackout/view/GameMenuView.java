@@ -215,8 +215,9 @@ public class GameMenuView extends View {
     //  }
     private void viewAntidoteAmount() throws AntidoteControlException {
         AntidoteView antidoteView = new AntidoteView();
-        antidoteView.displayAntidoteView();
-        this.console.println(menu);
+        antidoteView.display();
+        //antidoteView.displayAntidoteView();
+        //this.console.println(menu);
 
         //System.out.println("\n*** viewAntidoteAmount() function called ***");
     }
