@@ -2,11 +2,17 @@
 package byui.cit260.blackout.view;
 
 import byui.cit260.blackout.control.BackPackControl;
+import byui.cit260.blackout.model.Item;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.Stack;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 
 /**
  *
@@ -28,6 +34,7 @@ public class BackpackMenuView extends View {
                 + "\nC - Show Clue List"
                 + "\nA - Add Item to Backpack"
                 + "\nD - Add Clue to Clue List"
+                + "\nP - Print report of items added to Backpack to .txt  file" //added by Mark 3-24-17
                 + "\nQ - Return to Game Menu"
                 + "\n-----------------------------------------------------------");
     }
@@ -53,6 +60,11 @@ public class BackpackMenuView extends View {
                 case "D" : //add clue to list
                     addClueToBackPack(itemInputValue());
                     break;
+                   //added by Mark 3-24-17
+                    case "P" : //Print a report to file
+                    printTofFile();
+                    break;
+                    
                 
                 default :
                     //this.console.println("\n*** Invalid selection, try again");
@@ -192,6 +204,34 @@ public class BackpackMenuView extends View {
             
             
         }
+
+    // added by Mark on 3-24-84
+        private void printTofFile() {
+        PrintWriter output = null;
+        this.console.println("Enter the file path as a .txt file");
+        
+        try {
+            String path = keyboard.readLine();
+            output = new PrintWriter(path);
+            Object[] items = BackPackControl.getItemList().toArray();
+            String newLine = System.getProperty("line.separator"); //from my tutor instead of using \n
+            String header = "----- List of Backpack Items you added ------" + newLine + "Name" + newLine;
+                    
+            for (int i=0; i<items.length; i++) {
+                 header += items[i].toString() + newLine;
+                
+            }
+            output.println(header);
+            this.console.println("Your file was saved successfully as: " + path);
+            
+            output.close();
+            
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "Error generating report: " + ex.getMessage());
+        
+        }
+        
+    }
     
     
 }
