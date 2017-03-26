@@ -15,6 +15,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.Integer.parseInt;
+import java.util.Calendar;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -291,12 +292,16 @@ public class GameMenuView extends View {
    
         
         try (PrintWriter out = new PrintWriter(filePath)) {
-
+            
+            int noVisited = 0;
+            Calendar cal = Calendar.getInstance();
             Location[][] locations = Blackout.getCurrentGame().getMap().getLocations();
             
-           out.println("\n\n Map information List ");
-           out.printf("\n*********************************************************");
-           out.printf("\n%1s%3s%13s%9s%15s", "x", "y", "Map Symbol", "Visited", "Description");
+           out.printf("\nMap information List ");
+           out.printf("\n");
+           out.printf("%tc", cal);
+           out.printf("\n******************************************************************************************");
+           out.printf("\n%-1s%49s%7s%14s%9s","Description", "x", "y", "Map Symbol", "Visited");
             
             //go through each locaiton on the map and get the info
             for(int i = 0; i < 5; i++) {
@@ -305,6 +310,7 @@ public class GameMenuView extends View {
                     String hasVisited = "No";
                     if(locations[i][ii].isVisited()){
                         hasVisited = "Yes";
+                        noVisited++;
                     }
                     out.printf("\n");
                     out.printf("%-1s" ,locations[i][ii].getScene().getDescription());
@@ -313,14 +319,18 @@ public class GameMenuView extends View {
                     int w = locations[i][ii].getScene().getDescription().length();
                     int space = 60 - w;
                     
-                    out.printf("%" + space + "s" + "%7s%7s%7s", i, ii, locations[i][ii].getScene().getMapSymbol(),hasVisited);
+                    out.printf("%" + space + "s" + "%7s%7s%12s", i, ii, locations[i][ii].getScene().getMapSymbol(),hasVisited);
                     
                    // out.printf("%1s%3s%6s%11s", i, i,  locations[i][ii].getScene().getMapSymbol(), hasVisited);
 
                 }
                   
             }
-            out.printf("\n*********************************************************");
+            out.printf("\n******************************************************************************************");
+           
+            out.printf("\n");
+            out.printf("%-1s%5s%5s", "You have Visited :", String.valueOf(noVisited), " Locations");
+            
                 this.console.println("Good Job, Your " + filePath + " report was generated!");
 //              
 //            GameControl.saveGame(Blackout.getCurrentGame(), filePath);
