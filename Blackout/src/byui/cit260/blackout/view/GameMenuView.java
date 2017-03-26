@@ -34,6 +34,7 @@ public class GameMenuView extends View {
                 + "\n----------------------------------------------------------"
                 + "\nM - Move to New Location"
                 + "\nV - View Map"
+                + "\nF - Save Map Report"
                 + "\nS - Status"
                 + "\nB - Backpack Menu"
                 + "\nE - Examine"
@@ -66,6 +67,15 @@ public class GameMenuView extends View {
                 break;
             case "D": //view door
                 this.viewDoor();
+                break;
+            case "F": {
+            try {
+                    //map report list
+                    this.runMapReport();
+                 } catch (GameControlExceptions ex) {
+                    Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
                 break;
             case "T": //view briantalk
                 this.talk();
@@ -143,7 +153,7 @@ public class GameMenuView extends View {
     private void viewMap() {
 
         Location[][] locations = Blackout.getCurrentGame().getMap().getLocations();
-        //Location[][] locations = Map.getLocations();
+        
 
         //Map map = new Map(5, 5);
         String title = "    The Map, I'm the Map! \n";
@@ -169,7 +179,7 @@ public class GameMenuView extends View {
 
                 //shows if the location has been visited or not
                 if (locations[i][ii].isVisited()) {
-                    linePrintout = linePrintout + locations[i][i].getScene().getMapSymbol() + "  ";
+                    linePrintout = linePrintout + locations[i][ii].getScene().getMapSymbol() + "  ";
 
                 } else {
 
@@ -271,6 +281,57 @@ public class GameMenuView extends View {
         this.console.println("Your " + filePath + " report was successfully generated!");
         
         }
+
+    private void runMapReport() throws GameControlExceptions {
+        
+        
+//        this.console.println("\nPlease enter a file name to save your report:");
+
+        String filePath = this.getInput("\n\nEnter the file name for the report: ");
+   
+        
+        try (PrintWriter out = new PrintWriter(filePath)) {
+
+            Location[][] locations = Blackout.getCurrentGame().getMap().getLocations();
+            
+           out.println("\n\n Map information List ");
+           out.printf("\n*********************************************************");
+           out.printf("\n%1s%3s%13s%9s%15s", "x", "y", "Map Symbol", "Visited", "Description");
+            
+            //go through each locaiton on the map and get the info
+            for(int i = 0; i < 5; i++) {
+                for(int ii = 0; ii < 5; ii++){
+   
+                    String hasVisited = "No";
+                    if(locations[i][ii].isVisited()){
+                        hasVisited = "Yes";
+                    }
+                    out.printf("\n");
+                    out.printf("%-1s" ,locations[i][ii].getScene().getDescription());
+                    //get the width o the description
+                    
+                    int w = locations[i][ii].getScene().getDescription().length();
+                    int space = 60 - w;
+                    
+                    out.printf("%" + space + "s" + "%7s%7s%7s", i, ii, locations[i][ii].getScene().getMapSymbol(),hasVisited);
+                    
+                   // out.printf("%1s%3s%6s%11s", i, i,  locations[i][ii].getScene().getMapSymbol(), hasVisited);
+
+                }
+                  
+            }
+            out.printf("\n*********************************************************");
+                this.console.println("Good Job, Your " + filePath + " report was generated!");
+//              
+//            GameControl.saveGame(Blackout.getCurrentGame(), filePath);
+            } catch(IOException ex){
+                ErrorView.display(this.getClass().getName(), "Error generating report: " + ex.getMessage());
+//      
+            }
+        
+        
+        }
+
         
     }
         
