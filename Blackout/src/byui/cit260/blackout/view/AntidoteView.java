@@ -15,9 +15,75 @@ public class AntidoteView extends View{
     
     private final String promptMessage = "\nPlease enter your weight in pounds";
     private final String promptMessage2 = "\nPlease enter the number of pills to ingest";
-    private final String promptMessage3 = "\nYou took the correct amount of antidote, Continue the game";
+    private final String promptMessage3 = "\nYou took the correct amount of antidote!  You have now won the game!!!"
+            + "\nCongratulations!  Your memory comes back and you live a long happy life!"
+            + "\n"
+            + "\n             .#############. \n" +
+"          .###################. \n" +
+"       .####%####################.,::;;;;;;;;;;, \n" +
+"      .####%###############%######:::;;;;;;;;;;;;;, \n" +
+"      ####%%################%######:::;;;;;;;;@;;;;;;, \n" +
+"      ####%%################%%#####:::;;;;;;;;;@;;;;;;, \n" +
+"      ####%%################%%#####:::;;;;;;;;;@@;;;;;; \n" +
+"      `####%################%#####:::;;;;;;;;;;@@;;;;;; \n" +
+"        `###%##############%####:::;;;;;;;;;;;;@@;;;;;; \n" +
+"           `#################'::%%%%%%%%%%%%;;;@;;;;;;' \n" +
+"             `#############'.%%%%%%%%%%%%%%%%%%;;;;;' \n" +
+"               `#########'%%%%#%%%%%%%%%%%%%%%%%%%, \n" +
+"                 `#####'.%%%%#%%%%%%%%%%%%%%#%%%%%%, \n" +
+"                   `##' %%%%##%%%%%%%%%%%%%%%##%%%%% \n" +
+"                   ###  %%%%##%%%%%%%%%%%%%%%##%%%%% \n" +
+"                    '   %%%%##%%%%%%%%%%%%%%%##%%%%% \n" +
+"                   '    `%%%%#%%%%%%%%%%%%%%%#%%%%%' \n" +
+"                  '       `%%%#%%%%%%%%%%%%%#%%%%' \n" +
+"                  `         `%%%%%%%%%%%%%%%%%%' \n" +
+"                   `          `%%%%%%%%%%%%%%' \n" +
+"                    `           `%%%%%%%%%%'  ' \n" +
+"                     '            `%%%%%%'   ' \n" +
+"                    '              `%%%'    ' \n" +
+"                   '               .%%      ` \n" +
+"                  `                %%%       ' \n" +
+"                   `                '       ' \n" +
+"                    `              '      ' \n" +
+"                    '            '      ' \n" +
+"                   '           '       ` \n" +
+"                  '           '        ' \n" +
+"                              `       ' \n" +
+"                               ' \n" +
+"                              ' \n" +
+"                             ' \n" +
+"\n" +
+"\n" +
+"a@@@@@@@@a  a@@@@@@a  a@@@@@@@a a@@@@@@@@a a@@a.  .a@@a  a@@a \n" +
+"@@@@  @@@@ @@@@  @@@@ @@@@  @@@ @@@@@@@@@@ @@@@a  a@@@@  @@@@ \n" +
+"@@@@  @@@@ @@@@  @@@@ @@@@  @@@    @@@@    `@@@@  @@@@'  @@@@ \n" +
+"@@@@@@@@@@ @@@@@@@@@@ @@@@@@@@'    @@@@      `@@@@@@'    @@@@ \n" +
+"@@@@@@@@@' @@@@@@@@@@ @@@@@@@@a    @@@@        @@@@      `@@' \n" +
+"@@@@       @@@@  @@@@ @@@@ @@@@    @@@@        @@@@ \n" +
+"@@@@       @@@@  @@@@ @@@@ @@@@    @@@@        @@@@       @@";
     private final String promptMessage4 = "\nYou took too many pills. You are dead! Game Over!";
-    private final String promptMessage5 = "\nYou took the wrong amount of pills.  You are dead! Game over";
+    private final String promptMessage5 = "\nYou took the wrong amount of pills.  You are dead! Game over"
+            + "\n"
+            + "                  _  /)\n" +
+"                 mo / )\n" +
+"                 |/)\\)\n" +
+"                  /\\_\n" +
+"                  \\__|=\n" +
+"                 (    )\n" +
+"                 __)(__\n" +
+"           _____/      \\\\_____\n" +
+"          |  _     ___   _   ||\n" +
+"          | | \\     |   | \\  ||\n" +
+"          | |  |    |   |  | ||\n" +
+"          | |_/     |   |_/  ||\n" +
+"          | | \\     |   |    ||\n" +
+"          | |  \\    |   |    ||\n" +
+"          | |   \\. _|_. | .  ||\n" +
+"          |                  ||\n" +
+"          |    GAME OVER     ||\n" +
+"          |                  ||\n" +
+"  *       | *   **    * **   |**      **\n" +
+"   \\))ejm97/.,(//,,..,,\\||(,,.,\\\\,.((//";
 
     
     
@@ -28,6 +94,7 @@ public class AntidoteView extends View{
     double weightInPounds = 0;
     double medicineAmount = 0;
     double numberOfPills = 0;
+    boolean doILive;
     
     
         AntidoteView() {
@@ -54,7 +121,26 @@ public class AntidoteView extends View{
 
     }
 
-   
+    private String displayBanner() {
+        String answer = (
+                "\n***********************************************************"
+                + "\n* Would you like to administer the Antidote?"
+                + "\n"
+                + "\n* The antidote comes in 50mg  tablets."
+                + "\n"
+                + "\n* You must take 5mg per kilogram of your weight.*"
+                + "\n"
+                + "\n* Enter your weight in pounds and the game will*"
+                + "\n* calculate your weight into kilograms.  And then*"
+                + "\n* divide it by 5mg."
+                + "\n"
+                + "\n* It is then up to you to decide how many pills to take."
+                + "\n* If you do not take enough, your life ends."
+                + "\n"
+                + "\n************************************************************");
+        return answer;
+
+    }   
     
     
     public boolean doAction() {
@@ -78,20 +164,20 @@ public class AntidoteView extends View{
             }
           
         }
-        boolean doILive = true;
-        try {
-            
-            
-            doILive = AntidoteControl.testAntidote(medicineAmount, numberOfPills);
+
+        try {    
+        doILive = AntidoteControl.testAntidote(medicineAmount, numberOfPills);
         } catch (AntidoteControlException ex) {
             //Logger.getLogger(AntidoteView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (doILive) {
+        if (doILive == true) {
             this.console.println(promptMessage3);
+            System.exit(0);
+//            MainMenuView.quiteGame();
 
         } else {
             this.console.println(promptMessage5);
-
+            System.exit(0);
             //MainMenuView mainMenuView = new MainMenuView();
             //mainMenuView.display();
         }
@@ -112,7 +198,7 @@ public class AntidoteView extends View{
             
             //value = keyboard
             //String value = getInput(this.promptMessage);
-            String value = getInput("Please enter your weight in pounds");
+            String value = getInput("Please enter your weight in pounds:");
 
             try {
                 number = parseInt(value);
@@ -176,26 +262,7 @@ public class AntidoteView extends View{
     }
     
     
-    private String displayBanner() {
-        String answer = (
-                "\n***********************************************************"
-                + "\n* Would you like to administer the Antidote?"
-                + "\n"
-                + "\n* The antidote comes in 500mg  tablets."
-                + "\n"
-                + "\n* You must take 5mg per kilogram of your weight.*"
-                + "\n"
-                + "\n* Enter your weight in pounds and the game will*"
-                + "\n* calculate your weight into kilograms.  And then*"
-                + "\n* mulitiply it by 5mg."
-                + "\n"
-                + "\n* It is then up to you to decide how many pills to take."
-                + "\n* If you do not take enough, your life ends."
-                + "\n"
-                + "\n************************************************************");
-        return answer;
 
-    }
     
     
 }

@@ -18,11 +18,14 @@ public class AntidoteControl {
 
         double weightInKilo = (weightInPounds * 0.4535);
 
-        double medicineAmount = (weightInKilo * 5);
+        double medicineAmount = (weightInKilo /10);
         medicineAmount = Math.round(medicineAmount);
+        
+                    //for testing purposes
+                    System.out.println("Medicine Amount: " + medicineAmount);
 
-        if (weightInPounds <= 0) { //weightInPounds is negative?
-            throw new AntidoteControlException("\nWeight in pounds can not be zero or a negative number ");
+        if (weightInPounds <= 100) { //weightInPounds is negative?
+            throw new AntidoteControlException("\nWeight in pounds can not be less than or equal to 100 ");
             //return -1;
         }
 
@@ -43,15 +46,17 @@ public class AntidoteControl {
         } else {
             System.out.println("Your weight in kilograms is " + weightInKilo);
             return medicineAmount;
+
         }
+        
 
     }
 
-    public static boolean testAntidote(double medicineAmount, double takenMedicineAmount) throws AntidoteControlException {
+    public static boolean testAntidote(double medicineAmount, double numberOfPills) throws AntidoteControlException {
         boolean answer = false;
-        if (medicineAmount == takenMedicineAmount) {
+        if (medicineAmount == numberOfPills) {
             answer = true;
-        }
+        } else answer = false;
 
         return answer;
 
