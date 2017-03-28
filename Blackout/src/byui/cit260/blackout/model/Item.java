@@ -18,6 +18,7 @@ public class Item implements Serializable{
     private String name;
     private int locationX;
     private int locationY;
+    private boolean hasItem;
 
     public Item() {
     }
@@ -55,24 +56,33 @@ public class Item implements Serializable{
     public void setLocationY(int locationY) {
         this.locationY = locationY;
     }
+
+    public boolean isHasItem() {
+        return hasItem;
+    }
+
+    public void setHasItem(boolean hasItem) {
+        this.hasItem = hasItem;
+    }
     
     
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.description);
-        hash = 47 * hash + Objects.hashCode(this.name);
-        hash = 47 * hash + Objects.hashCode(this.locationX);
-        hash = 47 * hash + Objects.hashCode(this.locationY);
+        hash = 53 * hash + Objects.hashCode(this.description);
+        hash = 53 * hash + Objects.hashCode(this.name);
+        hash = 53 * hash + this.locationX;
+        hash = 53 * hash + this.locationY;
+        hash = 53 * hash + (this.hasItem ? 1 : 0);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Item{" + "description=" + description + ", name=" + name + ", locationX=" + locationX + ", locationY=" + locationY + '}';
+        return "Item{" + "description=" + description + ", name=" + name + ", locationX=" + locationX + ", locationY=" + locationY + ", hasItem=" + hasItem + '}';
     }
-    
+  
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -85,21 +95,27 @@ public class Item implements Serializable{
             return false;
         }
         final Item other = (Item) obj;
+        if (this.locationX != other.locationX) {
+            return false;
+        }
+        if (this.locationY != other.locationY) {
+            return false;
+        }
+        if (this.hasItem != other.hasItem) {
+            return false;
+        }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.locationX, other.locationX)) {
-            return false;
-        }
-        if (!Objects.equals(this.locationY, other.locationY)) {
-            return false;
-        }
         return true;
     }
-    
+
+
+
+
     
     
     

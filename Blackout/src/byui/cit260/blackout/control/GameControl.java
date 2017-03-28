@@ -82,6 +82,7 @@ public class GameControl {
         antidote.setName("The Antidote");
         antidote.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         antidote.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        antidote.setHasItem(false);
         itemList[ItemList.antidote.ordinal()] = antidote;
 
         Item phone = new Item();
@@ -89,6 +90,7 @@ public class GameControl {
         phone.setName("Android");
         phone.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         phone.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        phone.setHasItem(false);
         itemList[ItemList.phone.ordinal()] = phone;
 
         Item wallet = new Item();
@@ -96,6 +98,7 @@ public class GameControl {
         wallet.setName("Leather wallet");
         wallet.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         wallet.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        wallet.setHasItem(false);
         itemList[ItemList.wallet.ordinal()] = wallet;
 
         Item coat = new Item();
@@ -103,6 +106,7 @@ public class GameControl {
         coat.setName("Leather coat");
         coat.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         coat.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        coat.setHasItem(false);
         itemList[ItemList.coat.ordinal()] = coat;
 
         Item magicDoor = new Item();
@@ -110,6 +114,7 @@ public class GameControl {
         magicDoor.setName("Magic Door");
         magicDoor.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         magicDoor.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        magicDoor.setHasItem(false);
         itemList[ItemList.magicDoor.ordinal()] = magicDoor;
 
         return itemList;

@@ -9,8 +9,11 @@ import byui.cit260.blackout.control.PhoneControl;
 import byui.cit260.blackout.exceptions.AntidoteControlException;
 import byui.cit260.blackout.exceptions.GameControlExceptions;
 import byui.cit260.blackout.model.Game;
+import byui.cit260.blackout.model.Item;
+import byui.cit260.blackout.model.ItemList;
 import byui.cit260.blackout.model.Location;
 import byui.cit260.blackout.model.PhoneMessage;
+import byui.cit260.blackout.model.Player;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -225,8 +228,40 @@ public class GameMenuView extends View {
     //  System.out.println("\n*** mainMenu() function called ***");
     //  }
     private void viewAntidoteAmount() throws AntidoteControlException {
+        
+        boolean hasPhone = false;
+        boolean hasWallet = false;
+        boolean hasCoat = false;
+        boolean hasDoor = false;
+        boolean hasAntidote = false;
+        
+        Item[] itemList = GameControl.createItemList();
+        
+        for(Item door: itemList) {
+            hasDoor = door.isHasItem();
+        }
+        for(Item wallet: itemList) {
+            hasWallet = wallet.isHasItem();
+        }
+        for(Item coat: itemList) {
+            hasCoat = coat.isHasItem();
+        }
+        for(Item phone: itemList) {
+            hasPhone = phone.isHasItem();
+        }
+        for(Item antidote: itemList) {
+            hasAntidote = antidote.isHasItem();
+        }
+        
+        if(hasDoor == true && hasCoat == true && hasWallet == true && hasPhone == true && hasAntidote == true) {
+            
         AntidoteView antidoteView = new AntidoteView();
         antidoteView.display();
+        //System.out.println(menu);
+        } else {
+                this.console.println("\n***You must have all items and have been through the door to access this.*** ");
+
+                }
         //antidoteView.displayAntidoteView();
         //this.console.println(menu);
 
@@ -234,16 +269,64 @@ public class GameMenuView extends View {
     }
 
     private void viewPhonePassword() {
+        
+        boolean hasPhone = false;
+        
+        Item[] itemList = GameControl.createItemList();
+        
+        for(Item phone: itemList) {
+            hasPhone = phone.isHasItem();
+        }
+        
+        if(hasPhone == true) {
         PhonePasswordView phonepassword = new PhonePasswordView();
         phonepassword.displayPhonePasswordView();
         //System.out.println(menu);
+        } else {
+                this.console.println("\n***You do not have the phone.*** "
+                + "\n***You must have the phone before you can access this.***");
+
+                }
 
     }
 
     private void viewDoor() {
         
+        boolean hasPhone = false;
+        boolean hasWallet = false;
+        boolean hasCoat = false;
+        boolean hasDoor = false;
+        boolean hasAntidote = false;
+        
+        Item[] itemList = GameControl.createItemList();
+        
+        for(Item door: itemList) {
+            hasDoor = door.isHasItem();
+        }
+        for(Item wallet: itemList) {
+            hasWallet = wallet.isHasItem();
+        }
+        for(Item coat: itemList) {
+            hasCoat = coat.isHasItem();
+        }
+        for(Item phone: itemList) {
+            hasPhone = phone.isHasItem();
+        }
+        for(Item antidote: itemList) {
+            hasAntidote = antidote.isHasItem();
+        }
+        
+        if(hasDoor == true && hasCoat == true && hasWallet == true && hasPhone == true && hasAntidote == true) {
         DoorView doorView = new DoorView();
         doorView.display();
+        //System.out.println(menu);
+        } else {
+                this.console.println("\n***You are not at the Door.*** "
+                + "\n***You must have all of the items and be at the door before you can access this.***");
+
+                }
+        
+        
         
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
