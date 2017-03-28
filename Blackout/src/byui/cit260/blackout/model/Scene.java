@@ -18,6 +18,15 @@ public class Scene implements Serializable{
         private String mapSymbol;
         private int numberItems;
         private NonPlayer nonPlayer;
+        private String artForScreen;
+
+    public String getArtForScreen() {
+        return artForScreen;
+    }
+
+    public void setArtForScreen(String artForScreen) {
+        this.artForScreen = artForScreen;
+    }
         
 
     

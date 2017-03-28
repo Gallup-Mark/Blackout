@@ -47,7 +47,18 @@ public class MapControl {
         subwayOne.setMapSymbol("; )");
         subwayOne.setNonPlayer(NonPlayer.Thug1);
         subwayOne.setNumberItems(2);
+        //update ascii art  here
+        
+        subwayOne.setArtForScreen(" " 
+ + "\n          ~~~~ ____   |~~~~~~~~~~~~~|"
+ + "\nY_,___|[]|   | Subway Car   |"
+ + "\n{|_|_|_|PU|_,_|_____________|"
++" \n//oo---OO=OO     OOO     OOO"
+         );
+        
         scenes[SceneType.subwayOne.ordinal()] = subwayOne;
+        
+        
         
         Scene subwayTwo = new Scene();
         subwayTwo.setDescription("Crummy old subway where there was a crash Two");
