@@ -16,7 +16,8 @@ public class Item implements Serializable{
     //Class instance variables or attributes
     private String description;
     private String name;
-    private String clue;
+    private int locationX;
+    private int locationY;
 
     public Item() {
     }
@@ -39,26 +40,37 @@ public class Item implements Serializable{
         this.name = name;
     }
 
-    public String getClue() {
-        return clue;
+    public int getLocationX() {
+        return locationX;
     }
 
-    public void setClue(String clue) {
-        this.clue = clue;
+    public void setLocationX(int locationX) {
+        this.locationX = locationX;
     }
+
+    public int getLocationY() {
+        return locationY;
+    }
+
+    public void setLocationY(int locationY) {
+        this.locationY = locationY;
+    }
+    
+    
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 47 * hash + Objects.hashCode(this.description);
         hash = 47 * hash + Objects.hashCode(this.name);
-        hash = 47 * hash + Objects.hashCode(this.clue);
+        hash = 47 * hash + Objects.hashCode(this.locationX);
+        hash = 47 * hash + Objects.hashCode(this.locationY);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Item{" + "description=" + description + ", name=" + name + ", clue=" + clue + '}';
+        return "Item{" + "description=" + description + ", name=" + name + ", locationX=" + locationX + ", locationY=" + locationY + '}';
     }
     
     @Override
@@ -79,7 +91,10 @@ public class Item implements Serializable{
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.clue, other.clue)) {
+        if (!Objects.equals(this.locationX, other.locationX)) {
+            return false;
+        }
+        if (!Objects.equals(this.locationY, other.locationY)) {
             return false;
         }
         return true;

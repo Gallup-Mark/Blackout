@@ -23,6 +23,11 @@ import java.io.PrintWriter;
  * @author mgallup
  */
 public class GameControl {
+    
+    public static int[] itemLocationXY = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
+    
+    public static int min = 1;
+    public static int max = 24;
 
     public static Player createPlayer(String name) {
 
@@ -59,39 +64,53 @@ public class GameControl {
         game.setMap(map);
 
     }
+   
+//create random int values to assign items to map locations     
+    public static int getRandomInt(int min, int max) {
+        min = (int) Math.ceil(min);
+        max = (int) Math.floor(max);
+        int randomValue = (int) (Math.floor(Math.random() * (max - min)) + min);
+        
+        return randomValue;
+    }
 
     public static Item[] createItemList() {
         Item[] itemList = new Item[5];
 
-        Item watch = new Item();
-        watch.setDescription("Broken watch time: 12:00 am");
-        watch.setName("Apple Watch");
-        watch.setClue("Crash in subway");
-        itemList[ItemList.watch.ordinal()] = watch;
+        Item antidote = new Item();
+        antidote.setDescription("The antidote needed to live!");
+        antidote.setName("The Antidote");
+        antidote.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        antidote.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        itemList[ItemList.antidote.ordinal()] = antidote;
 
-        Item newsPaper = new Item();
-        newsPaper.setDescription("Yesterday's Paper");
-        newsPaper.setName("Washington Post");
-        newsPaper.setClue("Poison outbreak");
-        itemList[ItemList.newsPaper.ordinal()] = newsPaper;
-
-        Item hat = new Item();
-        hat.setDescription("Ball cap");
-        hat.setName("NY Giants");
-        hat.setClue("Initials: A.B.C.");
-        itemList[ItemList.hat.ordinal()] = hat;
+        Item phone = new Item();
+        phone.setDescription("Your cell phone");
+        phone.setName("Android");
+        phone.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        phone.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        itemList[ItemList.phone.ordinal()] = phone;
 
         Item wallet = new Item();
-        wallet.setDescription("Duct Tape Wallet");
-        wallet.setName("Pink fluffy unicorn ducktape wallet");
-        wallet.setClue("Happy Birthday Daddy 2015");
+        wallet.setDescription("Your wallet");
+        wallet.setName("Leather wallet");
+        wallet.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        wallet.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         itemList[ItemList.wallet.ordinal()] = wallet;
 
-        Item note = new Item();
-        note.setDescription("Note");
-        note.setName("Paper note");
-        note.setClue("Meet me at apartment 3");
-        itemList[ItemList.note.ordinal()] = note;
+        Item coat = new Item();
+        coat.setDescription("Your coat");
+        coat.setName("Leather coat");
+        coat.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        coat.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        itemList[ItemList.coat.ordinal()] = coat;
+
+        Item magicDoor = new Item();
+        magicDoor.setDescription("The Magic Door");
+        magicDoor.setName("Magic Door");
+        magicDoor.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        magicDoor.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        itemList[ItemList.magicDoor.ordinal()] = magicDoor;
 
         return itemList;
 

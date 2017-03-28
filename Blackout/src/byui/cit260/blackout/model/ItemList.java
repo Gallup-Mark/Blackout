@@ -10,9 +10,9 @@ package byui.cit260.blackout.model;
  * @author Matthew
  */
 public enum ItemList {
-    watch,
-    newsPaper,
-    hat,
+    antidote,
+    phone,
     wallet,
-    note;
+    coat,
+    magicDoor;
 }

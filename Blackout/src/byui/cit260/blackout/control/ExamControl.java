@@ -15,7 +15,8 @@ public class ExamControl {
     
     public static String examItem(Item item){
         
-        return item.getClue();
+//        return item.getClue();
+          return item.getName();
         
         
     }
