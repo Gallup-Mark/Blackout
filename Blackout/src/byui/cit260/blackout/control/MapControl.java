@@ -5,6 +5,7 @@
  */
 package byui.cit260.blackout.control;
 
+import blackout.Blackout;
 import byui.cit260.blackout.model.Item;
 import byui.cit260.blackout.model.ItemList;
 import byui.cit260.blackout.model.Map;
@@ -249,6 +250,16 @@ public class MapControl {
         map.getCurrentLocation().setVisited(true);
         map.setCurrentRow(row);
         map.setCurrentColumn(column);
+        
+        //update the number of moves left
+        int movesLeft = Blackout.getCurrentGame().getNumberMovesLeft();
+        movesLeft--;
+        
+        if(movesLeft < 0){
+            //game over
+        } else {
+            Blackout.getCurrentGame().setNumberMovesLeft(movesLeft);
+        }
 
     }
     

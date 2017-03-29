@@ -16,7 +16,19 @@ public class Game implements Serializable{
     private Backpack backpack;
     private Phone phone;
     private Player player; 
+    
+    private int NumberMovesLeft;
 
+    public int getNumberMovesLeft() {
+        return NumberMovesLeft;
+    }
+
+    public void setNumberMovesLeft(int NumberMovesLeft) {
+        this.NumberMovesLeft = NumberMovesLeft;
+    }
+
+    
+    
     public Game() {
     }
     

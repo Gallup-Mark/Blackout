@@ -62,6 +62,8 @@ public class GameControl {
 
         Map map = MapControl.createMap();
         game.setMap(map);
+        
+        game.setNumberMovesLeft(50);
 
     }
    
