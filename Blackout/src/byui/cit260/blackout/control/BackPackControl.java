@@ -47,5 +47,10 @@ public class BackPackControl {
         
     }
     
+    public static void clearBackpack(){
+        itemList = new Stack();
+        clueList = new Stack();
+    }
+    
     
 }

@@ -61,8 +61,8 @@ public class AntidoteView extends View{
 "@@@@@@@@@' @@@@@@@@@@ @@@@@@@@a    @@@@        @@@@      `@@' \n" +
 "@@@@       @@@@  @@@@ @@@@ @@@@    @@@@        @@@@ \n" +
 "@@@@       @@@@  @@@@ @@@@ @@@@    @@@@        @@@@       @@";
-    private final String promptMessage4 = "\nYou took too many pills. You are dead! Game Over!";
-    private final String promptMessage5 = "\nYou took the wrong amount of pills.  You are dead! Game over"
+    private final String promptMessage4 = "\nYou took too many pills. You are dead! Game Over! Do you want to try start a new game?";
+    private final String promptMessage5 = "\nYou took the wrong amount of pills.  You are dead! Game over. Do you want to start a new game?"
             + "\n"
             + "                  _  /)\n" +
 "                 mo / )\n" +
@@ -158,7 +158,9 @@ public class AntidoteView extends View{
                 
                 ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
                
-            } catch (IOException ex) {
+            }
+            
+            catch (IOException ex) {
                 ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
 
             }
@@ -173,13 +175,28 @@ public class AntidoteView extends View{
         if (doILive == true) {
             this.console.println(promptMessage3);
             System.exit(0);
-//            MainMenuView.quiteGame();
 
+               
         } else {
             this.console.println(promptMessage5);
-            System.exit(0);
-            //MainMenuView mainMenuView = new MainMenuView();
-            //mainMenuView.display();
+            
+             // added by Mark 3/29/17
+            try {
+               String answer = this.keyboard.readLine(); 
+               if (answer == "Y") {
+                MainMenuView mainMenuView = new MainMenuView();
+                mainMenuView.restartGame();
+                mainMenuView.display();
+                    }
+               else {
+                   System.exit(0);
+               }
+            }
+            catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+
+            }
+           
         }
         
         return done;

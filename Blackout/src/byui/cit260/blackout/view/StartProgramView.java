@@ -54,7 +54,7 @@ public class StartProgramView {
                 + "\n* task is to explore the environment and talk to        *"
                 + "\n* non-player charachters to obtain clues. You can keep  *"
                 + "\n* track of your clues in your backpack. You must collect*"
-                + "\n* all of the clues in order to fully revocer your       *"
+                + "\n* all of the clues in order to fully recover your       *"
                 + "\n* memory and obtain the antidote. If you do not find all*"
                 + "\n* of the clues in time, your charachter will sucumb to  *"
                 + "\n* the poison and will die.                              *"
@@ -63,9 +63,11 @@ public class StartProgramView {
                 + "\n* During the game, you will need to explore the         *"
                 + "\n* locations on your map, find and collect physical      *"
                 + "\n* clues, speak to other characters to gain information, *"
-                + "\n* keep a log of your clues and solve the mystery. You   *"
+                + "\n* keep a log of your clues and solve the mystery. "
+                + "\n* You have 50 moves to find everything you need *"
+                + "\n* or you die and the game is over.  You *"
                 + "\n* have successfully completed the game after you have   *"
-                + "\n* recovered your memory and found the antidote.         *"
+                + "\n* found the magic door and the four items randomly placed throught the map.  *"
                 + "\n*********************************************************");
                 
         

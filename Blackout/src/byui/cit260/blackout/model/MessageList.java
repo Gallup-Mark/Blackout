@@ -16,7 +16,5 @@ public enum MessageList {
     antidotMessage1,
     antidoteMessage2,
     antidoteMessage3; 
-//    message4, 
-//    message5, 
-//    message6;
+
 }

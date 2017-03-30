@@ -10,21 +10,7 @@ import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
-import byui.cit260.blackout.model.Antidote;
-import byui.cit260.blackout.model.Backpack;
-import byui.cit260.blackout.model.Door;
-import byui.cit260.blackout.model.Game;
-import byui.cit260.blackout.model.Item;
-import byui.cit260.blackout.model.ItemType;
-import byui.cit260.blackout.model.Location;
-import byui.cit260.blackout.model.Map;
-import byui.cit260.blackout.model.NonPlayer;
-import byui.cit260.blackout.model.Phone;
-import byui.cit260.blackout.model.Player;
-import byui.cit260.blackout.model.Scene;
-import byui.cit260.blackout.model.SceneType;
- */
+
 public class Blackout {
 
     private static Game currentGame = null;

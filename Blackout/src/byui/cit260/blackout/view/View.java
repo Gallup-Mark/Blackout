@@ -36,6 +36,13 @@ public abstract class View implements ViewInterface {
             {
                 break; // exit the game
             }
+            
+//               if (value.toUpperCase().equals("R")) //user wants to restart game 
+//            {
+//                   //MainMenuView mainMenu = new MainMenuView();
+//                   // mainMenu.display();
+//                //break; // exit the game
+//            }
             // do the requested action and display the next view
             done = this.doAction(value);
 

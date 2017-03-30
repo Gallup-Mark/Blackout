@@ -2,6 +2,7 @@
 package byui.cit260.blackout.view;
 
 import blackout.Blackout;
+import byui.cit260.blackout.control.BackPackControl;
 import byui.cit260.blackout.control.GameControl;
 import java.util.Scanner;
 
@@ -23,6 +24,7 @@ public class MainMenuView extends View {
                 + "\nS - Save Game"
                 + "\nL - Load Saved Game"
                 + "\nH - Help Menu"
+                + "\nR - Restart Game "
                 + "\nQ - Quit Game"
                 + "\n-----------------------------------------------------------");
     }
@@ -47,11 +49,15 @@ public class MainMenuView extends View {
                 case "H" : //Help Menu
                     this.helpMenu();
                     break;
-                case "Q" : //quit game
-                    this.quitGame();
+                case "R" ://Restart Game
+                    this.restartGame();
                     break;
+//                case "Q" : //quit game
+//                    this.quitGame();
+//                    break;
                 default :
-                    this.console.println("\n*** Invalid selection, try again");
+                    //this.console.println("\n*** Invalid selection, try again");
+                    ErrorView.display(this.getClass().getName(), "Invalid input. Invalid selection, try again" );
                     break;
             }
             return false;
@@ -103,8 +109,20 @@ public class MainMenuView extends View {
        helpMenu.display();
     }
 
-    private void quitGame() {
-        this.console.println("\n*** quitMenu() function called ***");
+//    private void quitGame() {
+//        this.console.println("\n*** quitMenu() function called ***");
+//    }
+
+    public void restartGame() {
+        
+        this.console.println("\n Game has been restarted");
+        GameControl.createNewGame(Blackout.getPlayer());
+        this.display();
+        //this.startNewGame();
+        //BackPackControl.clearBackpack();
+        
+
+
     }
     
 }

@@ -9,7 +9,7 @@ import blackout.Blackout;
 import byui.cit260.blackout.control.ExamControl;
 import byui.cit260.blackout.model.Item;
 import static java.lang.Integer.parseInt;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *

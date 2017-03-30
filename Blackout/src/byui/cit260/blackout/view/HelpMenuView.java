@@ -1,7 +1,7 @@
 
 package byui.cit260.blackout.view;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *
