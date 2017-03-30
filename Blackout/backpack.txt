@@ -1,5 +1,0 @@
------ List of Backpack Items you added ------
-Name
-handgun
-shoes
-
