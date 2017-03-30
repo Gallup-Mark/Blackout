@@ -19,6 +19,15 @@ public class Scene implements Serializable{
         private int numberItems;
         private NonPlayer nonPlayer;
         private String artForScreen;
+        private boolean hasItem;
+
+    public boolean isHasItem() {
+        return hasItem;
+    }
+
+    public void setHasItem(boolean hasItem) {
+        this.hasItem = hasItem;
+    }
 
     public String getArtForScreen() {
         return artForScreen;

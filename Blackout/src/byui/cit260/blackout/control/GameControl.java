@@ -85,6 +85,14 @@ public class GameControl {
         antidote.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         antidote.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         antidote.setHasItem(false);
+        antidote.setItemArt(""
+                            + " \n......"
+                            +" \n:.  .:"
+                            +" \n.'  '."
+                            +" \n|    |"
+                            +" \n|    |"
+                            +" \n`----'");
+        
         itemList[ItemList.antidote.ordinal()] = antidote;
 
         Item phone = new Item();
@@ -93,6 +101,12 @@ public class GameControl {
         phone.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         phone.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         phone.setHasItem(false);
+        phone.setItemArt(""
+                        +"\n*"
+                        +"\n|"
+                        +"\n(O)"
+                        +"\n|#|"
+                        +"\n'-'");         
         itemList[ItemList.phone.ordinal()] = phone;
 
         Item wallet = new Item();
@@ -101,6 +115,21 @@ public class GameControl {
         wallet.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         wallet.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         wallet.setHasItem(false);
+        wallet.setItemArt(""
+
+                + "\n          \\`\\/\\/\\/`/"
+                + "\n           )======("
+                + "\n         .'        '."
+                + "\n        /    _||__   \\"
+                + "\n       /    (_||_     \\"
+                + "\n      |     __||_)     |"
+                + "\n      |       ||       |"
+                + "\n      '.              .'"
+                + "\n        '------------'");
+                
+                
+
+        
         itemList[ItemList.wallet.ordinal()] = wallet;
 
         Item coat = new Item();
@@ -109,6 +138,16 @@ public class GameControl {
         coat.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         coat.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         coat.setHasItem(false);
+        coat.setItemArt(""
+                     + "\n      .-<\\ />-."
+                     + "\n    / , \\V/ , \\"
+                     + "\n    | |  :  | |"
+                     + "\n    | |  :  | |"
+                     + "\n    | |__:__| |"
+                    + "\n     \\_/     \\_/"
+                    + "\n      ~       ~ ");           
+
+        
         itemList[ItemList.coat.ordinal()] = coat;
 
         Item magicDoor = new Item();
@@ -117,6 +156,22 @@ public class GameControl {
         magicDoor.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         magicDoor.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         magicDoor.setHasItem(false);
+        magicDoor.setItemArt(""
+                
+                + "\n  ,-' ;  ! `-."
+                + "\n  / :  !  :  . \\"
+                + "\n |_ ;   __:  ;  |"
+                + "\n )| .  :)(.  !  |"
+                + "\n |\"    (##)  _  |"
+                + "\n |  :  ;`'  (_) ("
+                + "\n |  :  :  .     |"
+                + "\n )_ !  ,  ;  ;  |"
+                + "\n || .  .  :  :  |"
+                + "\n |\" .  |  :  .  |"
+                + "\n |mt-2_;----.___|");
+
+        
+        
         itemList[ItemList.magicDoor.ordinal()] = magicDoor;
 
         return itemList;
