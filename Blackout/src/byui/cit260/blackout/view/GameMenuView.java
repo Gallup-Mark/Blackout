@@ -2,6 +2,7 @@ package byui.cit260.blackout.view;
 
 import blackout.Blackout;
 import static blackout.Blackout.outFile;
+import byui.cit260.blackout.control.BackPackControl;
 import byui.cit260.blackout.control.GameControl;
 import byui.cit260.blackout.model.Map;
 import byui.cit260.blackout.control.MapControl;
@@ -180,6 +181,12 @@ public class GameMenuView extends View {
                     this.console.println("You Found: " + Blackout.getCurrentGame().getItem()[i].getDescription());
                     this.console.println(Blackout.getCurrentGame().getItem()[i].getItemArt());
                     foundItem = true;
+                    
+                    //add item to backpack if not already in there
+                    if(Blackout.getCurrentGame().getItem()[i].isAlreadyFound() == false){
+                        BackPackControl.addItemToList(Blackout.getCurrentGame().getItem()[i], Blackout.getCurrentGame().getBackpack());
+                        Blackout.getCurrentGame().getItem()[i].setAlreadyFound(true);
+                    }
                     
                     if(Blackout.getCurrentGame().getItem()[i].getDescription() == "The Magic Door"){
                         this.console.println("You have Found the Magic Door\n You can Now access the door functions from the menu. ");

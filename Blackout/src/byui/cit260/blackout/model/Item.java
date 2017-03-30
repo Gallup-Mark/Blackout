@@ -20,8 +20,17 @@ public class Item implements Serializable{
     private int locationY;
     private boolean hasItem;
     private String itemArt;
+    private boolean alreadyFound;
 
     public Item() {
+    }
+
+    public boolean isAlreadyFound() {
+        return alreadyFound;
+    }
+
+    public void setAlreadyFound(boolean alreadyFound) {
+        this.alreadyFound = alreadyFound;
     }
     
     public String getItemArt() {

@@ -1,7 +1,10 @@
 
 package byui.cit260.blackout.view;
 
+
+import blackout.Blackout;
 import byui.cit260.blackout.control.BackPackControl;
+import byui.cit260.blackout.model.Backpack;
 import byui.cit260.blackout.model.Item;
 import java.io.IOException;
 import java.util.Scanner;
@@ -31,9 +34,9 @@ public class BackpackMenuView extends View {
                 + "\n | Backpack Menu"
                 + "\n----------------------------------------------------------"
                 + "\nS - Show List of Items"
-                + "\nC - Show Clue List"
-                + "\nA - Add Item to Backpack"
-                + "\nD - Add Clue to Clue List"
+                //+ "\nC - Show Clue List"
+                //+ "\nA - Add Item to Backpack"
+               // + "\nD - Add Clue to Clue List"
                 + "\nP - Print report of items added to Backpack to .txt  file" //added by Mark 3-24-17
                 + "\nQ - Return to Game Menu"
                 + "\n-----------------------------------------------------------");
@@ -49,20 +52,20 @@ public class BackpackMenuView extends View {
             switch (choice) {
                 case "S" : //display list of items
                     
-                    showListOfItems();
+                    showListOfItems(Blackout.getCurrentGame().getBackpack());
                     break;
-                case "C" : // display clues
-                    showListOfClues();
-                    break;
-                case "A" : //add item to backpack
-                    addItemToBackPack(itemInputValue());
-                    break;
-                case "D" : //add clue to list
-                    addClueToBackPack(itemInputValue());
-                    break;
+//                case "C" : // display clues
+//                    showListOfClues();
+//                    break;
+//                case "A" : //add item to backpack
+//                    addItemToBackPack();
+//                    break;
+//                case "D" : //add clue to list
+//                    addClueToBackPack(itemInputValue());
+//                    break;
                    //added by Mark 3-24-17
                     case "P" : //Print a report to file
-                    printTofFile();
+                    printTofFile(Blackout.getCurrentGame().getBackpack());
                     break;
                     
                 
@@ -76,13 +79,15 @@ public class BackpackMenuView extends View {
     }
         
         
-        private void showListOfItems(){
+        private void showListOfItems(Backpack backPack){
             
             
             //checks the number of items in item list
-           // int sz = BackPackControl.
            
-           int sz = BackPackControl.getItemList().size();
+           
+           //int sz = BackPackControl.getItemList().size();
+           int sz = backPack.getItemList().size();
+           //int sz = Blackout.getCurrentGame().getBackpack().getItems().length();
            
            
             //int sz = itemList.size();
@@ -96,7 +101,8 @@ public class BackpackMenuView extends View {
                 displayMessage += "\n No Items In List";
             } else {
                 
-                Object[] theItems = BackPackControl.getItemList().toArray();
+                //Blackout.getCurrentGame().getBackpack()
+                Object[] theItems = backPack.getItemList().toArray();
                 
                 
                 for(int i =0; i < sz; i++){
@@ -114,43 +120,43 @@ public class BackpackMenuView extends View {
 
         }
         
-         private void showListOfClues(){
-            
-            
-            //checks the number of items in item list
-           // int sz = BackPackControl.
-           
-           int sz = BackPackControl.getClueList().size();
-           
-           
-            //int sz = itemList.size();
-            
-            String displayMessage =  "\n"
-                + "\n----------------------------------------------------------"
-                + "\n | Clue List"
-                + "\n----------------------------------------------------------";
-            
-            if(sz == 0){   
-                displayMessage += "\n No Clues In List";
-            } else {
-                
-                Object[] theItems = BackPackControl.getClueList().toArray();
-                
-                
-                for(int i =0; i < sz; i++){
-                    
-                    displayMessage += "\n " + (i + 1)  + " ";
-                    displayMessage += theItems[i].toString();
-                   
-                }
-                
-            }
-            //this displays the item lists
-            //System.out.println(itemList);
-            
-            this.console.println(displayMessage);
-
-        }
+//         private void showListOfClues(){
+//            
+//            
+//            //checks the number of items in item list
+//           // int sz = BackPackControl.
+//           
+//           int sz = BackPackControl.getClueList().size();
+//           
+//           
+//            //int sz = itemList.size();
+//            
+//            String displayMessage =  "\n"
+//                + "\n----------------------------------------------------------"
+//                + "\n | Clue List"
+//                + "\n----------------------------------------------------------";
+//            
+//            if(sz == 0){   
+//                displayMessage += "\n No Clues In List";
+//            } else {
+//                
+//                Object[] theItems = BackPackControl.getClueList().toArray();
+//                
+//                
+//                for(int i =0; i < sz; i++){
+//                    
+//                    displayMessage += "\n " + (i + 1)  + " ";
+//                    displayMessage += theItems[i].toString();
+//                   
+//                }
+//                
+//            }
+//            //this displays the item lists
+//            //System.out.println(itemList);
+//            
+//            this.console.println(displayMessage);
+//
+//        }
         
         private String itemInputValue(){
             //Scanner keyboard = new Scanner(System.in); // get infile for keyboard
@@ -189,31 +195,31 @@ public class BackpackMenuView extends View {
         }
     
         
-        private void addItemToBackPack(String itemName){
+        private void addItemToBackPack(Item item, Backpack backPack){
             
-            BackPackControl.getItemList().push(itemName);
-            this.console.println("\n Added item "  + itemName + " to item List");
+            backPack.getItemList().push(item);
+            this.console.println("\n Added item "  + item.getDescription() + " to item List");
             
             
         }
         
-        private void addClueToBackPack(String clueName){
-            
-            BackPackControl.getClueList().push(clueName);
-            this.console.println("\n Added item "  + clueName + " to item List");
-            
-            
-        }
+//        private void addClueToBackPack(String clueName){
+//            
+//            BackPackControl.getClueList().push(clueName);
+//            this.console.println("\n Added item "  + clueName + " to item List");
+//            
+//            
+//        }
 
     // added by Mark on 3-24-84
-        private void printTofFile() {
+        private void printTofFile(Backpack backPack) {
         PrintWriter output = null;
         this.console.println("Enter the file path as a .txt file");
         
         try {
             String path = keyboard.readLine();
             output = new PrintWriter(path);
-            Object[] items = BackPackControl.getItemList().toArray();
+            Object[] items = backPack.getItemList().toArray();
             String newLine = System.getProperty("line.separator"); //from my tutor instead of using \n
             String header = "----- List of Backpack Items you added ------" + newLine + "Name" + newLine;
                     

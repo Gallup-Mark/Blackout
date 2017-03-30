@@ -3,54 +3,37 @@
 
 package byui.cit260.blackout.control;
 
+import byui.cit260.blackout.model.Backpack;
 import byui.cit260.blackout.model.Item;
 import java.util.Stack;
 
 
 
-
-
-
 public class BackPackControl {
     
-    private static Stack itemList = new Stack();
-    private static Stack clueList = new Stack();
+    //private static Stack itemList = new Stack();
+    //private static Stack clueList = new Stack();
     
-    public static Stack getItemList(){  
-        return itemList;
-   
-    }
     
-    public static void addItemToList(String itemName){
-        
-       //make temp item and add it to the itemList
-        Item item = new Item();
-        item.setName(itemName);
-        itemList.push(item);
-        
-        
-    }
     
-    public static void addClueToList(String itemName){
+    public static void addItemToList(Item item, Backpack backPack){
         
-       //make temp item and add it to the itemList
-        Item item = new Item();
-        item.setName(itemName);
-        itemList.push(item);
+       Stack itemList = backPack.getItemList();
+       itemList.push(item);
+       
+       backPack.setItemList(itemList);
+        
         
         
     }
     
-    public static Stack getClueList(){
-        
-         return clueList;
-        
-    }
     
-    public static void clearBackpack(){
-        itemList = new Stack();
-        clueList = new Stack();
-    }
+    
+//    
+//    public static void clearBackpack(){
+//        itemList = new Stack();
+//        clueList = new Stack();
+//    }
     
     
 }

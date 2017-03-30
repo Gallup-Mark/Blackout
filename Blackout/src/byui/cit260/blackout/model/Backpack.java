@@ -7,6 +7,7 @@ package byui.cit260.blackout.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Stack;
 
 /**
  *
@@ -18,9 +19,28 @@ public class Backpack implements Serializable {
     
     private String items;
     
+    private  Stack itemList = new Stack();
+    private  Stack clueList = new Stack();
+    
     
     //default constructor
     public Backpack() {
+    }
+
+    public Stack getItemList() {
+        return itemList;
+    }
+
+    public  void setItemList(Stack itemList) {
+        this.itemList = itemList;
+    }
+
+    public  Stack getClueList() {
+        return clueList;
+    }
+
+    public  void setClueList(Stack clueList) {
+        this.clueList = clueList;
     }
 
     

@@ -92,7 +92,7 @@ public class GameControl {
                             +" \n|    |"
                             +" \n|    |"
                             +" \n`----'");
-        
+        antidote.setAlreadyFound(false);
         itemList[ItemList.antidote.ordinal()] = antidote;
 
         Item phone = new Item();
@@ -107,6 +107,7 @@ public class GameControl {
                         +"\n(O)"
                         +"\n|#|"
                         +"\n'-'");         
+        phone.setAlreadyFound(false);
         itemList[ItemList.phone.ordinal()] = phone;
 
         Item wallet = new Item();
@@ -129,7 +130,7 @@ public class GameControl {
                 
                 
 
-        
+        wallet.setAlreadyFound(false);
         itemList[ItemList.wallet.ordinal()] = wallet;
 
         Item coat = new Item();
@@ -147,7 +148,7 @@ public class GameControl {
                     + "\n     \\_/     \\_/"
                     + "\n      ~       ~ ");           
 
-        
+        coat.setAlreadyFound(false);
         itemList[ItemList.coat.ordinal()] = coat;
 
         Item magicDoor = new Item();
@@ -171,7 +172,7 @@ public class GameControl {
                 + "\n |mt-2_;----.___|");
 
         
-        
+        magicDoor.setAlreadyFound(false);
         itemList[ItemList.magicDoor.ordinal()] = magicDoor;
 
         return itemList;
