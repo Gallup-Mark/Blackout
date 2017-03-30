@@ -42,12 +42,12 @@ public class GameMenuView extends View {
                 + "\nF - Save Map Report"
                 + "\nS - Status"
                 + "\nB - Backpack Menu"
-                + "\nE - Examine"
+                //+ "\nE - Examine"
                 + "\nT - Talk"
                 + "\nA - Antidote Amount Needed"
                 + "\nP - Phone"
                 + "\nC - Phone Message Report"
-                //+ "\nD - Door Menu"  hid rood menu unless found door
+                //+ "\nD - Door Menu"  hide  menu unless found door
                 + "\nQ - Back to Main Menu"
                 + "\n-----------------------------------------------------------");
     }
@@ -67,11 +67,11 @@ public class GameMenuView extends View {
             case "S": // Load game
                 this.viewStatus();
                 break;
-            case "E": //view examine
-                this.viewExamine();
-                break;
+//            case "E": //view examine
+//                this.viewExamine();
+//                break;
             case "D": //view door
-                this.viewDoor();
+                this.viewDoor(Blackout.getCurrentGame());
                 break;
             case "F": {
             try {
@@ -188,9 +188,32 @@ public class GameMenuView extends View {
                         Blackout.getCurrentGame().getItem()[i].setAlreadyFound(true);
                     }
                     
+                    //once you find the magic door you have have access to door menu
                     if(Blackout.getCurrentGame().getItem()[i].getDescription() == "The Magic Door"){
                         this.console.println("You have Found the Magic Door\n You can Now access the door functions from the menu. ");
+                        foudDoor(Blackout.getCurrentGame());
                     }
+                    
+                    //found antidote
+                    if(Blackout.getCurrentGame().getItem()[i].getDescription() == "The antidote needed to live!"){
+                        Blackout.getCurrentGame().setFoundAntidote(true); 
+                    }
+                    
+                    //found cell phone
+                    if(Blackout.getCurrentGame().getItem()[i].getDescription() == "Your cell phone"){
+                        Blackout.getCurrentGame().setFoundPhone(true);
+                    }
+                    
+                    //found wallet
+                    if(Blackout.getCurrentGame().getItem()[i].getDescription() == "Your wallet"){
+                        Blackout.getCurrentGame().setFoundWallet(true);
+                    }
+                    
+                    //found coat
+                    if(Blackout.getCurrentGame().getItem()[i].getDescription() == "Your coat"){
+                        Blackout.getCurrentGame().setFoundCoat(true);
+                    }
+                    
                 }  
                 
             }
@@ -205,6 +228,30 @@ public class GameMenuView extends View {
        }
     }
     
+    private void foudDoor(Game game){
+        
+        this.menu = "\n"
+                + "\n----------------------------------------------------------"
+                + "\n | Game Menu"
+                + "\n----------------------------------------------------------"
+                + "\nM - Move to New Location"
+                + "\nV - View Map"
+                + "\nF - Save Map Report"
+                + "\nS - Status"
+                + "\nB - Backpack Menu"
+                //+ "\nE - Examine"
+                + "\nT - Talk"
+                + "\nA - Antidote Amount Needed"
+                + "\nP - Phone"
+                + "\nC - Phone Message Report"
+               + " \nD - Door Menu"  
+                + "\nQ - Back to Main Menu"
+                + "\n----------------------------------------------------------";
+                
+        game.setFoundDoor(true);
+        
+        
+    }
   
     private void viewMap() {
 
@@ -342,81 +389,92 @@ public class GameMenuView extends View {
 
     }
 
-    private void viewDoor() {
+    private void viewDoor(Game game) {
         
-        boolean hasPhone = false;
-        boolean hasWallet = false;
-        boolean hasCoat = false;
-        boolean hasDoor = false;
-        boolean hasAntidote = false;
+        //have you finded the dooreth YES?
+        if(game.isFoundDoor()){
         
-        Item[] itemList = GameControl.createItemList();
-        
-        for(Item door: itemList) {
-            hasDoor = door.isHasItem();
-        }
-        for(Item wallet: itemList) {
-            hasWallet = wallet.isHasItem();
-        }
-        for(Item coat: itemList) {
-            hasCoat = coat.isHasItem();
-        }
-        for(Item phone: itemList) {
-            hasPhone = phone.isHasItem();
-        }
-        for(Item antidote: itemList) {
-            hasAntidote = antidote.isHasItem();
-        }
-        
-        if(hasDoor == true && hasCoat == true && hasWallet == true && hasPhone == true && hasAntidote == true) {
-        DoorView doorView = new DoorView();
-        doorView.display();
-        //System.out.println(menu);
-        } else {
-                this.console.println("\n***You are not at the Door.*** "
-                + "\n***You must have all of the items and be at the door before you can access this.***");
+//            boolean hasPhone = game.isFoundPhone();
+//            boolean hasWallet = game.isFoundWallet();
+//            boolean hasCoat = game.isFoundCoat();
+//            boolean hasDoor = game.isFoundDoor();
+//            boolean hasAntidote = game.isFoundAntidote();
+//
+//            Item[] itemList = GameControl.createItemList();
+//
+//            for(Item door: itemList) {
+//                hasDoor = door.isHasItem();
+//            }
+//            for(Item wallet: itemList) {
+//                hasWallet = wallet.isHasItem();
+//            }
+//            for(Item coat: itemList) {
+//                hasCoat = coat.isHasItem();
+//            }
+//            for(Item phone: itemList) {
+//                hasPhone = phone.isHasItem();
+//            }
+//            for(Item antidote: itemList) {
+//                hasAntidote = antidote.isHasItem();
+//            }
 
-                }
-        
-        
-        
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            if(game.isFoundAntidote() && game.isFoundCoat() && game.isFoundDoor() && game.isFoundPhone() && game.isFoundWallet()){
+            //if(hasDoor == true && hasCoat == true && hasWallet == true && hasPhone == true && hasAntidote == true) {
+                DoorView doorView = new DoorView();
+                doorView.display();
+                //System.out.println(menu);
+            } else {
+                    this.console.println("\n***You are not at the Door.*** "
+                    + "\n***You must have all of the items and be at the door before you can access this.***");
+
+                    }
+
+
+
+            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        else {
+            
+            this.console.println("NO Cheating You haven't found the door yet. Keep looking");
+            
+        }
     }
+        private void phoneMessageReport() throws GameControlExceptions {
 
-    private void phoneMessageReport() throws GameControlExceptions {
-        
-        
-//        this.console.println("\nPlease enter a file name to save your report:");
 
-        String filePath = this.getInput("\n\nEnter the file you want to save the report to: ");
-        PhoneMessage[] messageList = PhoneControl.createMessageList();
-        
-        
-        try (PrintWriter out = new PrintWriter(filePath)) {
-            
-            out.println("\n\n                             Phone Messages                       ");
-            out.printf("%n%-10s%30s", "From", "Message");
-            out.printf("%n%-10s%30s", "----", "-------");
-            
-            for(PhoneMessage message: messageList) {
-            
-                out.printf("%n%-10s%30s", message.getFrom()
-                                        , message.getMessage());
-            }
-//            GameControl.saveGame(Blackout.getCurrentGame(), filePath);
-        } catch(IOException ex){
-            ErrorView.display(this.getClass().getName(), "Error generating report: " + ex.getMessage());
-//        } finally {
-//            if (out != null) {
-//                try {
-//                    out.close();
-//                } catch (IOException ex2) {
-//                    ErrorView.display(this.getClass().getName(), "Error closing report: " + ex2.getMessage());
-//                }
-            }
-        this.console.println("Your " + filePath + " report was successfully generated!");
+    //        this.console.println("\nPlease enter a file name to save your report:");
+
+            String filePath = this.getInput("\n\nEnter the file you want to save the report to: ");
+            PhoneMessage[] messageList = PhoneControl.createMessageList();
+
+
+            try (PrintWriter out = new PrintWriter(filePath)) {
+
+                out.println("\n\n                             Phone Messages                       ");
+                out.printf("%n%-10s%30s", "From", "Message");
+                out.printf("%n%-10s%30s", "----", "-------");
+
+                for(PhoneMessage message: messageList) {
+
+                    out.printf("%n%-10s%30s", message.getFrom()
+                                            , message.getMessage());
+                }
+    //            GameControl.saveGame(Blackout.getCurrentGame(), filePath);
+            } catch(IOException ex){
+                ErrorView.display(this.getClass().getName(), "Error generating report: " + ex.getMessage());
+    //        } finally {
+    //            if (out != null) {
+    //                try {
+    //                    out.close();
+    //                } catch (IOException ex2) {
+    //                    ErrorView.display(this.getClass().getName(), "Error closing report: " + ex2.getMessage());
+    //                }
+                }
+            this.console.println("Your " + filePath + " report was successfully generated!");
         
         }
+        
+        
 
     private void runMapReport() throws GameControlExceptions {
         

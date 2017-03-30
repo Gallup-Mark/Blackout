@@ -17,7 +17,55 @@ public class Game implements Serializable{
     private Phone phone;
     private Player player; 
     
+    private boolean foundDoor;
+    private boolean foundPhone;
+    private boolean foundWallet;
+    private boolean foundCoat;
+    private boolean foundAntidote;
+    
     private int NumberMovesLeft;
+
+    public boolean isFoundPhone() {
+        return foundPhone;
+    }
+
+    public void setFoundPhone(boolean foundPhone) {
+        this.foundPhone = foundPhone;
+    }
+
+    public boolean isFoundWallet() {
+        return foundWallet;
+    }
+
+    public void setFoundWallet(boolean foundWallet) {
+        this.foundWallet = foundWallet;
+    }
+
+    public boolean isFoundCoat() {
+        return foundCoat;
+    }
+
+    public void setFoundCoat(boolean foundCoat) {
+        this.foundCoat = foundCoat;
+    }
+
+    public boolean isFoundAntidote() {
+        return foundAntidote;
+    }
+
+    public void setFoundAntidote(boolean foundAntidote) {
+        this.foundAntidote = foundAntidote;
+    }
+
+    
+    
+    public boolean isFoundDoor() {
+        return foundDoor;
+    }
+
+    public void setFoundDoor(boolean foundDoor) {
+        this.foundDoor = foundDoor;
+    }
 
     public int getNumberMovesLeft() {
         return NumberMovesLeft;

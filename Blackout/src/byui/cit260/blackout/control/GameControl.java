@@ -64,6 +64,11 @@ public class GameControl {
         game.setMap(map);
         
         game.setNumberMovesLeft(50);
+        game.setFoundDoor(false);
+        game.setFoundAntidote(false);
+        game.setFoundCoat(false);
+        game.setFoundPhone(false);
+        game.setFoundWallet(false);
 
     }
    
