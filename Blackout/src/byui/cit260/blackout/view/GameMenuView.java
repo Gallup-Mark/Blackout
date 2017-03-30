@@ -150,7 +150,13 @@ public class GameMenuView extends View {
             MapControl.movePlayer(Blackout.getCurrentGame().getMap(), x, y);
             this.console.println("\nYou have " + Blackout.getCurrentGame().getNumberMovesLeft() + " Moves Left!");
             
+            //this will show the art for the scene
+            this.console.println(Blackout.getCurrentGame().getMap().getCurrentLocation().getScene().getArtForScreen());
+            //give des of location
+            this.console.println(Blackout.getCurrentGame().getMap().getCurrentLocation().getScene().getDescription());
             //check if an item is at location
+            boolean foundItem = false;
+            
             for(int i = 0; i < 5; i++){
                
                 
@@ -170,15 +176,17 @@ public class GameMenuView extends View {
                 
                
                 //checks if the locaiton is set
-                if(Blackout.getCurrentGame().getItem()[i].getLocationX() == (locationNumber)){
+                if(Blackout.getCurrentGame().getItem()[i].getLocationX() == locationNumber){
                     this.console.println("You Found: " + Blackout.getCurrentGame().getItem()[i].getDescription());
-                }
-                
-                
-                
+                    this.console.println(Blackout.getCurrentGame().getItem()[i].getItemArt());
+                    foundItem = true;
+                }  
                 
             }
             
+            if(foundItem == false){
+                this.console.println("No Items At this location");
+            }
             
        } else {
            

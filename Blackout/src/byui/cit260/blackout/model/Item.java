@@ -19,11 +19,18 @@ public class Item implements Serializable{
     private int locationX;
     private int locationY;
     private boolean hasItem;
+    private String itemArt;
 
     public Item() {
     }
     
-    
+    public String getItemArt() {
+        return itemArt;
+    }
+
+    public void setItemArt(String itemArt) {
+        this.itemArt = itemArt;
+    }
 
     public String getDescription() {
         return description;
