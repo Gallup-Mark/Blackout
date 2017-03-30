@@ -178,7 +178,7 @@ public class GameMenuView extends View {
                 //checks if the locaiton is set
                 if(Blackout.getCurrentGame().getItem()[i].getLocationX() == locationNumber){
                     this.console.println("You Found: " + Blackout.getCurrentGame().getItem()[i].getDescription());
-                    this.console.print(Blackout.getCurrentGame().getItem()[i].getItemArt());
+                    this.console.println(Blackout.getCurrentGame().getItem()[i].getItemArt());
                     foundItem = true;
                 }  
                 
