@@ -46,7 +46,7 @@ public class GameMenuView extends View {
                 + "\nA - Antidote Amount Needed"
                 + "\nP - Phone"
                 + "\nC - Phone Message Report"
-                + "\nD - Door Menu"
+                //+ "\nD - Door Menu"  hid rood menu unless found door
                 + "\nQ - Back to Main Menu"
                 + "\n-----------------------------------------------------------");
     }
@@ -180,6 +180,10 @@ public class GameMenuView extends View {
                     this.console.println("You Found: " + Blackout.getCurrentGame().getItem()[i].getDescription());
                     this.console.println(Blackout.getCurrentGame().getItem()[i].getItemArt());
                     foundItem = true;
+                    
+                    if(Blackout.getCurrentGame().getItem()[i].getDescription() == "The Magic Door"){
+                        this.console.println("You have Found the Magic Door\n You can Now access the door functions from the menu. ");
+                    }
                 }  
                 
             }
