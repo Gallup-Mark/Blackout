@@ -22,7 +22,7 @@ public class AntidoteControl {
         medicineAmount = Math.round(medicineAmount);
         
                     //for testing purposes
-                    System.out.println("Medicine Amount: " + medicineAmount);
+                    //System.out.println("Medicine Amount: " + medicineAmount);
 
         if (weightInPounds <= 100) { //weightInPounds is negative?
             throw new AntidoteControlException("\nWeight in pounds can not be less than or equal to 100 ");

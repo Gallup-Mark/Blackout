@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class AntidoteView extends View{
     
     private final String promptMessage = "\nPlease enter your weight in pounds";
-    private final String promptMessage2 = "\nPlease enter the number of pills to ingest";
+    private final String promptMessage2 = "\nPlease enter the number of pills to ingest (Medican Amount is kilogram Rounding Then  / 10";
     private final String promptMessage3 = "\nYou took the correct amount of antidote!  You have now won the game!!!"
             + "\nCongratulations!  Your memory comes back and you live a long happy life!"
             + "\n"
@@ -152,6 +152,7 @@ public class AntidoteView extends View{
                 
                 weightInPounds = getWeightInPounds();
                 medicineAmount = AntidoteControl.calcMedAmount(weightInPounds);
+                //this.console.println(medicineAmount);
                 numberOfPills = numberOfPills();
                 done = true;
             } catch (AntidoteControlException ex) {
@@ -168,7 +169,7 @@ public class AntidoteView extends View{
         }
 
         try {    
-        doILive = AntidoteControl.testAntidote(medicineAmount, numberOfPills);
+            doILive = AntidoteControl.testAntidote(medicineAmount, numberOfPills);
         } catch (AntidoteControlException ex) {
             //Logger.getLogger(AntidoteView.class.getName()).log(Level.SEVERE, null, ex);
         }

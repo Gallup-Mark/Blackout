@@ -45,7 +45,7 @@ public class MapControl {
         
         Scene subwayOne = new Scene();
         subwayOne.setDescription("Crummy old subway where there was a crash Car One");
-        subwayOne.setMapSymbol("; )");
+        subwayOne.setMapSymbol(";)");
         subwayOne.setNonPlayer(NonPlayer.Thug1);
         subwayOne.setNumberItems(2);
         //update ascii art  here
