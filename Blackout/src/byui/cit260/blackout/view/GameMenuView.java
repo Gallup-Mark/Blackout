@@ -291,7 +291,7 @@ public class GameMenuView extends View {
         String columnDivider = "|";
         this.console.println("" + title);
 
-        String linePrintout = " ";
+        String linePrintout = "  ";
         for (int i = 0; i < 5; i++) {
 
             linePrintout = linePrintout + " " + (i) + "   ";
