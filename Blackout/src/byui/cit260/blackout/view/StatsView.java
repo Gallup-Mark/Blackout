@@ -5,6 +5,9 @@
  */
 package byui.cit260.blackout.view;
 
+import blackout.Blackout;
+import byui.cit260.blackout.model.Location;
+
 /**
  *
  * @author Matt
@@ -16,7 +19,7 @@ public class StatsView extends View {
                 + "\n----------------------------------------------------------"
                 + "\nCURRENT STATS"
                 + "\n"
-                + "\nPress S at anytime for Stats"
+                + "\nPress S to View Stats"
                 + "\nPress Q at anytime to return to the Game Menu"
                 + "\n----------------------------------------------------------");
     }
@@ -62,22 +65,63 @@ public class StatsView extends View {
     
     private void statistics() {
         
-        this.console.println("\nPercentage of Clues Found"
-                           + "\n-------------------------");
-        int percentOfClues = this.percentageOfClues();
-        this.console.println(percentOfClues);
+//        this.console.println("\nPercentage of Clues Found"
+//                           + "\n-------------------------");
+//        int percentOfClues = this.percentageOfClues();
+//        this.console.println(percentOfClues);
         
         
         this.console.println("\nNumber of Locations Visited"
                            + "\n---------------------------");
-        int numLocationsVisited = this.numLocationsVisited();
+        
+        Location[][] locations = Blackout.getCurrentGame().getMap().getLocations();
+        int numLocationsVisited = 0;
+        for(int i = 0; i < 5; i++){
+            for(int ii = 0; ii < 5; ii++){
+                if(locations[i][ii].isVisited()){
+                        numLocationsVisited++;   
+                    }
+            }
+        }
+        
         this.console.println(numLocationsVisited);
         
         
-        this.console.println("\nTime Remaining to Find Antidote"
-                           + "\n-------------------------------");
-        int timeRemaining = this.timeRemaining();
-        this.console.println(timeRemaining);
+        this.console.println("\nMoves Remaining to Finish Game \n---------------------------");
+        int movesRemaining = Blackout.getCurrentGame().getNumberMovesLeft();
+        this.console.println(movesRemaining);
+        
+        //see if found all the items
+        this.console.println("\nItems Needed to find to finish Game \n--------------------------- ");
+        int cntItmsNeeded = 0;
+        
+        if(!Blackout.getCurrentGame().isFoundDoor()){
+            this.console.println("The Magic Door");
+            cntItmsNeeded++;
+        }
+        
+        if(!Blackout.getCurrentGame().isFoundAntidote()){
+            this.console.println("The Antidote");
+            cntItmsNeeded++;
+        }
+        if(!Blackout.getCurrentGame().isFoundCoat()){
+            this.console.println("Your Coat");
+            cntItmsNeeded++;
+        }
+        if(!Blackout.getCurrentGame().isFoundWallet()){
+            this.console.println("Your Wallet");
+            cntItmsNeeded++;
+        }
+        if(!Blackout.getCurrentGame().isFoundPhone()){
+            this.console.println("Your Phone");
+            cntItmsNeeded++;
+        }
+       
+        
+        if(cntItmsNeeded == 0){
+            this.console.println("You Have Found All the Items!!");
+        }
+        
     }
 
     private int percentageOfClues() {

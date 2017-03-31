@@ -92,10 +92,10 @@ public class GameMenuView extends View {
                 }
             }
                 break;
-            case "T": //view briantalk
-                this.talk();
-                break;
-            //updated by Mark 3/18/17
+//            case "T": //view briantalk
+//                this.talk();
+//                break;
+//            //updated by Mark 3/18/17
             case "A": {
                 //only show Ant menu if you found it
                 if(Blackout.getCurrentGame().isFoundAntidote()){
@@ -253,8 +253,8 @@ public class GameMenuView extends View {
                 + "\nV - View Map"
                 + "\nF - Save Map Report"
                 + "\nS - Status"
-                + "\nB - Backpack Menu"                
-                + "\nT - Talk";
+                + "\nB - Backpack Menu";                
+                //+ "\nT - Talk";
         
                 if(game.isFoundAntidote()){
                       displayMenu = displayMenu +  "\nA - Antidote Amount Needed";

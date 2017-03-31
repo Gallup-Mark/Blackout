@@ -27,7 +27,7 @@ public class DoorView extends View {
                 + "\n | Door Menu"
                 + "\n----------------------------------------------------------"
                 + "\nK - Kick Door Open"
-                + "\nU - Unlock Door"
+                //+ "\nU - Unlock Door"
                 + "\nQ - Quit Menu"
                 + "\n-----------------------------------------------------------");
     }
@@ -50,20 +50,20 @@ public class DoorView extends View {
                 }
             }
             break;
-            case "U": {
-            try {
-                // display Unlock
-                this.displayUnlock();
-            } catch (DoorUnLockControlException e) {
-                
-                ErrorView.display(this.getClass().getName(), "You must enter a valid number. Try again or enter Q to quit. : " + e.getMessage());
-                
-                //System.out.println(ex);
-                
-                //Logger.getLogger(DoorView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-                break;
+//            case "U": {
+            //            try {
+            //                // display Unlock
+            //                this.displayUnlock();
+            //            } catch (DoorUnLockControlException e) {
+            //                
+            //                ErrorView.display(this.getClass().getName(), "You must enter a valid number. Try again or enter Q to quit. : " + e.getMessage());
+            //                
+            //                //System.out.println(ex);
+            //                
+            //                //Logger.getLogger(DoorView.class.getName()).log(Level.SEVERE, null, ex);
+            //            }
+            //        }
+            //                break;
 
             default:
                 
