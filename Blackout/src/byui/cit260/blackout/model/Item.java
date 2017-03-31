@@ -5,6 +5,7 @@
  */
 package byui.cit260.blackout.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -18,11 +19,28 @@ public class Item implements Serializable{
     private String name;
     private int locationX;
     private int locationY;
-    private boolean hasItem;
+    //private boolean hasItem;
     private String itemArt;
     private boolean alreadyFound;
+    private Point location;
 
     public Item() {
+    }
+    
+    public Point getLocation() {
+        return location;
+    }
+
+    public void setLocation(int x, int y) {
+        
+        this.location = new Point(x,y);
+    }
+
+    
+    
+    public void setLocation(Point location) {
+        
+        this.location = location;
     }
 
     public boolean isAlreadyFound() {
@@ -73,13 +91,13 @@ public class Item implements Serializable{
         this.locationY = locationY;
     }
 
-    public boolean isHasItem() {
-        return hasItem;
-    }
-
-    public void setHasItem(boolean hasItem) {
-        this.hasItem = hasItem;
-    }
+//    public boolean isHasItem() {
+//        return hasItem;
+//    }
+//
+//    public void setHasItem(boolean hasItem) {
+//        this.hasItem = hasItem;
+//    }
     
     
 
@@ -90,13 +108,13 @@ public class Item implements Serializable{
         hash = 53 * hash + Objects.hashCode(this.name);
         hash = 53 * hash + this.locationX;
         hash = 53 * hash + this.locationY;
-        hash = 53 * hash + (this.hasItem ? 1 : 0);
+        //hash = 53 * hash + (this.hasItem ? 1 : 0);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Item{" + "description=" + description + ", name=" + name + ", locationX=" + locationX + ", locationY=" + locationY + ", hasItem=" + hasItem + '}';
+        return "Item{" + "description=" + description + ", name=" + name + ", locationX=" + locationX + ", locationY=" + locationY + "" +'}';
     }
   
     @Override
@@ -117,9 +135,9 @@ public class Item implements Serializable{
         if (this.locationY != other.locationY) {
             return false;
         }
-        if (this.hasItem != other.hasItem) {
-            return false;
-        }
+//        if (this.hasItem != other.hasItem) {
+//            return false;
+//        }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }

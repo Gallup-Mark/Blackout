@@ -26,8 +26,8 @@ public class GameControl {
     
     public static int[] itemLocationXY = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
     
-    public static int min = 1;
-    public static int max = 24;
+    public static int min = 0;
+    public static int max = 4;
 
     public static Player createPlayer(String name) {
 
@@ -104,7 +104,8 @@ public class GameControl {
         antidote.setName("The Antidote");
         antidote.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         antidote.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
-        antidote.setHasItem(false);
+        antidote.setLocation(GameControl.getRandomInt(min, max), GameControl.getRandomInt(min, max));
+        //antidote.setHasItem(false);
         antidote.setItemArt(""
                             + " \n......"
                             +" \n:.  .:"
@@ -120,7 +121,8 @@ public class GameControl {
         phone.setName("Android");
         phone.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         phone.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
-        phone.setHasItem(false);
+        phone.setLocation(GameControl.getRandomInt(min, max), GameControl.getRandomInt(min, max));
+        //phone.setHasItem(false);
         phone.setItemArt(""
                         +"\n*"
                         +"\n|"
@@ -135,7 +137,8 @@ public class GameControl {
         wallet.setName("Leather wallet");
         wallet.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         wallet.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
-        wallet.setHasItem(false);
+        wallet.setLocation(GameControl.getRandomInt(min, max), GameControl.getRandomInt(min, max));
+        //wallet.setHasItem(false);
         wallet.setItemArt(""
 
                 + "\n          \\`\\/\\/\\/`/"
@@ -158,15 +161,17 @@ public class GameControl {
         coat.setName("Leather coat");
         coat.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         coat.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
-        coat.setHasItem(false);
+        coat.setLocation(GameControl.getRandomInt(min, max), GameControl.getRandomInt(min, max));
+       
+        //coat.setHasItem(false);
         coat.setItemArt(""
-                     + "\n      .-<\\ />-."
+                     + "\n     .-<\\ />-."
                      + "\n    / , \\V/ , \\"
                      + "\n    | |  :  | |"
                      + "\n    | |  :  | |"
                      + "\n    | |__:__| |"
                     + "\n     \\_/     \\_/"
-                    + "\n      ~       ~ ");           
+                    + "\n       ~        ~ ");           
 
         coat.setAlreadyFound(false);
         itemList[ItemList.coat.ordinal()] = coat;
@@ -176,7 +181,8 @@ public class GameControl {
         magicDoor.setName("Magic Door");
         magicDoor.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
         magicDoor.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
-        magicDoor.setHasItem(false);
+        magicDoor.setLocation(GameControl.getRandomInt(min, max), GameControl.getRandomInt(min, max));
+        //magicDoor.setHasItem(false);
         magicDoor.setItemArt(""
                 
                 + "\n  ,-' ;  ! `-."

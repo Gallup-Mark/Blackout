@@ -173,22 +173,22 @@ public class GameMenuView extends View {
                
                 
                 //this is a code to convert locations of XY into 25 locaitons
-                int locationNumber = 1;
-                if(x == 0){
-                    locationNumber = x + y + 1;
-                } else if(x == 1){
-                    locationNumber = (5 + y + 1);
-                } else if (x == 2){
-                    locationNumber = (10 + y + 1);  
-                } else if (x == 3){
-                    locationNumber = (15 + y + 1);
-                } else if ( x == 4){
-                    locationNumber = (20 + y + 1);
-                }
+//                int locationNumber = 1;
+//                if(x == 0){
+//                    locationNumber = x + y + 1;
+//                } else if(x == 1){
+//                    locationNumber = (5 + y + 1);
+//                } else if (x == 2){
+//                    locationNumber = (10 + y + 1);  
+//                } else if (x == 3){
+//                    locationNumber = (15 + y + 1);
+//                } else if ( x == 4){
+//                    locationNumber = (20 + y + 1);
+//                }
                 
                
                 //checks if the locaiton is set
-                if(Blackout.getCurrentGame().getItem()[i].getLocationX() == locationNumber){
+                if(Blackout.getCurrentGame().getItem()[i].getLocationX() == x && Blackout.getCurrentGame().getItem()[i].getLocationY() == y){
                     this.console.println("You Found: " + Blackout.getCurrentGame().getItem()[i].getDescription());
                     this.console.println(Blackout.getCurrentGame().getItem()[i].getItemArt());
                     foundItem = true;
@@ -408,7 +408,7 @@ public class GameMenuView extends View {
         Item[] itemList = GameControl.createItemList();
         
         for(Item phone: itemList) {
-            hasPhone = phone.isHasItem();
+           // hasPhone = phone.isHasItem();
         }
         
         if(game.isFoundPhone()) {

@@ -6,14 +6,14 @@ import blackout.Blackout;
 import byui.cit260.blackout.control.BackPackControl;
 import byui.cit260.blackout.model.Backpack;
 import byui.cit260.blackout.model.Item;
-import java.io.IOException;
-import java.util.Scanner;
-import java.util.Stack;
-import java.io.FileWriter;
+//import java.io.IOException;
+//import java.util.Scanner;
+//import java.util.Stack;
+//import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
 
@@ -102,8 +102,8 @@ public class BackpackMenuView extends View {
             } else {
                 
                 //Blackout.getCurrentGame().getBackpack()
-                Object[] theItems = backPack.getItemList().toArray();
                 
+                Object[] theItems = backPack.getItemList().toArray();
                 
                 for(int i =0; i < sz; i++){
                     
