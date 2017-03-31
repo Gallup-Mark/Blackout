@@ -85,6 +85,9 @@ public class GameControl {
                 + "\nQ - Back to Main Menu"
                 + "\n-----------------------------------------------------------");
 
+        
+        
+        
     }
    
 //create random int values to assign items to map locations     
@@ -170,8 +173,8 @@ public class GameControl {
                      + "\n    | |  :  | |"
                      + "\n    | |  :  | |"
                      + "\n    | |__:__| |"
-                    + "\n     \\_/     \\_/"
-                    + "\n       ~        ~ ");           
+                    + "\n    \\_/     \\_/"
+                    + "\n     ~        ~ ");           
 
         coat.setAlreadyFound(false);
         itemList[ItemList.coat.ordinal()] = coat;
