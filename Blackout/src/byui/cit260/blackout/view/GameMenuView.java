@@ -33,23 +33,26 @@ public class GameMenuView extends View {
     //private final String promptMessage = "\nPlease enter an option:";
     //private final String menu;
     public GameMenuView() {
-        super("\n"
-                + "\n----------------------------------------------------------"
-                + "\n | Game Menu"
-                + "\n----------------------------------------------------------"
-                + "\nM - Move to New Location"
-                + "\nV - View Map"
-                + "\nF - Save Map Report"
-                + "\nS - Status"
-                + "\nB - Backpack Menu"
-                //+ "\nE - Examine"
-                + "\nT - Talk"
-                + "\nA - Antidote Amount Needed"
-                + "\nP - Phone"
-                + "\nC - Phone Message Report"
-                //+ "\nD - Door Menu"  hide  menu unless found door
-                + "\nQ - Back to Main Menu"
-                + "\n-----------------------------------------------------------");
+            
+        super(Blackout.getCurrentGame().getGameMenu());
+        
+//        super("\n"
+//                + "\n----------------------------------------------------------"
+//                + "\n | Game Menu"
+//                + "\n----------------------------------------------------------"
+//                + "\nM - Move to New Location"
+//                + "\nV - View Map"
+//                + "\nF - Save Map Report"
+//                + "\nS - Status"
+//                + "\nB - Backpack Menu"
+//                //+ "\nE - Examine"
+//                + "\nT - Talk"
+//                //+ "\nA - Antidote Amount Needed"
+//                //+ "\nP - Phone"
+//                //+ "\nC - Phone Message Report"
+//                //+ "\nD - Door Menu"  hide  menu unless found door
+//                + "\nQ - Back to Main Menu"
+//                + "\n-----------------------------------------------------------");
     }
 
     @Override
@@ -71,8 +74,15 @@ public class GameMenuView extends View {
 //                this.viewExamine();
 //                break;
             case "D": //view door
-                this.viewDoor(Blackout.getCurrentGame());
-                break;
+                if(Blackout.getCurrentGame().isFoundDoor()){
+                   this.viewDoor(Blackout.getCurrentGame());
+                   break;
+                } else {
+                    this.console.println("\n*** Invalid selection, try again");
+                    break;
+                }
+                
+                
             case "F": {
             try {
                     //map report list
@@ -87,20 +97,32 @@ public class GameMenuView extends View {
                 break;
             //updated by Mark 3/18/17
             case "A": {
-            try {
-                //Amount of Antidote
-                this.viewAntidoteAmount();
-            } catch (AntidoteControlException ex) {
-               //System.out.println("\nInvalid input. Please enter a valid letter");
-               ErrorView.display(this.getClass().getName(), "Invalid Value Entered" + ex.getMessage());
-            }
-        }
+                //only show Ant menu if you found it
+                if(Blackout.getCurrentGame().isFoundAntidote()){
+                   try {
+                        //Amount of Antidote
+                        this.viewAntidoteAmount(Blackout.getCurrentGame());
+                    } catch (AntidoteControlException ex) {
+                       //System.out.println("\nInvalid input. Please enter a valid letter");
+                       ErrorView.display(this.getClass().getName(), "Invalid Value Entered" + ex.getMessage());
+                    }
+                } else {
+                    this.console.println("\n*** Invalid selection, try again");
+                    
+                }
+                    
+                }
                 break;
             case "B": //View Backpack contents
+                
                 this.viewBackPack();
                 break;
             case "P": //PhonePasswordView
-                this.viewPhonePassword();
+                if(Blackout.getCurrentGame().isFoundPhone()){
+                    this.viewPhonePassword(Blackout.getCurrentGame());
+                } else {
+                    this.console.println("\n*** Invalid selection, try again");
+                }
                 break;
             case "C": {
             try {
@@ -191,17 +213,21 @@ public class GameMenuView extends View {
                     //once you find the magic door you have have access to door menu
                     if(Blackout.getCurrentGame().getItem()[i].getDescription() == "The Magic Door"){
                         this.console.println("You have Found the Magic Door\n You can Now access the door functions from the menu. ");
-                        foudDoor(Blackout.getCurrentGame());
+                        Blackout.getCurrentGame().setFoundDoor(true);
+                        foudItemsForHiddenDoor(Blackout.getCurrentGame());
+                        
                     }
                     
                     //found antidote
                     if(Blackout.getCurrentGame().getItem()[i].getDescription() == "The antidote needed to live!"){
                         Blackout.getCurrentGame().setFoundAntidote(true); 
+                        foudItemsForHiddenDoor(Blackout.getCurrentGame());
                     }
                     
                     //found cell phone
                     if(Blackout.getCurrentGame().getItem()[i].getDescription() == "Your cell phone"){
                         Blackout.getCurrentGame().setFoundPhone(true);
+                        foudItemsForHiddenDoor(Blackout.getCurrentGame());
                     }
                     
                     //found wallet
@@ -228,9 +254,9 @@ public class GameMenuView extends View {
        }
     }
     
-    private void foudDoor(Game game){
+    private void foudItemsForHiddenDoor(Game game){
         
-        this.menu = "\n"
+        String displayMenu ="\n"
                 + "\n----------------------------------------------------------"
                 + "\n | Game Menu"
                 + "\n----------------------------------------------------------"
@@ -238,17 +264,29 @@ public class GameMenuView extends View {
                 + "\nV - View Map"
                 + "\nF - Save Map Report"
                 + "\nS - Status"
-                + "\nB - Backpack Menu"
-                //+ "\nE - Examine"
-                + "\nT - Talk"
-                + "\nA - Antidote Amount Needed"
-                + "\nP - Phone"
-                + "\nC - Phone Message Report"
-               + " \nD - Door Menu"  
+                + "\nB - Backpack Menu"                
+                + "\nT - Talk";
+        
+                if(game.isFoundAntidote()){
+                      displayMenu = displayMenu +  "\nA - Antidote Amount Needed";
+                }
+                
+                if(game.isFoundPhone()){
+                    displayMenu = displayMenu +  "\nP - Phone"
+                                + "\nC - Phone Message Report";
+                }
+
+                if(game.isFoundDoor()){
+                    displayMenu = displayMenu + "\nD - Door Menu";
+                }
+                
+                displayMenu = displayMenu + ""
                 + "\nQ - Back to Main Menu"
                 + "\n----------------------------------------------------------";
-                
-        game.setFoundDoor(true);
+        
+        this.menu = displayMenu;  
+        Blackout.getCurrentGame().setGameMenu(displayMenu);
+       // game.setFoundDoor(true);
         
         
     }
@@ -326,48 +364,54 @@ public class GameMenuView extends View {
     //private void mainMenu() {
     //  System.out.println("\n*** mainMenu() function called ***");
     //  }
-    private void viewAntidoteAmount() throws AntidoteControlException {
+    private void viewAntidoteAmount(Game game) throws AntidoteControlException {
         
-        boolean hasPhone = false;
-        boolean hasWallet = false;
-        boolean hasCoat = false;
-        boolean hasDoor = false;
-        boolean hasAntidote = false;
+//        boolean hasPhone = false;
+//        boolean hasWallet = false;
+//        boolean hasCoat = false;
+//        boolean hasDoor = false;
+//        boolean hasAntidote = false;
+//        
+//        Item[] itemList = GameControl.createItemList();
+//        
+//        for(Item door: itemList) {
+//            hasDoor = door.isHasItem();
+//        }
+//        for(Item wallet: itemList) {
+//            hasWallet = wallet.isHasItem();
+//        }
+//        for(Item coat: itemList) {
+//            hasCoat = coat.isHasItem();
+//        }
+//        for(Item phone: itemList) {
+//            hasPhone = phone.isHasItem();
+//        }
+//        for(Item antidote: itemList) {
+//            hasAntidote = antidote.isHasItem();
+//        }
         
-        Item[] itemList = GameControl.createItemList();
-        
-        for(Item door: itemList) {
-            hasDoor = door.isHasItem();
-        }
-        for(Item wallet: itemList) {
-            hasWallet = wallet.isHasItem();
-        }
-        for(Item coat: itemList) {
-            hasCoat = coat.isHasItem();
-        }
-        for(Item phone: itemList) {
-            hasPhone = phone.isHasItem();
-        }
-        for(Item antidote: itemList) {
-            hasAntidote = antidote.isHasItem();
-        }
-        
-        if(hasDoor == true && hasCoat == true && hasWallet == true && hasPhone == true && hasAntidote == true) {
+        if(game.isUnlockedDoor()){
+        //if(hasDoor == true && hasCoat == true && hasWallet == true && hasPhone == true && hasAntidote == true) {
             
-        AntidoteView antidoteView = new AntidoteView();
-        antidoteView.display();
-        //System.out.println(menu);
+            AntidoteView antidoteView = new AntidoteView();
+            antidoteView.display();
+            //System.out.println(menu);
         } else {
-                this.console.println("\n***You must have all items and have been through the door to access this.*** ");
-
+                if(game.isFoundDoor()){
+                    this.console.println("\n*** You must open the door before you can take the antidote");
+                } else {
+                    this.console.println("You must find the door and open it before you can take the antidote");
                 }
+                //this.console.println("\n***You must have all items and have been through the door to access this.*** ");
+
+        }
         //antidoteView.displayAntidoteView();
         //this.console.println(menu);
 
         //System.out.println("\n*** viewAntidoteAmount() function called ***");
     }
 
-    private void viewPhonePassword() {
+    private void viewPhonePassword(Game game) {
         
         boolean hasPhone = false;
         
@@ -377,7 +421,7 @@ public class GameMenuView extends View {
             hasPhone = phone.isHasItem();
         }
         
-        if(hasPhone == true) {
+        if(game.isFoundPhone()) {
         PhonePasswordView phonepassword = new PhonePasswordView();
         phonepassword.displayPhonePasswordView();
         //System.out.println(menu);
@@ -418,16 +462,34 @@ public class GameMenuView extends View {
 //                hasAntidote = antidote.isHasItem();
 //            }
 
-            if(game.isFoundAntidote() && game.isFoundCoat() && game.isFoundDoor() && game.isFoundPhone() && game.isFoundWallet()){
+            if(game.isFoundAntidote() && game.isFoundCoat() && game.isFoundDoor() && game.isFoundPhone() && game.isFoundWallet()  && game.isUnlockedPhone()){
             //if(hasDoor == true && hasCoat == true && hasWallet == true && hasPhone == true && hasAntidote == true) {
                 DoorView doorView = new DoorView();
                 doorView.display();
                 //System.out.println(menu);
             } else {
-                    this.console.println("\n***You are not at the Door.*** "
-                    + "\n***You must have all of the items and be at the door before you can access this.***");
-
+                    //this.console.println("\n***You are not at the Door.*** "
+                    this.console.println(""
+                    + "\n***You must have all of the items and unlocked your phone before you can access this.***");
+                    
+                    
+                    //lists all items not found
+                    if(!game.isFoundAntidote()){
+                        this.console.println("You have not found the Antidote");
                     }
+                    if(!game.isFoundCoat()){
+                        this.console.println("You have not found your Coat");
+                    }
+                    if(!game.isFoundWallet()){
+                        this.console.println("You have not found your Wallet");
+                    }
+                    if(!game.isFoundPhone()){
+                        this.console.println("You have not found your Phone");
+                    }
+                    if(!game.isUnlockedPhone()){
+                        this.console.println("You have not unlocked your Phone, Access the Phone option to unlock your phone");
+                    }
+            }
 
 
 

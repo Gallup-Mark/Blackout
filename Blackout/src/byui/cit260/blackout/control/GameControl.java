@@ -69,6 +69,26 @@ public class GameControl {
         game.setFoundCoat(false);
         game.setFoundPhone(false);
         game.setFoundWallet(false);
+        game.setUnlockedPhone(false);
+        game.setUnlockedDoor(false);
+        
+        game.setGameMenu("\n"
+                + "\n----------------------------------------------------------"
+                + "\n | Game Menu"
+                + "\n----------------------------------------------------------"
+                + "\nM - Move to New Location"
+                + "\nV - View Map"
+                + "\nF - Save Map Report"
+                + "\nS - Status"
+                + "\nB - Backpack Menu"
+                //+ "\nE - Examine"
+                + "\nT - Talk"
+                //+ "\nA - Antidote Amount Needed"
+                //+ "\nP - Phone"
+                //+ "\nC - Phone Message Report"
+                //+ "\nD - Door Menu"  hide  menu unless found door
+                + "\nQ - Back to Main Menu"
+                + "\n-----------------------------------------------------------");
 
     }
    

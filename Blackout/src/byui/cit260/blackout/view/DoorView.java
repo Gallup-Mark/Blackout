@@ -11,6 +11,7 @@ import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import blackout.Blackout;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
 
@@ -194,7 +195,16 @@ public class DoorView extends View {
 
         }
         Player.setForce(value);
-        DoorControl.breakDoorOpen(Player.getWeight(), Player.getForce(), 5, 3, 7);
+        
+        if(DoorControl.breakDoorOpen(Player.getWeight(), Player.getForce(), 5, 3, 7) == 1){
+            this.console.println("Door is broken open.  Way to go \nYou can now take the Antidote ");
+            Blackout.getCurrentGame().setUnlockedDoor(true);
+        }
+        if(DoorControl.breakDoorOpen(Player.getWeight(), Player.getForce(), 5, 3, 7) == 0){
+            this.console.println("Nice try you big sissy! ");
+            
+        }
+        
     }
 
 }

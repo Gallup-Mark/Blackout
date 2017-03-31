@@ -368,6 +368,9 @@ public class PhonePasswordView {
 //            messageList = PhoneControl.displayMessages();
 //              messageList = this.displayMessages();
             this.displayMessages();
+            //set the game value to unlocked phone
+            Blackout.getCurrentGame().setUnlockedPhone(true);
+            
             //return for use when other code is finished
             //return true;
         } else {

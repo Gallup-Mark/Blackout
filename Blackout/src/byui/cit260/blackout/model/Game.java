@@ -22,8 +22,38 @@ public class Game implements Serializable{
     private boolean foundWallet;
     private boolean foundCoat;
     private boolean foundAntidote;
+    private boolean unlockedPhone;
+    private boolean unlockedDoor;
     
     private int NumberMovesLeft;
+    
+    private String gameMenu;
+
+    public String getGameMenu() {
+        return gameMenu;
+    }
+
+    public void setGameMenu(String gameMenu) {
+        this.gameMenu = gameMenu;
+    }
+    
+    
+
+    public boolean isUnlockedDoor() {
+        return unlockedDoor;
+    }
+
+    public void setUnlockedDoor(boolean unlockedDoor) {
+        this.unlockedDoor = unlockedDoor;
+    }
+
+    public boolean isUnlockedPhone() {
+        return unlockedPhone;
+    }
+
+    public void setUnlockedPhone(boolean unlockedPhone) {
+        this.unlockedPhone = unlockedPhone;
+    }
 
     public boolean isFoundPhone() {
         return foundPhone;

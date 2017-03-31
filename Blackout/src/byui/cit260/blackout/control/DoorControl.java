@@ -9,7 +9,7 @@ import byui.cit260.blackout.model.Door;
  */
 public class DoorControl {
 
-    public static void breakDoorOpen(double playerWeight, double playerForce, double doorWeight, double doorWidth, double doorHeight)
+    public static int breakDoorOpen(double playerWeight, double playerForce, double doorWeight, double doorWidth, double doorHeight)
             throws DoorControlException {
 
         if (doorHeight <= 0) { //doorHeight is negative?
@@ -43,12 +43,12 @@ public class DoorControl {
 
         if (force >= doorMass) {
             Door.setOpen(true);
-            System.out.println("Door is broken open.  Way to go!");
-            // return 1;
+            //System.out.println("Door is broken open.  Way to go!");
+            return 1;
         } else {
             Door.setOpen(false);
-            System.out.println("Nice try you big sissy!");
-            //return 0;
+            //System.out.println("Nice try you big sissy!");
+            return 0;
         }
 
     }
