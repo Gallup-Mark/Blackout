@@ -153,22 +153,11 @@ public class GameMenuView extends View {
         //LocationMenuView locationMenuView = new LocationMenuView();
         //locationMenuView.display();
         //System.out.println(menu);
-       int x = -1; 
-       int y = -1;
-       try {
-             x = parseInt(getInput("Enter X value on Map"));
-       } catch(NumberFormatException e){
-           ErrorView.display(this.getClass().getName(), "*** Invalid Value Entered" + e.getMessage());
-           //System.out.println("Invalid Value entered");
         
-        }
-       try {
-            y = parseInt(getInput("Enter Y value on Map"));
-       } catch(NumberFormatException e){
-           ErrorView.display(this.getClass().getName(), "*** Invalid Value Entered" + e.getMessage());
-           
-           //System.out.println("Invalid Value Entered");
-       }
+        //use the getInput with Min, Max value
+       int x = getInput("Enter X value on Map between 0 and 4", 0, 4); 
+       int y = getInput("Enter Y value on Map between 0 and 4", 0, 4); 
+
        if(x >= 0 && y >= 0  && x < 5 && y < 5){
             MapControl.movePlayer(Blackout.getCurrentGame().getMap(), x, y);
             this.console.println("\nYou have " + Blackout.getCurrentGame().getNumberMovesLeft() + " Moves Left!");
@@ -320,7 +309,8 @@ public class GameMenuView extends View {
 
                 //shows if the location has been visited or not
                 if (locations[i][ii].isVisited()) {
-                    linePrintout = linePrintout + locations[i][ii].getScene().getMapSymbol() + "  ";
+                    linePrintout = linePrintout + " ";
+                    linePrintout = linePrintout + locations[i][ii].getScene().getMapSymbol() + " ";
 
                 } else {
 

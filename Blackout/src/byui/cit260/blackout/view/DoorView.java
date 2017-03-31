@@ -123,6 +123,7 @@ public class DoorView extends View {
              this.console.println("You Did Not Unlock the door");
          } else {
              this.console.println("You Unlocked the Door");
+             Blackout.getCurrentGame().setUnlockedDoor(true);
          }
         
        

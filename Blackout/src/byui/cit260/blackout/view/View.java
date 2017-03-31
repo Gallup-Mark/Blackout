@@ -4,6 +4,7 @@ import blackout.Blackout;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -109,6 +110,43 @@ public abstract class View implements ViewInterface {
             }
 
             break;  // end the loop
+        }
+        return value;
+    }
+    
+    public int getInput(String message, int minVal, int maxVal) {
+
+        //Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        int value = 0; //value to be returned
+        boolean valid = false; // intialize to not valid
+
+        while (!valid) { // loop while an invalid va;lue is entered
+            this.console.println(message);
+            //System.out.println("\n" + this.promptMessage);
+            try {
+                value = parseInt(keyboard.readLine()); // get next line typed on keyboard
+                
+            } catch (IOException ex) {
+                 ErrorView.display(this.getClass().getName(), "Error Reading input: " +ex.getMessage());
+               
+                //System.out.println("\n Error Reading Input: " + ex.getMessage());
+                //Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (NumberFormatException nf) {
+                //System.out.println("You must enter a valid number ");
+                ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again " + nf.getMessage());
+                
+          }
+            //value = value.trim(); // trim off leading and trailing blanks
+            
+            
+            if (value < minVal || value > maxVal) { //
+                 
+                 ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again ");
+                //continue;
+            } else {
+
+                break;  // end the loop
+            }
         }
         return value;
     }

@@ -81,12 +81,7 @@ public class GameControl {
                 + "\nF - Save Map Report"
                 + "\nS - Status"
                 + "\nB - Backpack Menu"
-                //+ "\nE - Examine"
                 + "\nT - Talk"
-                //+ "\nA - Antidote Amount Needed"
-                //+ "\nP - Phone"
-                //+ "\nC - Phone Message Report"
-                //+ "\nD - Door Menu"  hide  menu unless found door
                 + "\nQ - Back to Main Menu"
                 + "\n-----------------------------------------------------------");
 
