@@ -86,8 +86,6 @@ public class GameControl {
                 + "\n-----------------------------------------------------------");
 
         
-        
-        
     }
    
 //create random int values to assign items to map locations     
@@ -100,7 +98,7 @@ public class GameControl {
     }
 
     public static Item[] createItemList() {
-        Item[] itemList = new Item[5];
+        Item[] itemList = new Item[6];
 
         Item antidote = new Item();
         antidote.setDescription("The antidote needed to live!");
@@ -203,6 +201,39 @@ public class GameControl {
         
         magicDoor.setAlreadyFound(false);
         itemList[ItemList.magicDoor.ordinal()] = magicDoor;
+        
+        Item loveNote = new Item();
+        loveNote.setDescription("The Love Note");
+        loveNote.setName(" Formula to unlock you phone ((sqrt(Number1 – Number2) *  ( sqrt(Number1 – Number2)) +   (Number3 – Number4) ");
+        loveNote.setLocationX(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        loveNote.setLocationY(itemLocationXY[(GameControl.getRandomInt(min, max))]);
+        loveNote.setLocation(GameControl.getRandomInt(min, max), GameControl.getRandomInt(min, max));
+        loveNote.setItemArt(""
+                
+                +"\n                  _______                    ______"
+                +"\n         ..//``~~~~~-=+=-=+~~~~\\.      .//~~~~=-=+=-~~~~~''\\.."
+                +"\n     ..//=+=-=+=-=+=-=+=-=+=-=+=-\\    //=+=-=+=-=+=-=+=-=+=-=+=\\.."
+                +"\n     //+=-=+=-=+=-=+=-=+=-=+=-=+=-=+\\//=-=+=-=+=-=+=-=+=-=+=-=+=-=+\\"
+                +"\n   //-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-\\"
+                +"\n  ++=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=++"
+                +"\n  ||~~\\    /~~~\\/~~~\\   /~~~\\/~~~\\   /~~~\\/~~~\\   /~~~\\/~~~\\   /~~~\\/~~||"
+                +"\n  ||  /    \\        /   \\        /   \\        /   \\        /   \\       ||"
+                +"\n  ||/        \\    /       \\    /       \\    /       \\    /       \\    /||"
+                +"\n  ||           \\/           \\/           \\/           \\/           \\/  ||"
+                +"\n  ++=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=++"
+                +"\n   \\-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=//"
+                +"\n     `\\=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+//'"
+                +"\n       |`\\+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=//'"
+                +"\n       |   `\\=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=//''"
+                +"\n       |      ``\\=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=//''"
+                +"\n  _____|_____     ``\\=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=//''     --Jrf"
+                +"\n |   I Love  |        ``\\=+=-=+=-=+=-=+=-=+=-=+=//''"
+                +"\n |    You.   |            ``\\=+=-=+=-=+=-=+=//''"
+                +"\n |   *kiss*  |                ``\\=+=-=+=//''"
+                +"\n  ~~~~~~~~~~~                     ``\\//''");
+
+        loveNote.setAlreadyFound(false);
+        itemList[ItemList.loveNote.ordinal()] = loveNote;
 
         return itemList;
 
