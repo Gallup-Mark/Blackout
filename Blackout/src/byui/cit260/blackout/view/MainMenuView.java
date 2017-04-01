@@ -23,7 +23,7 @@ public class MainMenuView extends View {
                 + "\nN - New Game"
                 + "\nS - Save Game"
                 + "\nL - Load Saved Game"
-                + "\nH - Help Menu"
+//                + "\nH - Help Menu"
                 + "\nR - Restart Game "
                 + "\nQ - Quit Game"
                 + "\n-----------------------------------------------------------");
@@ -46,9 +46,9 @@ public class MainMenuView extends View {
                 case "L" : // Load game
                     this.loadGame();
                     break;
-                case "H" : //Help Menu
-                    this.helpMenu();
-                    break;
+//                case "H" : //Help Menu
+//                    this.helpMenu();
+//                    break;
                 case "R" ://Restart Game
                     this.restartGame();
                     break;
@@ -103,11 +103,11 @@ public class MainMenuView extends View {
         gameMenu.display();
     }
 
-    private void helpMenu() {
-       // display help menu
-       HelpMenuView helpMenu = new HelpMenuView();
-       helpMenu.display();
-    }
+//    private void helpMenu() {
+//       // display help menu
+//       HelpMenuView helpMenu = new HelpMenuView();
+//       helpMenu.display();
+//    }
 
 //    private void quitGame() {
 //        this.console.println("\n*** quitMenu() function called ***");
