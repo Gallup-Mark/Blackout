@@ -95,6 +95,28 @@ public class MapControl {
         apartmentOne.setMapSymbol(";(");
         apartmentOne.setNonPlayer(NonPlayer.PoliceManJoe);
         apartmentOne.setNumberItems(1);
+        
+        apartmentOne.setArtForScreen(
+"    /\\  ____\n" +
+"    <> ( oo )\n" +
+"    <>_| ^^ |_\n" +
+"    <>   @    \\\n" +
+"   /~~\\ . . _ |\n" +
+"  /~~~~\\    | |\n" +
+" /~~~~~~\\/ _| |\n" +
+" |[][][]/ / [m]\n" +
+" |[][][[m]\n" +
+" |[][][]|\n" +
+" |[][][]|\n" +
+" |[][][]|\n" +
+" |[|--|]|\n" +
+" |[|  |]|\n" +
+" ========\n" +
+"==========\n" +
+"|[[    ]]|\n" +
+"========== " 
+ );
+        
         scenes[SceneType.apartmentOne.ordinal()] = apartmentOne;
         
         Scene apartmentTwo = new Scene();
@@ -102,6 +124,26 @@ public class MapControl {
         apartmentTwo.setMapSymbol(";(");
         apartmentTwo.setNonPlayer(NonPlayer.PoliceManJoe);
         apartmentTwo.setNumberItems(1);
+        apartmentTwo.setArtForScreen(
+"    /\\  ____\n" +
+"    <> ( oo )\n" +
+"    <>_| ^^ |_\n" +
+"    <>   @    \\\n" +
+"   /~~\\ . . _ |\n" +
+"  /~~~~\\    | |\n" +
+" /~~~~~~\\/ _| |\n" +
+" |[][][]/ / [m]\n" +
+" |[][][[m]\n" +
+" |[][][]|\n" +
+" |[][][]|\n" +
+" |[][][]|\n" +
+" |[|--|]|\n" +
+" |[|  |]|\n" +
+" ========\n" +
+"==========\n" +
+"|[[    ]]|\n" +
+"========== " 
+ );
         scenes[SceneType.apartmentTwo.ordinal()] = apartmentTwo;
         
         Scene apartmentThree = new Scene();
@@ -109,6 +151,26 @@ public class MapControl {
         apartmentThree.setMapSymbol(";(");
         apartmentThree.setNonPlayer(NonPlayer.PoliceManJoe);
         apartmentThree.setNumberItems(1);
+        apartmentThree.setArtForScreen(
+"    /\\  ____\n" +
+"    <> ( oo )\n" +
+"    <>_| ^^ |_\n" +
+"    <>   @    \\\n" +
+"   /~~\\ . . _ |\n" +
+"  /~~~~\\    | |\n" +
+" /~~~~~~\\/ _| |\n" +
+" |[][][]/ / [m]\n" +
+" |[][][[m]\n" +
+" |[][][]|\n" +
+" |[][][]|\n" +
+" |[][][]|\n" +
+" |[|--|]|\n" +
+" |[|  |]|\n" +
+" ========\n" +
+"==========\n" +
+"|[[    ]]|\n" +
+"========== " 
+ );
         scenes[SceneType.apartmentThree.ordinal()] = apartmentThree;
         
         Scene apartmentFour = new Scene();
@@ -116,6 +178,26 @@ public class MapControl {
         apartmentFour.setMapSymbol(";(");
         apartmentFour.setNonPlayer(NonPlayer.PoliceManJoe);
         apartmentFour.setNumberItems(1);
+        apartmentFour.setArtForScreen(
+"    /\\  ____\n" +
+"    <> ( oo )\n" +
+"    <>_| ^^ |_\n" +
+"    <>   @    \\\n" +
+"   /~~\\ . . _ |\n" +
+"  /~~~~\\    | |\n" +
+" /~~~~~~\\/ _| |\n" +
+" |[][][]/ / [m]\n" +
+" |[][][[m]\n" +
+" |[][][]|\n" +
+" |[][][]|\n" +
+" |[][][]|\n" +
+" |[|--|]|\n" +
+" |[|  |]|\n" +
+" ========\n" +
+"==========\n" +
+"|[[    ]]|\n" +
+"========== " 
+ );
         scenes[SceneType.apartmentFour.ordinal()] = apartmentFour;
         
         Scene apartmentFive = new Scene();
@@ -123,6 +205,26 @@ public class MapControl {
         apartmentFive.setMapSymbol(";(");
         apartmentFive.setNonPlayer(NonPlayer.PoliceManJoe);
         apartmentFive.setNumberItems(1);
+        apartmentFive.setArtForScreen(
+"    /\\  ____\n" +
+"    <> ( oo )\n" +
+"    <>_| ^^ |_\n" +
+"    <>   @    \\\n" +
+"   /~~\\ . . _ |\n" +
+"  /~~~~\\    | |\n" +
+" /~~~~~~\\/ _| |\n" +
+" |[][][]/ / [m]\n" +
+" |[][][[m]\n" +
+" |[][][]|\n" +
+" |[][][]|\n" +
+" |[][][]|\n" +
+" |[|--|]|\n" +
+" |[|  |]|\n" +
+" ========\n" +
+"==========\n" +
+"|[[    ]]|\n" +
+"========== " 
+ );
         scenes[SceneType.apartmentFive.ordinal()] = apartmentFive;
         
         
