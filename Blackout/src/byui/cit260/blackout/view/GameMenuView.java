@@ -166,8 +166,8 @@ public class GameMenuView extends View {
         //System.out.println(menu);
         
         //use the getInput with Min, Max value
-       int x = getInput("Enter X value on Map between 0 and 4", 0, 4); 
-       int y = getInput("Enter Y value on Map between 0 and 4", 0, 4); 
+       int x = getInput("Enter X value on Map between 0 and 4 (No Value Defaults to 0)", 0, 4); 
+       int y = getInput("Enter Y value on Map between 0 and 4 (No Value Defaults to 0)", 0, 4); 
 
        if(x >= 0 && y >= 0  && x < 5 && y < 5){
             MapControl.movePlayer(Blackout.getCurrentGame().getMap(), x, y);
@@ -270,7 +270,8 @@ public class GameMenuView extends View {
                 + "\nV - View Map"
                 + "\nF - Save Map Report"
                 + "\nS - Status"
-                + "\nB - Backpack Menu";                
+                + "\nB - Backpack Menu"
+                + "\nH - Help Menu";
                 //+ "\nT - Talk";
         
                 if(game.isFoundAntidote()){
