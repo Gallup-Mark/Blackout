@@ -61,8 +61,8 @@ public class AntidoteView extends View{
 "@@@@@@@@@' @@@@@@@@@@ @@@@@@@@a    @@@@        @@@@      `@@' \n" +
 "@@@@       @@@@  @@@@ @@@@ @@@@    @@@@        @@@@ \n" +
 "@@@@       @@@@  @@@@ @@@@ @@@@    @@@@        @@@@       @@";
-    private final String promptMessage4 = "\nYou took too many pills. You are dead! Game Over! Do you want to try start a new game?";
-    private final String promptMessage5 = "\nYou took the wrong amount of pills.  You are dead! Game over. Do you want to start a new game?"
+    private final String promptMessage4 = "\nYou took too many pills. You are dead! Game Over! ";
+    private final String promptMessage5 = "\nYou took the wrong amount of pills.  You are dead! Game over. "
             + "\n"
             + "                  _  /)\n" +
 "                 mo / )\n" +

@@ -133,7 +133,7 @@ public abstract class View implements ViewInterface {
                 //Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NumberFormatException nf) {
                 //System.out.println("You must enter a valid number ");
-                ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again " + nf.getMessage());
+                //ErrorView.display(this.getClass().getName(), "*** Invalid selection, try again " + nf.getMessage());
                 
           }
             //value = value.trim(); // trim off leading and trailing blanks
