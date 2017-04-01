@@ -81,6 +81,7 @@ public class GameControl {
                 + "\nF - Save Map Report"
                 + "\nS - Status"
                 + "\nB - Backpack Menu"
+                + "\nH - Help Menu"
                 //+ "\nT - Talk"
                 + "\nQ - Back to Main Menu"
                 + "\n-----------------------------------------------------------");

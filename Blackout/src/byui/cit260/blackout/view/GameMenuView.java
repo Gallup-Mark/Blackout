@@ -82,6 +82,10 @@ public class GameMenuView extends View {
                     break;
                 }
                 
+            case "H" : //Help Menu
+                this.helpMenu();
+                break;
+                
                 
             case "F": {
             try {
@@ -147,6 +151,13 @@ public class GameMenuView extends View {
         //System.out.println(menu);
 
     }
+    
+    private void helpMenu() {
+       // display help menu
+       HelpMenuView helpMenu = new HelpMenuView();
+       helpMenu.display();
+    }
+
 
     private void moveLocation() {
 

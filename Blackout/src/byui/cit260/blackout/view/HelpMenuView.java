@@ -46,15 +46,18 @@ public class HelpMenuView extends View{
     }
 
     private void displayGoal() {
-        this.console.println("\n*** Figure out who you are and how much antidote you need to survive ***");
+        this.console.println("\n*** Figure out who you are and how much antidote you need to survive ***"
+                + "\nIn order to win you need to find all of the items randomly placed around the map."
+                + "\nOnce you find all of the items and complete the challenges your memories will come back and"
+                + "\nYou will live happily ever after.  Mess up and you die!");
     }
 
     private void displayMoveOptions() {
-       this.console.println("\n*** Where do you want to go?***");
+       this.console.println("\n*** Input your x and y coordinates.  Inputs should be from 0 to 4 ***");
     }
 
     private void displayClues() {
-        this.console.println("\n*** Gather clues to bring back your memory and find the antidote ***");
+        this.console.println("\n*** Some items will give you clues to finish the game ***");
     }
 
     
