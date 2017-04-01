@@ -14,5 +14,6 @@ public enum ItemList {
     phone,
     wallet,
     coat,
-    magicDoor;
+    magicDoor,
+    loveNote;
 }

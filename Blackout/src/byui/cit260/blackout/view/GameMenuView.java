@@ -82,6 +82,10 @@ public class GameMenuView extends View {
                     break;
                 }
                 
+            case "H" : //Help Menu
+                this.helpMenu();
+                break;
+                
                 
             case "F": {
             try {
@@ -147,6 +151,13 @@ public class GameMenuView extends View {
         //System.out.println(menu);
 
     }
+    
+    private void helpMenu() {
+       // display help menu
+       HelpMenuView helpMenu = new HelpMenuView();
+       helpMenu.display();
+    }
+
 
     private void moveLocation() {
 
@@ -169,7 +180,7 @@ public class GameMenuView extends View {
             //check if an item is at location
             boolean foundItem = false;
             
-            for(int i = 0; i < 5; i++){
+            for(int i = 0; i < 6; i++){
                
                 
                 //this is a code to convert locations of XY into 25 locaitons
@@ -199,6 +210,8 @@ public class GameMenuView extends View {
                         Blackout.getCurrentGame().getItem()[i].setAlreadyFound(true);
                     }
                     
+                    
+                    
                     //once you find the magic door you have have access to door menu
                     if(Blackout.getCurrentGame().getItem()[i].getDescription() == "The Magic Door"){
                         this.console.println("You have Found the Magic Door\n You can Now access the door functions from the menu. ");
@@ -227,6 +240,10 @@ public class GameMenuView extends View {
                     //found coat
                     if(Blackout.getCurrentGame().getItem()[i].getDescription() == "Your coat"){
                         Blackout.getCurrentGame().setFoundCoat(true);
+                    }
+                    
+                    if(Blackout.getCurrentGame().getItem()[i].getDescription() == "The Love Note"){
+                        Blackout.getCurrentGame().setFoundLoveNote(true);
                     }
                     
                 }  
@@ -405,23 +422,28 @@ public class GameMenuView extends View {
         
         boolean hasPhone = false;
         
-        Item[] itemList = GameControl.createItemList();
+        if(Blackout.getCurrentGame().isFoundLoveNote()){
         
-        for(Item phone: itemList) {
-           // hasPhone = phone.isHasItem();
-        }
-        
-        if(game.isFoundPhone()) {
-        PhonePasswordView phonepassword = new PhonePasswordView();
-        phonepassword.displayPhonePasswordView();
-        //System.out.println(menu);
+            Item[] itemList = GameControl.createItemList();
+
+            for(Item phone: itemList) {
+               // hasPhone = phone.isHasItem();
+            }
+
+            if(game.isFoundPhone()) {
+                this.console.println("\n***View the Love note from the BackPack Menu to view the equation to unlock your phone");
+                PhonePasswordView phonepassword = new PhonePasswordView();
+                phonepassword.displayPhonePasswordView();
+                //System.out.println(menu);
+            } else {
+                    this.console.println("\n***You do not have the phone.*** "
+                    + "\n***You must have the phone before you can access this.***");
+
+            }
         } else {
-                this.console.println("\n***You do not have the phone.*** "
-                + "\n***You must have the phone before you can access this.***");
-
-                }
-
-    }
+            this.console.println("\n**You Must Find love note To unlock Phone");
+        }
+}
 
     private void viewDoor(Game game) {
         

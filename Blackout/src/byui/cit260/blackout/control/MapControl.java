@@ -51,11 +51,11 @@ public class MapControl {
         //update ascii art  here
         
         subwayOne.setArtForScreen(" " 
- + "\n          ~~~~ ____   |~~~~~~~~~~~~~|"
- + "\nY_,___|[]|   | Subway Car   |"
- + "\n{|_|_|_|PU|_,_|_____________|"
-+" \n//oo---OO=OO     OOO     OOO"
-         );
+        + "\n  ~~~~ ____   |~~~~~~~~~~~~~|"
+        + "\nY_,___|[]|   | Subway Car   |"
+        + "\n{|_|_|_|PU|_,_|_____________|"
+       +" \n//oo---OO=OO     OOO     OOO"
+                );
         
         scenes[SceneType.subwayOne.ordinal()] = subwayOne;
         
@@ -66,6 +66,12 @@ public class MapControl {
         subwayTwo.setMapSymbol(";)");
         subwayTwo.setNonPlayer(NonPlayer.Thug1);
         subwayTwo.setNumberItems(2);
+        subwayTwo.setArtForScreen(" " 
+        + "\n  ~~~~ ____   |~~~~~~~~~~~~~|"
+        + "\nY_,___|[]|   | Subway Car   |"
+        + "\n{|_|_|_|PU|_,_|_____________|"
+       +" \n//oo---OO=OO     OOO     OOO"
+                );
         scenes[SceneType.subwayTwo.ordinal()] = subwayTwo;
         
         Scene subwayThree = new Scene();
@@ -73,6 +79,12 @@ public class MapControl {
         subwayThree.setMapSymbol(";)");
         subwayThree.setNonPlayer(NonPlayer.Thug1);
         subwayThree.setNumberItems(2);
+        subwayThree.setArtForScreen(" " 
+        + "\n  ~~~~ ____   |~~~~~~~~~~~~~|"
+        + "\nY_,___|[]|   | Subway Car   |"
+        + "\n{|_|_|_|PU|_,_|_____________|"
+       +" \n//oo---OO=OO     OOO     OOO"
+                );
         scenes[SceneType.subwayThree.ordinal()] = subwayThree;
         
         Scene subwayFour = new Scene();
@@ -80,6 +92,12 @@ public class MapControl {
         subwayFour.setMapSymbol(";)");
         subwayFour.setNonPlayer(NonPlayer.Thug1);
         subwayFour.setNumberItems(2);
+        subwayFour.setArtForScreen(" " 
+        + "\n  ~~~~ ____   |~~~~~~~~~~~~~|"
+        + "\nY_,___|[]|   | Subway Car   |"
+        + "\n{|_|_|_|PU|_,_|_____________|"
+       +" \n//oo---OO=OO     OOO     OOO"
+                );
         scenes[SceneType.subwayFour.ordinal()] = subwayFour;
         
         Scene subwayFive = new Scene();
@@ -87,6 +105,12 @@ public class MapControl {
         subwayFive.setMapSymbol(";)");
         subwayFive.setNonPlayer(NonPlayer.Thug1);
         subwayFive.setNumberItems(2);
+        subwayFive.setArtForScreen(" " 
+        + "\n  ~~~~ ____   |~~~~~~~~~~~~~|"
+        + "\nY_,___|[]|   | Subway Car   |"
+        + "\n{|_|_|_|PU|_,_|_____________|"
+       +" \n//oo---OO=OO     OOO     OOO"
+                );
         scenes[SceneType.subwayFive.ordinal()] = subwayFive;
         
         
@@ -234,6 +258,17 @@ public class MapControl {
         streetOne.setMapSymbol(";0");
         streetOne.setNonPlayer(NonPlayer.Thug3);
         streetOne.setNumberItems(1);
+        streetOne.setArtForScreen(
+        "________/\"\"||\"\"\"\"\"\"\"\"\"\"\"\"\"|_________/\"\"||\"\"\"\"\"\"\"\"\"\"\"\"\"|_________/\"\"||\"\"\"\"\"\"\"\"\"\n" +
+        ".._/\"\\_, |  ||_____________| ._/\"\\_, |  ||_____________| ._/\"\\_, |  ||_________\n" +
+        "\"o---o\" 'O--OO       OO OO  \"o---o\" 'O--OO       OO OO  \"o---o\" 'O--OO       O\n" +
+        "\"\"\"\"\\,   .__/\"\"\\__,   .__/\"\"\"\"\"\\,   .__/\"\"\\__,   .__/\"\"\"\"\"\\,   .__/\"\"\\__,   ._\n" +
+        "---()\"   \"()----()\"   \"()-----()\"   \"()----()\"   \"()-----()\"   \"()----()\"   \"(\n" +
+        "\\                 /\"\"\"T\"\"\"\\                 /\"\"\"T\"\"\"\\                 /\"\"\"T\"\"\"\n" +
+        "_>---\\       ,---<____|____>---\\       ,---<____|____>---\\       ,---<____|___\n" +
+        "-/\"\\ {      / /\"\\    -|   -/\"\\ {      / /\"\\    -|   -/\"\\ {      / /\"\\    -|\n" +
+        "-\\_/-=      =-\\_/-----+----\\_/-=      =-\\_/-----+----\\_/-=      =-\\_/-----+---\n" +
+        "______________________________________________________________________________");
         scenes[SceneType.streetOne.ordinal()] = streetOne;
         
         Scene streetTwo = new Scene();
@@ -241,6 +276,17 @@ public class MapControl {
         streetTwo.setMapSymbol(";0");
         streetTwo.setNonPlayer(NonPlayer.Thug3);
         streetTwo.setNumberItems(1);
+        streetTwo.setArtForScreen(
+        "________/\"\"||\"\"\"\"\"\"\"\"\"\"\"\"\"|_________/\"\"||\"\"\"\"\"\"\"\"\"\"\"\"\"|_________/\"\"||\"\"\"\"\"\"\"\"\"\n" +
+        ".._/\"\\_, |  ||_____________| ._/\"\\_, |  ||_____________| ._/\"\\_, |  ||_________\n" +
+        "\"o---o\" 'O--OO       OO OO  \"o---o\" 'O--OO       OO OO  \"o---o\" 'O--OO       O\n" +
+        "\"\"\"\"\\,   .__/\"\"\\__,   .__/\"\"\"\"\"\\,   .__/\"\"\\__,   .__/\"\"\"\"\"\\,   .__/\"\"\\__,   ._\n" +
+        "---()\"   \"()----()\"   \"()-----()\"   \"()----()\"   \"()-----()\"   \"()----()\"   \"(\n" +
+        "\\                 /\"\"\"T\"\"\"\\                 /\"\"\"T\"\"\"\\                 /\"\"\"T\"\"\"\n" +
+        "_>---\\       ,---<____|____>---\\       ,---<____|____>---\\       ,---<____|___\n" +
+        "-/\"\\ {      / /\"\\    -|   -/\"\\ {      / /\"\\    -|   -/\"\\ {      / /\"\\    -|\n" +
+        "-\\_/-=      =-\\_/-----+----\\_/-=      =-\\_/-----+----\\_/-=      =-\\_/-----+---\n" +
+        "______________________________________________________________________________");
         scenes[SceneType.streetTwo.ordinal()] = streetTwo;
         
         Scene streetThree = new Scene();
@@ -248,6 +294,17 @@ public class MapControl {
         streetThree.setMapSymbol(";0");
         streetThree.setNonPlayer(NonPlayer.Thug3);
         streetThree.setNumberItems(1);
+        streetThree.setArtForScreen(
+        "________/\"\"||\"\"\"\"\"\"\"\"\"\"\"\"\"|_________/\"\"||\"\"\"\"\"\"\"\"\"\"\"\"\"|_________/\"\"||\"\"\"\"\"\"\"\"\"\n" +
+        ".._/\"\\_, |  ||_____________| ._/\"\\_, |  ||_____________| ._/\"\\_, |  ||_________\n" +
+        "\"o---o\" 'O--OO       OO OO  \"o---o\" 'O--OO       OO OO  \"o---o\" 'O--OO       O\n" +
+        "\"\"\"\"\\,   .__/\"\"\\__,   .__/\"\"\"\"\"\\,   .__/\"\"\\__,   .__/\"\"\"\"\"\\,   .__/\"\"\\__,   ._\n" +
+        "---()\"   \"()----()\"   \"()-----()\"   \"()----()\"   \"()-----()\"   \"()----()\"   \"(\n" +
+        "\\                 /\"\"\"T\"\"\"\\                 /\"\"\"T\"\"\"\\                 /\"\"\"T\"\"\"\n" +
+        "_>---\\       ,---<____|____>---\\       ,---<____|____>---\\       ,---<____|___\n" +
+        "-/\"\\ {      / /\"\\    -|   -/\"\\ {      / /\"\\    -|   -/\"\\ {      / /\"\\    -|\n" +
+        "-\\_/-=      =-\\_/-----+----\\_/-=      =-\\_/-----+----\\_/-=      =-\\_/-----+---\n" +
+        "______________________________________________________________________________");
         scenes[SceneType.streetThree.ordinal()] = streetThree;
         
         Scene streetFour = new Scene();
@@ -255,6 +312,17 @@ public class MapControl {
         streetFour.setMapSymbol(";0");
         streetFour.setNonPlayer(NonPlayer.Thug3);
         streetFour.setNumberItems(1);
+        streetFour.setArtForScreen(
+        "________/\"\"||\"\"\"\"\"\"\"\"\"\"\"\"\"|_________/\"\"||\"\"\"\"\"\"\"\"\"\"\"\"\"|_________/\"\"||\"\"\"\"\"\"\"\"\"\n" +
+        ".._/\"\\_, |  ||_____________| ._/\"\\_, |  ||_____________| ._/\"\\_, |  ||_________\n" +
+        "\"o---o\" 'O--OO       OO OO  \"o---o\" 'O--OO       OO OO  \"o---o\" 'O--OO       O\n" +
+        "\"\"\"\"\\,   .__/\"\"\\__,   .__/\"\"\"\"\"\\,   .__/\"\"\\__,   .__/\"\"\"\"\"\\,   .__/\"\"\\__,   ._\n" +
+        "---()\"   \"()----()\"   \"()-----()\"   \"()----()\"   \"()-----()\"   \"()----()\"   \"(\n" +
+        "\\                 /\"\"\"T\"\"\"\\                 /\"\"\"T\"\"\"\\                 /\"\"\"T\"\"\"\n" +
+        "_>---\\       ,---<____|____>---\\       ,---<____|____>---\\       ,---<____|___\n" +
+        "-/\"\\ {      / /\"\\    -|   -/\"\\ {      / /\"\\    -|   -/\"\\ {      / /\"\\    -|\n" +
+        "-\\_/-=      =-\\_/-----+----\\_/-=      =-\\_/-----+----\\_/-=      =-\\_/-----+---\n" +
+        "______________________________________________________________________________");
         scenes[SceneType.streetFour.ordinal()] = streetFour;
         
         Scene streetFive = new Scene();
@@ -262,6 +330,17 @@ public class MapControl {
         streetFive.setMapSymbol(";0");
         streetFive.setNonPlayer(NonPlayer.Thug3);
         streetFive.setNumberItems(1);
+        streetFive.setArtForScreen(
+        "________/\"\"||\"\"\"\"\"\"\"\"\"\"\"\"\"|_________/\"\"||\"\"\"\"\"\"\"\"\"\"\"\"\"|_________/\"\"||\"\"\"\"\"\"\"\"\"\n" +
+        ".._/\"\\_, |  ||_____________| ._/\"\\_, |  ||_____________| ._/\"\\_, |  ||_________\n" +
+        "\"o---o\" 'O--OO       OO OO  \"o---o\" 'O--OO       OO OO  \"o---o\" 'O--OO       O\n" +
+        "\"\"\"\"\\,   .__/\"\"\\__,   .__/\"\"\"\"\"\\,   .__/\"\"\\__,   .__/\"\"\"\"\"\\,   .__/\"\"\\__,   ._\n" +
+        "---()\"   \"()----()\"   \"()-----()\"   \"()----()\"   \"()-----()\"   \"()----()\"   \"(\n" +
+        "\\                 /\"\"\"T\"\"\"\\                 /\"\"\"T\"\"\"\\                 /\"\"\"T\"\"\"\n" +
+        "_>---\\       ,---<____|____>---\\       ,---<____|____>---\\       ,---<____|___\n" +
+        "-/\"\\ {      / /\"\\    -|   -/\"\\ {      / /\"\\    -|   -/\"\\ {      / /\"\\    -|\n" +
+        "-\\_/-=      =-\\_/-----+----\\_/-=      =-\\_/-----+----\\_/-=      =-\\_/-----+---\n" +
+        "______________________________________________________________________________");
         scenes[SceneType.streetFive.ordinal()] = streetFive;
         
         
@@ -270,6 +349,18 @@ public class MapControl {
         pharmacyOne.setMapSymbol(";P");
         pharmacyOne.setNonPlayer(NonPlayer.Thug2);
         pharmacyOne.setNumberItems(0);
+        pharmacyOne.setArtForScreen("                    _..._                  \n" +
+" hjm               //''\\\\\\                 \n" +
+"                   ||. .||                 \n" +
+"                   |\\ _ /|      (          \n" +
+"                  .-/\\ /\\-.     )   |      \n" +
+"                 |  ` \\ '  |    _   |      \n" +
+"           (     | |  |  | |    H=--+-     \n" +
+"           ))    | |__|[ | |    U   |      \n" +
+"           __    \\___(_3/ /     )   |      \n" +
+"-|_H_H_|---||---------|!|/------|---|---.  \n" +
+" |_U_U_|  /__\\        |_|      _[_ _|__  \\ \n" +
+"------------------------------------------`");
         scenes[SceneType.pharmacyOne.ordinal()] = pharmacyOne;
         
         Scene pharmacyTwo = new Scene();
@@ -277,6 +368,18 @@ public class MapControl {
         pharmacyTwo.setMapSymbol(";P");
         pharmacyTwo.setNonPlayer(NonPlayer.Thug2);
         pharmacyTwo.setNumberItems(0);
+        pharmacyTwo.setArtForScreen("                    _..._                  \n" +
+" hjm               //''\\\\\\                 \n" +
+"                   ||. .||                 \n" +
+"                   |\\ _ /|      (          \n" +
+"                  .-/\\ /\\-.     )   |      \n" +
+"                 |  ` \\ '  |    _   |      \n" +
+"           (     | |  |  | |    H=--+-     \n" +
+"           ))    | |__|[ | |    U   |      \n" +
+"           __    \\___(_3/ /     )   |      \n" +
+"-|_H_H_|---||---------|!|/------|---|---.  \n" +
+" |_U_U_|  /__\\        |_|      _[_ _|__  \\ \n" +
+"------------------------------------------`");
         scenes[SceneType.pharmacyTwo.ordinal()] = pharmacyTwo;
         
         Scene pharmacyThree = new Scene();
@@ -284,6 +387,18 @@ public class MapControl {
         pharmacyThree.setMapSymbol(";P");
         pharmacyThree.setNonPlayer(NonPlayer.Thug2);
         pharmacyThree.setNumberItems(0);
+        pharmacyThree.setArtForScreen("                    _..._                  \n" +
+" hjm               //''\\\\\\                 \n" +
+"                   ||. .||                 \n" +
+"                   |\\ _ /|      (          \n" +
+"                  .-/\\ /\\-.     )   |      \n" +
+"                 |  ` \\ '  |    _   |      \n" +
+"           (     | |  |  | |    H=--+-     \n" +
+"           ))    | |__|[ | |    U   |      \n" +
+"           __    \\___(_3/ /     )   |      \n" +
+"-|_H_H_|---||---------|!|/------|---|---.  \n" +
+" |_U_U_|  /__\\        |_|      _[_ _|__  \\ \n" +
+"------------------------------------------`");
         scenes[SceneType.pharmacyThree.ordinal()] = pharmacyThree;
         
         Scene pharmacyFour = new Scene();
@@ -291,6 +406,18 @@ public class MapControl {
         pharmacyFour.setMapSymbol(";P");
         pharmacyFour.setNonPlayer(NonPlayer.Thug2);
         pharmacyFour.setNumberItems(0);
+        pharmacyFour.setArtForScreen("                    _..._                  \n" +
+" hjm               //''\\\\\\                 \n" +
+"                   ||. .||                 \n" +
+"                   |\\ _ /|      (          \n" +
+"                  .-/\\ /\\-.     )   |      \n" +
+"                 |  ` \\ '  |    _   |      \n" +
+"           (     | |  |  | |    H=--+-     \n" +
+"           ))    | |__|[ | |    U   |      \n" +
+"           __    \\___(_3/ /     )   |      \n" +
+"-|_H_H_|---||---------|!|/------|---|---.  \n" +
+" |_U_U_|  /__\\        |_|      _[_ _|__  \\ \n" +
+"------------------------------------------`");
         scenes[SceneType.pharmacyFour.ordinal()] = pharmacyFour;
         
         Scene pharmacyFive = new Scene();
@@ -298,6 +425,18 @@ public class MapControl {
         pharmacyFive.setMapSymbol(";P");
         pharmacyFive.setNonPlayer(NonPlayer.Thug2);
         pharmacyFive.setNumberItems(0);
+        pharmacyFive.setArtForScreen("                    _..._                  \n" +
+" hjm               //''\\\\\\                 \n" +
+"                   ||. .||                 \n" +
+"                   |\\ _ /|      (          \n" +
+"                  .-/\\ /\\-.     )   |      \n" +
+"                 |  ` \\ '  |    _   |      \n" +
+"           (     | |  |  | |    H=--+-     \n" +
+"           ))    | |__|[ | |    U   |      \n" +
+"           __    \\___(_3/ /     )   |      \n" +
+"-|_H_H_|---||---------|!|/------|---|---.  \n" +
+" |_U_U_|  /__\\        |_|      _[_ _|__  \\ \n" +
+"------------------------------------------`");
         scenes[SceneType.pharmacyFive.ordinal()] = pharmacyFive;
         
         Scene hospitalOne = new Scene();
@@ -305,13 +444,35 @@ public class MapControl {
         hospitalOne.setMapSymbol(";X");
         hospitalOne.setNonPlayer(NonPlayer.PoliceManJoe);
         hospitalOne.setNumberItems(1);
+        hospitalOne.setArtForScreen("   \\\\\\\\\n" +
+"   c  oo\n" +
+"    | .U\n" +
+"   __=__                        ,,,   \n" +
+"  |.  __|___                    oo ; \n" +
+"  ||_/  /  /                    U= _  0\n" +
+"  \\_/__/__E   o                 /. .| |\n" +
+"   (___ ||    |~~~~~~~~~~~~~~~~'----'~|\n" +
+"   I---|||    |-----------------------|\n" +
+"   I   |||    |       c(__)           |\n" +
+"   ^   '--''  ^                       ^");
         scenes[SceneType.hospitalOne.ordinal()] = hospitalOne;
         
         Scene hospitalTwo = new Scene();
         hospitalTwo.setDescription("St. Granny Crack Memorial Hospital Room One");
         hospitalTwo.setMapSymbol(";X");
-        hospitalOne.setNonPlayer(NonPlayer.PoliceManJoe);
+        hospitalTwo.setNonPlayer(NonPlayer.PoliceManJoe);
         hospitalTwo.setNumberItems(1);
+        hospitalTwo.setArtForScreen("   \\\\\\\\\n" +
+"   c  oo\n" +
+"    | .U\n" +
+"   __=__                        ,,,   \n" +
+"  |.  __|___                    oo ; \n" +
+"  ||_/  /  /                    U= _  0\n" +
+"  \\_/__/__E   o                 /. .| |\n" +
+"   (___ ||    |~~~~~~~~~~~~~~~~'----'~|\n" +
+"   I---|||    |-----------------------|\n" +
+"   I   |||    |       c(__)           |\n" +
+"   ^   '--''  ^                       ^");
         scenes[SceneType.hospitalTwo.ordinal()] = hospitalTwo;
         
         Scene hospitalThree = new Scene();
@@ -319,6 +480,17 @@ public class MapControl {
         hospitalThree.setMapSymbol(";X");
         hospitalThree.setNonPlayer(NonPlayer.PoliceManJoe);
         hospitalThree.setNumberItems(1);
+        hospitalThree.setArtForScreen("   \\\\\\\\\n" +
+"   c  oo\n" +
+"    | .U\n" +
+"   __=__                        ,,,   \n" +
+"  |.  __|___                    oo ; \n" +
+"  ||_/  /  /                    U= _  0\n" +
+"  \\_/__/__E   o                 /. .| |\n" +
+"   (___ ||    |~~~~~~~~~~~~~~~~'----'~|\n" +
+"   I---|||    |-----------------------|\n" +
+"   I   |||    |       c(__)           |\n" +
+"   ^   '--''  ^                       ^");
         scenes[SceneType.hospitalThree.ordinal()] = hospitalThree;
         
         Scene hospitalFour = new Scene();
@@ -326,6 +498,17 @@ public class MapControl {
         hospitalFour.setMapSymbol(";X");
         hospitalFour.setNonPlayer(NonPlayer.PoliceManJoe);
         hospitalFour.setNumberItems(1);
+        hospitalFour.setArtForScreen("   \\\\\\\\\n" +
+"   c  oo\n" +
+"    | .U\n" +
+"   __=__                        ,,,   \n" +
+"  |.  __|___                    oo ; \n" +
+"  ||_/  /  /                    U= _  0\n" +
+"  \\_/__/__E   o                 /. .| |\n" +
+"   (___ ||    |~~~~~~~~~~~~~~~~'----'~|\n" +
+"   I---|||    |-----------------------|\n" +
+"   I   |||    |       c(__)           |\n" +
+"   ^   '--''  ^                       ^");
         scenes[SceneType.hospitalFour.ordinal()] = hospitalFour;
         
         Scene hospitalFive = new Scene();
@@ -333,6 +516,17 @@ public class MapControl {
         hospitalFive.setMapSymbol(";X");
         hospitalFive.setNonPlayer(NonPlayer.PoliceManJoe);
         hospitalFive.setNumberItems(1);
+        hospitalFive.setArtForScreen("   \\\\\\\\\n" +
+"   c  oo\n" +
+"    | .U\n" +
+"   __=__                        ,,,   \n" +
+"  |.  __|___                    oo ; \n" +
+"  ||_/  /  /                    U= _  0\n" +
+"  \\_/__/__E   o                 /. .| |\n" +
+"   (___ ||    |~~~~~~~~~~~~~~~~'----'~|\n" +
+"   I---|||    |-----------------------|\n" +
+"   I   |||    |       c(__)           |\n" +
+"   ^   '--''  ^                       ^");
         scenes[SceneType.hospitalFive.ordinal()] = hospitalFive;
         
         return scenes;

@@ -24,11 +24,22 @@ public class Game implements Serializable{
     private boolean foundAntidote;
     private boolean unlockedPhone;
     private boolean unlockedDoor;
+    private boolean foundLoveNote;
     
     private int NumberMovesLeft;
     
     private String gameMenu;
 
+    public boolean isFoundLoveNote() {
+        return foundLoveNote;
+    }
+
+    public void setFoundLoveNote(boolean foundLoveNote) {
+        this.foundLoveNote = foundLoveNote;
+    }
+
+    
+    
     public String getGameMenu() {
         return gameMenu;
     }
